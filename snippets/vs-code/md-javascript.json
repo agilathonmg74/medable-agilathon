@@ -13,7 +13,7 @@
 	  "cortext access levels": {
 		"prefix": "md-accessLevels",
 		"body": [
-		  "consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|}"
+		  "consts.accessLevels.${1|public,connected,reserved,read,share,update,delete,script|}"
 		],
 		"description": "cortext access levels"
 	  },

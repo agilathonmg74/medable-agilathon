@@ -1,6 +1,6 @@
 # medable - agilathon
 
-intent to contain different helpers and snippets fro agilathom?medable eco-system.
+intent to contain different helpers and snippets from agilathon-medable eco-system.
 
 ## Description
 
