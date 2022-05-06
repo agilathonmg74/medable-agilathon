@@ -1,6 +1,6 @@
 # medable - agilathon
 
-intent to contain different helpers and snippets from agilathon-medable eco-system.
+intent to contain different helpers and snippets for agilathon-medable eco-system.
 
 ## Description
 
@@ -42,4 +42,4 @@ None
 Inspiration, code snippets, etc.
 * [snippet generator app](https://snippet-generator.app/)
 * [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
-* [Definitive guide to snippets visual studio code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
+* [Definitive guide to snippets visual studio code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
