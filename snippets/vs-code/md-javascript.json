@@ -1,0 +1,84 @@
+{
+    "md-query": {
+		"prefix": "md-query",
+		"body": [
+		  "org.objects",
+		  ".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}",
+		  ".${2|find(),readOne(), insertOne(),insertMany(),updateOne(),delete(), deleteMany()|}",
+		  ".skipAcl()",
+		  ".grant(consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|})"
+		],
+		"description": "query"
+	  },
+	  "cortext access levels": {
+		"prefix": "md-accessLevels",
+		"body": [
+		  "consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|}"
+		],
+		"description": "cortext access levels"
+	  },
+	  "trigger events ": {
+		"prefix": "md-triggerEvents",
+		"body": [
+		  "${1|create.after, create.before,update.after, update.before,delete.after, delete.before|}"
+		],
+		"description": "trigger events "
+	  },
+	  "medable objects": {
+		"prefix": "md-objects",
+		"body": [
+			".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}"
+		],
+		"description": "medable objects"
+	  },
+	  
+	  "trigger class ": {
+		"prefix": "md-triggerClass",
+		"body": [
+		  "const { log, trigger } = require('decorators'),",
+		  "",
+		  "class ${1:TriggerClass} {",
+		  "",
+		  "  @log({ traceError: true })",
+		  "  @trigger('update.after', {",
+		  "    object: 'c_task_response',",
+		  "    weight: 1,",
+		  "    principal: 'c_system_user',",
+		  "    if: {",
+		  "      $and: [",
+		  "        {",
+		  "          $eq: ['$$ROOT.c_status', 'Complete']",
+		  "        },",
+		  "        {",
+		  "          $eq: ['$$ROOT.c_success', true]",
+		  "        },",
+		  "        {",
+		  "          $eq: [",
+		  "            {",
+		  "              $pathTo: [{",
+		  "                $dbNext: {",
+		  "                  $object: {",
+		  "                    object: 'c_task',",
+		  "                    operation: 'cursor',",
+		  "                    where: {",
+		  "                      c_key: { $config: 'c_cs_config.tn_level_task' }",
+		  "                    }",
+		  "                  }",
+		  "                }",
+		  "              }, '_id']",
+		  "            },",
+		  "            '$$ROOT.c_task._id'",
+		  "          ]",
+		  "        }",
+		  "      ]",
+		  "    }",
+		  "  })",
+		  "  ",
+		  "  static OnTriggerEvent(){",
+		  "  // to do implemenattion",
+		  "}",
+		  ""
+		],
+		"description": "trigger class "
+	  }
+}
