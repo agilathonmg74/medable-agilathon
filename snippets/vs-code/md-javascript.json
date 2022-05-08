@@ -1,84 +1,463 @@
 {
-    "md-query": {
-		"prefix": "md-query",
+	"md query": {
+		"prefix": "md query",
 		"body": [
-		  "org.objects",
-		  ".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}",
-		  ".${2|find(),readOne(), insertOne(),insertMany(),updateOne(),delete(), deleteMany()|}",
-		  ".skipAcl()",
-		  ".grant(consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|})"
+			"org.objects",
+			".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}",
+			".${2|find(),readOne(), insertOne(),insertMany(),updateOne(),delete(), deleteMany()|}",
+			".skipAcl()",
+			".grant(consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|})"
 		],
 		"description": "query"
-	  },
-	  "cortext access levels": {
-		"prefix": "md-accessLevels",
+	},
+	"cortext access levels": {
+		"prefix": "md accessLevels",
 		"body": [
-		  "consts.accessLevels.${1|public,connected,reserved,read,share,update,delete,script|}"
+			"consts.accessLevels.${1|public,connected,reserved,read,share,update,delete,script|}"
 		],
 		"description": "cortext access levels"
-	  },
-	  "trigger events ": {
-		"prefix": "md-triggerEvents",
-		"body": [
-		  "${1|create.after, create.before,update.after, update.before,delete.after, delete.before|}"
-		],
-		"description": "trigger events "
-	  },
-	  "medable objects": {
-		"prefix": "md-objects",
+	},
+	"medable objects": {
+		"prefix": "md objects",
 		"body": [
 			".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}"
 		],
 		"description": "medable objects"
-	  },
-	  
-	  "trigger class ": {
-		"prefix": "md-triggerClass",
+	},
+	"task trigger": {
+		"prefix": "md trigger task",
 		"body": [
-		  "const { log, trigger } = require('decorators'),",
-		  "",
-		  "class ${1:TriggerClass} {",
-		  "",
-		  "  @log({ traceError: true })",
-		  "  @trigger('update.after', {",
-		  "    object: 'c_task_response',",
-		  "    weight: 1,",
-		  "    principal: 'c_system_user',",
-		  "    if: {",
-		  "      $and: [",
-		  "        {",
-		  "          $eq: ['$$ROOT.c_status', 'Complete']",
-		  "        },",
-		  "        {",
-		  "          $eq: ['$$ROOT.c_success', true]",
-		  "        },",
-		  "        {",
-		  "          $eq: [",
-		  "            {",
-		  "              $pathTo: [{",
-		  "                $dbNext: {",
-		  "                  $object: {",
-		  "                    object: 'c_task',",
-		  "                    operation: 'cursor',",
-		  "                    where: {",
-		  "                      c_key: { $config: 'c_cs_config.tn_level_task' }",
-		  "                    }",
-		  "                  }",
-		  "                }",
-		  "              }, '_id']",
-		  "            },",
-		  "            '$$ROOT.c_task._id'",
-		  "          ]",
-		  "        }",
-		  "      ]",
-		  "    }",
-		  "  })",
-		  "  ",
-		  "  static OnTriggerEvent(){",
-		  "  // to do implemenattion",
-		  "}",
-		  ""
+			"const { log, trigger } = require('decorators')",
+			"const config = require('config')",
+			"const r = consts.accessLevels.read,",
+			"      u = consts.accessLevels.update",
+			"",
+			"class ${1:triggerClass} {",
+			"    @log({ traceError: true })",
+			"    @trigger(${2|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}, {",
+			"      object: 'c_task',",
+			"      weight: 1,",
+			"      principal: 'c_system_user',",
+			"      if: {",
+			"        $and: [",
+			"          {",
+			"            $gte: [{",
+			"              $indexOfArray: [",
+			"                '$$SCRIPT.arguments.modified',",
+			"                'c_completed'",
+			"              ]",
+			"            }, 0]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_success', true]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_completed', true]",
+			"          },",
+			"          {",
+			"            $eq: [{",
+			"              $pathTo: [{",
+			"                $dbNext: {",
+			"                  $object: {",
+			"                    object: 'c_task',",
+			"                    operation: 'cursor',",
+			"                    where: {",
+			"                      c_key: { $config: 'c_cs.${3:taskKey}' }",
+			"                    }",
+			"                  }",
+			"                }",
+			"              }, '_id']",
+			"            },",
+			"            '$$ROOT.c_task._id'",
+			"            ]",
+			"          }",
+			"        ]",
+			"      }",
+			"    })",
+			"  static ${4:functionName}() {",
+			"    const { c_task._id: taskId } = script.arguments.old,",
+			"      task = org.objects.c_task.readOne({ _id: taskId })",
+			"        .throwNotFound(false)",
+			"        .skipAcl()",
+			"        .grant(r)",
+			"        .execute()",
+			"  }",
+			"}"
 		],
-		"description": "trigger class "
-	  }
+		"description": ""
+	},
+	"event trigger single task": {
+		"prefix": "md trigger event single",
+		"body": [
+			"const { log, trigger } = require('decorators')",
+			"const config = require('config')",
+			"const r = consts.accessLevels.read,",
+			"      u = consts.accessLevels.update",
+			"",
+			"class ${1:triggerClass} {",
+			"    @log({ traceError: true })",
+			"    @trigger(${2|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}, {",
+			"      object: 'c_event',",
+			"      weight: 1,",
+			"      principal: 'c_system_user',",
+			"      if: {",
+			"        $and: [",
+			"          {",
+			"            $gte: [{",
+			"              $indexOfArray: [",
+			"                '$$SCRIPT.arguments.modified',",
+			"                'c_completed'",
+			"              ]",
+			"            }, 0]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_success', true]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_completed', true]",
+			"          },",
+			"          {",
+			"            $eq: [{",
+			"              $pathTo: [{",
+			"                $dbNext: {",
+			"                  $object: {",
+			"                    object: 'c_event',",
+			"                    operation: 'cursor',",
+			"                    where: {",
+			"                      c_key: { $config: 'c_cs.${3:taskKey}' }",
+			"                    }",
+			"                  }",
+			"                }",
+			"              }, '_id']",
+			"            },",
+			"            '$$ROOT.c_event._id'",
+			"            ]",
+			"          }",
+			"        ]",
+			"      }",
+			"    })",
+			"  static ${4:functionName}() {",
+			"    const { c_task._id: taskId } = script.arguments.old,",
+			"      task = org.objects.c_task.readOne({ _id: taskId })",
+			"        .throwNotFound(false)",
+			"        .skipAcl()",
+			"        .grant(r)",
+			"        .execute()",
+			"  }",
+			"}"
+		],
+		"description": ""
+	},
+	"event trigger multiple tasks": {
+		"prefix": "md trigger event multiple",
+		"body": [
+			"const { log, trigger } = require('decorators')",
+			"const config = require('config')",
+			"const r = consts.accessLevels.read,",
+			"      u = consts.accessLevels.update",
+			"",
+			"class ${1:triggerClass} {",
+			"   @log({ traceError: true })",
+			"   @trigger(${2|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}, {",
+			"    object: \"c_event\",",
+			"    weight: 1,",
+			"    principal: \"c_system_user\",",
+			"    if: {",
+			"      $and: [",
+			"        {",
+			"          $ne: [",
+			"            {",
+			"              $indexOfArray: [\"$$SCRIPT.arguments.modified\", \"c_missed\"]",
+			"            },",
+			"            -1",
+			"          ]",
+			"        },",
+			"        {",
+			"          $eq: [\"$$ROOT.c_missed\", true]",
+			"        },",
+			"        {",
+			"          $in: [",
+			"            \"$$ROOT.c_task._id\",",
+			"            {",
+			"              $pathTo: [",
+			"                {",
+			"                  $dbNext: {",
+			"                    $object: {",
+			"                      skipAcl: true,",
+			"                      grant: \"read\",",
+			"                      object: \"c_task\",",
+			"                      operation: \"cursor\",",
+			"                      pipeline: {",
+			"                        $array: [",
+			"                          {",
+			"                            $object: {",
+			"                              $match: {",
+			"                                c_key: {",
+			"                                  $object: {",
+			"                                    $in: {",
+			"                                      $config:",
+			"                                        \"c_cs.${3:taskKeysArray}\",",
+			"                                    },",
+			"                                  },",
+			"                                },",
+			"                              },",
+			"                            },",
+			"                          },",
+			"                          {",
+			"                            $literal: {",
+			"                              $group: {",
+			"                                _id: { $literal: \"\" },",
+			"                                ids: { $push: \"_id\" },",
+			"                              },",
+			"                            },",
+			"                          },",
+			"                        ],",
+			"                      },",
+			"                    },",
+			"                  },",
+			"                },",
+			"                \"ids\",",
+			"              ],",
+			"            },",
+			"          ],",
+			"        }",
+			"      ]",
+			"    }",
+			"  })",
+			"  static ${4:functionName}() {",
+			"    const { c_public_user._id: publicUserId, c_task_id: taskId  } = script.arguments.old,",
+			"      publicUser = org.objects.c_public_user.readOne({ _id: publicUserId })",
+			"        .throwNotFound(false)",
+			"        .skipAcl()",
+			"        .grant(r)",
+			"        .execute(),",
+			"      task = org.objects.c_task.readOne({ _id: taskId })",
+			"        .throwNotFound(false)",
+			"        .skipAcl()",
+			"        .grant(r)",
+			"        .execute(),",
+			"  }",
+			"}"
+		],
+		"description": ""
+	},
+	"config": {
+		"prefix": "md config",
+		"body": [
+			"import config from 'config'"
+		],
+		"description": "medable config"
+	},
+	"debug": {
+		"prefix": "md debug",
+		"body": [
+			"import { debug } from 'logger'",
+			"debug(${1:object}, ${2:'message'})"
+		],
+		"description": ""
+	},
+	"moment": {
+		"prefix": "md moment",
+		"body": [
+			"import { moment } from 'moment.timezone'",
+			""
+		],
+		"description": ""
+	},
+	"find": {
+		"prefix": "md find",
+		"body": [
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.find()",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"insert": {
+		"prefix": "md insert",
+		"body": [
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.insertOne()",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.update)",
+			"  .lean(false)",
+			"  .execute()"
+		],
+		"description": ""
+	},
+	"update": {
+		"prefix": "md update",
+		"body": [
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.updateOne({ _id: '' }, { $set: {  } })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.update)",
+			"  .lean(false)",
+			"  .execute()"
+		],
+		"description": ""
+	},
+	"read One": {
+		"prefix": "md readOne",
+		"body": [
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.readOne()",
+			"  .throwNotFound(false)",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .execute()"
+		],
+		"description": ""
+	},
+	"delete": {
+		"prefix": "md delete",
+		"body": [
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.deleteOne()",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.delete)"
+		],
+		"description": ""
+	},
+	"create event": {
+		"prefix": "md event create",
+		"body": [
+			"org.objects.Event.insertOne({",
+			"  type: 'script',",
+			"  event: ${1:'eventName'},",
+			"  key: ${2:`unique.key`},",
+			"  param: eventParamsObject,",
+			"  start: startDate",
+			"})",
+			"  .bypassCreateAcl()",
+			"  .grant(consts.accessLevels.update)",
+			"  .execute()"
+		],
+		"description": ""
+	},
+	"ats notif payload": {
+		"prefix": "md payload",
+		"body": [
+			"const payload = {",
+			"  c_notifications: [",
+			"    {",
+			"      c_notification_name: '',",
+			"      c_offset: 0,",
+			"      c_reference_time: 'start',",
+			"      c_conditions: 'c_ats_notif'",
+			"    }",
+			"  ]",
+			"}"
+		],
+		"description": ""
+	},
+	"script.as": {
+		"prefix": "md script.as",
+		"body": [
+			"script.as(",
+			"  'c_system_user',",
+			"  { safe: false, principal: { skipAcl: true, grant: ${1|'read','update'|} } },",
+			"  () => {",
+			"    doSomething()",
+			"  })"
+		],
+		"description": ""
+	},
+	"arrow function": {
+		"prefix": "md arrowFunction",
+		"body": [
+			"const functionName = (param1, param2) => {",
+			"  return ",
+			"}"
+		],
+		"description": ""
+	},
+	"class with static method": {
+		"prefix": "md class",
+		"body": [
+			"class ${1:className} {",
+			"",
+			"  static ${2:functionName} () {",
+			"    return 'Hello'",
+			"  }",
+			"",
+			"}"
+		],
+		"description": ""
+	},
+	"ternary condition": {
+		"prefix": "md ternary",
+		"body": [
+			"${1:condition} ? ${2:value_if_true} : ${3:value_if_false}"
+		],
+		"description": "ternary condition"
+	},
+	"get account": {
+		"prefix": "md get account",
+		"body": [
+			"org.objects.account.find({_id: '', email: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get c_event": {
+		"prefix": "md get event",
+		"body": [
+			"org.objects.c_event.find({c_public_user: '', c_task: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get Event": {
+		"prefix": "md get Event",
+		"body": [
+			"org.objects.Event.find({key: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get patient flag": {
+		"prefix": "md get patient flag",
+		"body": [
+			"org.objects.c_patient_flag.find({_id: '', c_identifier: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get task assignment": {
+		"prefix": "md get task assignment",
+		"body": [
+			"org.objects.c_task_assignments.find({_id: '', c_task: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get site": {
+		"prefix": "md get site",
+		"body": [
+			"org.objects.c_site.find({_id: '', c_name: '', c_study: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get study": {
+		"prefix": "md get study",
+		"body": [
+			"org.objects.c_study.find({_id: '', c_name: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	},
+	"get anchor date template": {
+		"prefix": "md get anchor date",
+		"body": [
+			"org.objects.c_anchor_date_templates.find({_id: '', c_identifier: ''})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)"
+		],
+		"description": ""
+	}
 }
