@@ -82,7 +82,7 @@
 			"      task = org.objects.c_task.readOne({ _id: taskId })",
 			"        .throwNotFound(false)",
 			"        .skipAcl()",
-			"        .grant(consts.accessLevels.read)",
+			"        .grant(r)",
 			"        .execute()",
 			"  }",
 			"}"
@@ -325,7 +325,7 @@
 		"prefix": "md debug",
 		"body": [
 			"import { debug } from 'logger'",
-			"debug('${1:message}', ${2:object})",
+			"debug(${1:object}, ${2:'message'})",
 			"$0"
 		],
 		"description": "Write in log file - debug level"
@@ -333,7 +333,7 @@
 	"moment": {
 		"prefix": "md moment",
 		"body": [
-			"import moment from 'moment.timezone'",
+			"import { moment } from 'moment.timezone'",
 			"$0"
 		],
 		"description": "import moment package"
@@ -341,7 +341,7 @@
 	"find": {
 		"prefix": "md find",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit,c_notif,c_axon_notif,Event|}.find()",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit,c_notif,c_axon_notif,Event|}.find({_id: '$2'})",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)",
 			"$0"
@@ -363,7 +363,7 @@
 	"update": {
 		"prefix": "md update",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.updateOne({ _id: '' }, { $set: {  } })",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.updateOne({ _id: '$2' }, { $set: {${3:key}: '${4:value}'  } })",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.update)",
 			"  .lean(false)",
@@ -375,7 +375,7 @@
 	"read One": {
 		"prefix": "md readOne",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.readOne()",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.readOne({_id: '$2'})",
 			"  .throwNotFound(false)",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)",
@@ -387,7 +387,7 @@
 	"delete": {
 		"prefix": "md delete",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.deleteOne()",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.deleteOne({_id: '$2'})",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.delete)",
 			"$0"
@@ -401,17 +401,18 @@
 			"  type: 'script',",
 			"  event: ${1:'eventName'},",
 			"  key: ${2:`unique.key`},",
-			"  param: eventParamsObject,",
+			"  param: eventParamsObject,//add param obj to pass to event here",
 			"  start: startDate",
 			"})",
 			"  .bypassCreateAcl()",
 			"  .grant(consts.accessLevels.update)",
-			"  .execute()"
+			"  .execute()",
+			"$0"
 		],
 		"description": "create Event"
 	},
 	"ats notif payload": {
-		"prefix": "md payload",
+		"prefix": "md payload ats",
 		"body": [
 			"const payload = {",
 			"  c_notifications: [",
@@ -470,72 +471,80 @@
 	"get account": {
 		"prefix": "md get account",
 		"body": [
-			"org.objects.account.find({_id: '', email: ''})",
+			"org.objects.account.find({_id: '$1', email: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "get cortex account"
 	},
 	"get c_event": {
 		"prefix": "md get event",
 		"body": [
-			"org.objects.c_event.find({c_public_user: '', c_task: ''})",
+			"org.objects.c_event.find({c_public_user: '$1', c_task: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "get cortex c_events"
 	},
 	"get Event": {
 		"prefix": "md get Event",
 		"body": [
-			"org.objects.Event.find({key: ''})",
+			"org.objects.Event.find({key: '$1'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "get cortex Event"
 	},
 	"get patient flag": {
 		"prefix": "md get patient flag",
 		"body": [
-			"org.objects.c_patient_flag.find({_id: '', c_identifier: ''})",
+			"org.objects.c_patient_flag.find({_id: '$1', c_identifier: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "get patient flags"
 	},
 	"get task assignment": {
 		"prefix": "md get task assignment",
 		"body": [
-			"org.objects.c_task_assignments.find({_id: '', c_task: ''})",
+			"org.objects.c_task_assignments.find({_id: '$1', c_task: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "cortex - get task assignment"
 	},
 	"get site": {
 		"prefix": "md get site",
 		"body": [
-			"org.objects.c_site.find({_id: '', c_name: '', c_study: ''})",
+			"org.objects.c_site.find({_id: '$1', c_name: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "cortex - get site"
 	},
 	"get study": {
 		"prefix": "md get study",
 		"body": [
-			"org.objects.c_study.find({_id: '', c_name: ''})",
+			"org.objects.c_study.find({_id: '$1', c_name: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "cortex - get study"
 	},
 	"get anchor date template": {
 		"prefix": "md get anchor date",
 		"body": [
-			"org.objects.c_anchor_date_templates.find({_id: '', c_identifier: ''})",
+			"org.objects.c_anchor_date_templates.find({_id: '$1', c_identifier: '$2'})",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
 		"description": "cortex - get anchor date"
 	},
@@ -668,5 +677,12 @@
 		  "  $0"
 		],
 		"description": "Update task response object"
+	  },
+	  "import underscore": {
+		"prefix": "md underscore",
+		"body": [
+		  "import _ from 'underscore'"
+		],
+		"description": "import underscore"
 	  }
 }
