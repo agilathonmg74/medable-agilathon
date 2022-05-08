@@ -44,8 +44,6 @@ Different helpers and snippets for agilathon-nmedable eco-system.
     md get site
     md get study
     md get anchor date
-
-    newly added:
     md trigger task response - trigger on task response
     md notif schedule - schedule c_notif
     md notif cancel - cancel c_notif
@@ -57,6 +55,8 @@ Different helpers and snippets for agilathon-nmedable eco-system.
     md get step response
     md update task response
     md underscore
+    md report helper
+    md get report file
 
 ### Addtional
 
