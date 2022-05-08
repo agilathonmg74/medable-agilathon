@@ -605,5 +605,68 @@
 		  "$0"
 		],
 		"description": "Updates c_public_user"
-	}
+	},
+	"Medable - find c_task": {
+		"prefix": "md get task",
+		"body": [
+		  "org.objects.c_task.find({ _id: '$1', c_name: '$2', c_key: '$3' })",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.read)",
+		  "  .next()",
+		  "  $0"
+		],
+		"description": "Find c_task"
+	},
+	"Medable - find task response": {
+		"prefix": "md get task response",
+		"body": [
+		  "org.objects.c_task_response.find({",
+		  "  _id: '$1',",
+		  "  c_task: '$2',",
+		  "  c_public_user: '$3',",
+		  "  c_end_date: '$4'",
+		  "})",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.read)",
+		  "  .next()",
+		  "  $0"
+		],
+		"description": "Find task response"
+	},
+	"Medable - find step": {
+		"prefix": "md get step",
+		"body": [
+		  "org.objects.c_step.find({ _id: '$1', c_task: '$2', c_key: '$4' })",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.read)",
+		  "  .next()",
+		  "  $0"
+		],
+		"description": "Find step"
+	},
+	"Medable - find step response": {
+		"prefix": "md get step response",
+		"body": [
+		  "org.objects.c_step_response.find({ _id: '$1', c_task: '$2', c_step: '$3' })",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.read)",
+		  "  .next()",
+		  "  $0"
+		],
+		"description": "Find step response"
+	},
+	
+	"Medable - update task response": {
+		"prefix": "md update task response",
+		"body": [
+		  "org.objects.c_task_response.updateOne({",
+		  "  _id: '$1'",
+		  "}, { $$set: { ${2:c_completed}: '${3|true,false|}'  }})",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.update)",
+		  "  .execute()",
+		  "  $0"
+		],
+		"description": "Update task response object"
+	  }
 }

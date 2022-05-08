@@ -45,6 +45,18 @@ Different helpers and snippets for agilathon-nmedable eco-system.
     md get study
     md get anchor date
 
+    newly added:
+    md trigger task response - trigger on task response
+    md notif schedule - schedule c_notif
+    md notif cancel - cancel c_notif
+    md get publicuser
+    md update publicuser
+    md get task
+    md get task response
+    md get step
+    md get step response
+    md update task response
+
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
