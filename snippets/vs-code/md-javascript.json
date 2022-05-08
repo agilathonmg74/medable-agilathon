@@ -3,24 +3,27 @@
 		"prefix": "md query",
 		"body": [
 			"org.objects",
-			".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}",
-			".${2|find(),readOne(), insertOne(),insertMany(),updateOne(),delete(), deleteMany()|}",
+			".${1|c_public_user,c_anchor_date_template,c_branch,c_event,c_group,c_notif,c_step,c_step_response,c_task,c_task_assigment,c_task_response,c_visit,c_visit_schedule|}",
+			".${2|find(),readOne(),insertOne(),insertMany(),updateOne(),delete(),deleteMany()|}",
 			".skipAcl()",
-			".grant(consts.accessLevels.${3|public,connected,reserved,read,share,update,delete,script|})"
+			".grant(consts.accessLevels.${3|read,update,delete,public,connected,reserved,share,script|})",
+			"$0"
 		],
 		"description": "query"
 	},
 	"cortext access levels": {
 		"prefix": "md accessLevels",
 		"body": [
-			"consts.accessLevels.${1|public,connected,reserved,read,share,update,delete,script|}"
+			"consts.accessLevels.${1|read,update,delete,public,connected,reserved,share,script|}",
+			"$0"
 		],
 		"description": "cortext access levels"
 	},
 	"medable objects": {
 		"prefix": "md objects",
 		"body": [
-			".${1|c_public_user,c_anchor_date_template,c_branch, c_event, c_group, c_notif, c_step, c_step_response, c_task, c_task_assigment, c_task_response, c_visit, c_visit_schedule|}"
+			".${1|c_public_user,account,c_task,c_task_response,c_step,c_step_response,c_site,c_site_user,c_event,c_anchor_date_template,c_branch,c_group,c_notif,c_axon_notif,c_task_assignment,c_visit,c_visit_schedule|}",
+			"$0"
 		],
 		"description": "medable objects"
 	},
@@ -79,12 +82,81 @@
 			"      task = org.objects.c_task.readOne({ _id: taskId })",
 			"        .throwNotFound(false)",
 			"        .skipAcl()",
-			"        .grant(r)",
+			"        .grant(consts.accessLevels.read)",
 			"        .execute()",
 			"  }",
 			"}"
 		],
-		"description": ""
+		"description": "Template for task trigger"
+	},
+	"trigger on task response": {
+		"prefix": "md trigger task response",
+		"body": [
+			"const { log, trigger } = require('decorators')",
+			"const config = require('config')",
+			"const r = consts.accessLevels.read,",
+			"      u = consts.accessLevels.update",
+			"",
+			"class ${1:triggerClass} {",
+			"  @log({ traceError: true })",
+			"    @trigger(${2|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}, {",
+			"      object: 'c_task_response',",
+			"      weight: 1,",
+			"      principal: 'c_system_user',",
+			"      if: {",
+			"        $and: [",
+			"          {",
+			"            $gte: [{",
+			"              $indexOfArray: [",
+			"                '$$SCRIPT.arguments.modified',",
+			"                'c_completed'",
+			"              ]",
+			"            }, 0]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_success', true]",
+			"          },",
+			"          {",
+			"            $eq: ['$$ROOT.c_completed', true]",
+			"          },",
+			"          {",
+			"            $or: [",
+			"              {",
+			"                $eq: [{",
+			"                  $pathTo: [{",
+			"                    $dbNext: {",
+			"                      $object: {",
+			"                        object: 'c_task',",
+			"                        operation: 'cursor',",
+			"                        where: {",
+			"                          c_key: '${3:Enter task c_key here}'",
+			"                        }",
+			"                      }",
+			"                    }",
+			"                  }, '_id']",
+			"                },",
+			"                '$$ROOT.c_task._id'",
+			"                ]",
+			"              }",
+			"            ]",
+			"          }",
+			"        ]",
+			"      }",
+			"    })",
+			"  static ${4:functionName}() {",
+			"    const { debug } = require('logger')",
+			"    const { c_task_response._id: taskResponseId } = script.arguments.new,",
+			"      taskResponse = org.objects.c_task_response.readOne({ _id: taskResponseId })",
+			"        .throwNotFound(false)",
+			"        .skipAcl()",
+			"        .grant(r)",
+			"        .execute()",
+			"//    debug('taskResponse ->', taskResponse)",
+			"  }",
+			"}",
+			"$0"
+		],
+		"description": "Create trigger on task response"
 	},
 	"event trigger single task": {
 		"prefix": "md trigger event single",
@@ -244,7 +316,8 @@
 	"config": {
 		"prefix": "md config",
 		"body": [
-			"import config from 'config'"
+			"import config from 'config'",
+			"$0"
 		],
 		"description": "medable config"
 	},
@@ -252,37 +325,40 @@
 		"prefix": "md debug",
 		"body": [
 			"import { debug } from 'logger'",
-			"debug(${1:object}, ${2:'message'})"
+			"debug('${1:message}', ${2:object})",
+			"$0"
 		],
-		"description": ""
+		"description": "Write in log file - debug level"
 	},
 	"moment": {
 		"prefix": "md moment",
 		"body": [
-			"import { moment } from 'moment.timezone'",
-			""
+			"import moment from 'moment.timezone'",
+			"$0"
 		],
-		"description": ""
+		"description": "import moment package"
 	},
 	"find": {
 		"prefix": "md find",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.find()",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit,c_notif,c_axon_notif,Event|}.find()",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.read)"
+			"  .grant(consts.accessLevels.read)",
+			"$0"
 		],
-		"description": ""
+		"description": "cortex - find operation"
 	},
 	"insert": {
 		"prefix": "md insert",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.insertOne()",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit,c_notif,c_axon_notif,Event|}.insertOne()",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.update)",
 			"  .lean(false)",
-			"  .execute()"
+			"  .execute()",
+			"$0"
 		],
-		"description": ""
+		"description": "cortex - insert operation"
 	},
 	"update": {
 		"prefix": "md update",
@@ -291,9 +367,10 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.update)",
 			"  .lean(false)",
-			"  .execute()"
+			"  .execute()",
+			"$0"
 		],
-		"description": ""
+		"description": "cortex - update operation"
 	},
 	"read One": {
 		"prefix": "md readOne",
@@ -302,18 +379,20 @@
 			"  .throwNotFound(false)",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)",
-			"  .execute()"
+			"  .execute()",
+			"$0"
 		],
-		"description": ""
+		"description": "cortex - readOne operation"
 	},
 	"delete": {
 		"prefix": "md delete",
 		"body": [
 			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.deleteOne()",
 			"  .skipAcl()",
-			"  .grant(consts.accessLevels.delete)"
+			"  .grant(consts.accessLevels.delete)",
+			"$0"
 		],
-		"description": ""
+		"description": "cortex - delete operation"
 	},
 	"create event": {
 		"prefix": "md event create",
@@ -329,7 +408,7 @@
 			"  .grant(consts.accessLevels.update)",
 			"  .execute()"
 		],
-		"description": ""
+		"description": "create Event"
 	},
 	"ats notif payload": {
 		"prefix": "md payload",
@@ -345,7 +424,7 @@
 			"  ]",
 			"}"
 		],
-		"description": ""
+		"description": "Payload template for ATS notification"
 	},
 	"script.as": {
 		"prefix": "md script.as",
@@ -357,7 +436,7 @@
 			"    doSomething()",
 			"  })"
 		],
-		"description": ""
+		"description": "script.as template"
 	},
 	"arrow function": {
 		"prefix": "md arrowFunction",
@@ -366,7 +445,7 @@
 			"  return ",
 			"}"
 		],
-		"description": ""
+		"description": "arrow function template"
 	},
 	"class with static method": {
 		"prefix": "md class",
@@ -379,7 +458,7 @@
 			"",
 			"}"
 		],
-		"description": ""
+		"description": "class template"
 	},
 	"ternary condition": {
 		"prefix": "md ternary",
@@ -395,7 +474,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "get cortex account"
 	},
 	"get c_event": {
 		"prefix": "md get event",
@@ -404,7 +483,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "get cortex c_events"
 	},
 	"get Event": {
 		"prefix": "md get Event",
@@ -413,7 +492,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "get cortex Event"
 	},
 	"get patient flag": {
 		"prefix": "md get patient flag",
@@ -422,7 +501,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "get patient flags"
 	},
 	"get task assignment": {
 		"prefix": "md get task assignment",
@@ -431,7 +510,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "cortex - get task assignment"
 	},
 	"get site": {
 		"prefix": "md get site",
@@ -440,7 +519,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "cortex - get site"
 	},
 	"get study": {
 		"prefix": "md get study",
@@ -449,7 +528,7 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "cortex - get study"
 	},
 	"get anchor date template": {
 		"prefix": "md get anchor date",
@@ -458,6 +537,73 @@
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.read)"
 		],
-		"description": ""
+		"description": "cortex - get anchor date"
+	},
+	"c_notif - schedule notification": {
+		"prefix": "md notif schedule",
+		"body": [
+			"const notif = require('cs__notif')",
+			"const notifData = {",
+			"  c_public_user: '${1:USER_ID}',",
+			"  c_name:  '${2:NOTIF_NAME}',",
+			"  c_recipient:  '${3:ACCOUNT_ID}',",
+			"  c_recurring: ${4|true,false|}, // if not reccuring --> false",
+			"  c_date:  '${5:DATETIME}'// notif date, if reccuring -> then first notif date",
+			"  //c_recurrence: {",
+			"  //  c_interval: 6,",
+			"  //  c_unit: 'weeks'",
+			"  //} // if reccuring, how often will notif repeat",
+			"}",
+			"notif.scheduleNotif(notifData)",
+			"$0"
+		],
+		"description": "Schedule notif with cs_notifications module"
+	},
+	
+	"c_notif - cancel notification": {
+		"prefix": "md notif cancel",
+		"body": [
+			"const notif = require('cs_notifications')",
+			"const notifs = org.objects.c_notif",
+			"  .find({",
+			"    c_name: '${1:NOTIFICATION_NAME}',",
+			"    c_recipient: '${2:ACCOUNT_ID}',",
+			"    c_status: 'scheduled'",
+			"  })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .toArray()",
+			"if (!notifs.length) {",
+			"  return",
+			"}",
+			"const notifIds = notifs.map(n => n._id)",
+			"",
+			"notif.cancelNotif(notifIds)",
+			"$0"
+		],
+		"description": "Cancel scheduled c_notifs"
+	},
+	"find c_public_users": {
+		"prefix": "md get publicuser",
+		"body": [
+			"org.objects.c_public_user.${1|find,readOne|}({ ${2|_id,c_email,c_number,c_tz|}: '${3}' })",
+			"    .skipAcl()",
+			"    .grant(consts.accessLevels.read)",
+			"    .next()",
+			"  $0"
+		],
+		"description": "Find/ReadOne study participant"
+	},
+	
+	"update c_public_user": {
+		"prefix": "md update publicuser",
+		"body": [
+		  "org.objects.c_public_user.updateOne({ ${1|_id,c_email,c_number,c_account._id|}: '${2}' }, { $$set: { ${3:key}: ${4:new value} } })",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.update)",
+		  "  .execute()",
+		  "$0"
+		],
+		"description": "Updates c_public_user"
 	}
 }
