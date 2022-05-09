@@ -61,7 +61,7 @@ Different helpers and snippets for agilathon-nmedable eco-system.
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
-- for snippet customisation check links ['Snippets in Visual Studio Code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and ['Definitive guide to snippets visual studio code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
+- for snippet customisation check links ['Snippets in Visual Studio Code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and ['Definitive guide to snippets visual studio code'](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/) 
 
 
 
@@ -84,4 +84,4 @@ None
 Inspiration, code snippets, etc.
 * [snippet generator app](https://snippet-generator.app/)
 * [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
-* [Definitive guide to snippets visual studio code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
+* [Definitive guide to snippets visual studio code](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code) 
