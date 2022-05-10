@@ -4,7 +4,7 @@ intent to contain different helpers and snippets for agilathon-medable eco-syste
 
 ## Description
 
-Different helpers and snippets for agilathon-nmedable eco-system.
+Different helpers and snippets for agilathon-medable eco-system.
 
 
 # VS Code Snippets
@@ -57,7 +57,9 @@ Different helpers and snippets for agilathon-nmedable eco-system.
     md get step response
     md update task response
     md underscore
-
+    md trigger events
+    md assert
+    
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)

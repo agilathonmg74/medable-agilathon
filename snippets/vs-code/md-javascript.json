@@ -1,4 +1,21 @@
 {
+	"assert for script runner": {
+		"prefix": "md assert",
+		"body": [
+		  "// const should = require('should')",
+		  "should.equal('a','a')",
+		  "$0"
+		],
+		"description": ""
+	  },
+	"trigger events ": {
+		"prefix": "md trigger events",
+		"body": [
+		  "${1|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}",
+		  "$0"
+		],
+		"description": "trigger events "
+	  },
 	"md query": {
 		"prefix": "md query",
 		"body": [
