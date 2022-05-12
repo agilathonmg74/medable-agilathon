@@ -36,6 +36,23 @@
 		],
 		"description": "cortext access levels"
 	},
+	"logger (medable)": {
+		"prefix": "md logger",
+		"body": [
+			"import logger from 'logger'",
+			"logger.${1|info,error,debug,trace|}(${2:object}, '${3:message}')",
+			"$0"
+		],
+		"description": "Write in log file, with level specification"
+	},
+	"logger levels": {
+		"prefix": "md logLevels",
+		"body": [
+			"${1|info,error,debug,trace,warn|}",
+			"$0"
+		],
+		"description": "cortext logger levels"
+	},
 	"medable objects": {
 		"prefix": "md objects",
 		"body": [
@@ -380,7 +397,7 @@
 	"update": {
 		"prefix": "md update",
 		"body": [
-			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.updateOne({ _id: '$2' }, { $set: {${3:key}: '${4:value}'  } })",
+			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_anchor_date_templates,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.updateOne({ _id: '$2' }, { $$set: {${3:key}: '${4:value}'  } })",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.update)",
 			"  .lean(false)",
@@ -407,6 +424,7 @@
 			"org.objects.${1|c_public_user,c_task,c_task_response,account,c_event,Event,c_step,c_step_response,c_missed_task,c_patient_flag,c_sent,c_site,c_site_user,c_study,c_task_assignment,c_visit|}.deleteOne({_id: '$2'})",
 			"  .skipAcl()",
 			"  .grant(consts.accessLevels.delete)",
+			"  .execute()",
 			"$0"
 		],
 		"description": "cortex - delete operation"

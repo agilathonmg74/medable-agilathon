@@ -59,7 +59,9 @@ Different helpers and snippets for agilathon-medable eco-system.
     md underscore
     md trigger events
     md assert
-    
+    md logger
+    md logLevels
+
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
