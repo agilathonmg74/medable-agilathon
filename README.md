@@ -61,13 +61,12 @@ Different helpers and snippets for agilathon-medable eco-system.
     md assert
     md logger
     md logLevels
+    md comment header
 
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
 - for snippet customisation check links ['Snippets in Visual Studio Code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and ['Definitive guide to snippets visual studio code'](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/) 
-
-
 
 
 ## Authors

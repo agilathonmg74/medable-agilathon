@@ -1,4 +1,26 @@
 {
+	"medable script header comment": {
+		"prefix": "md comment header",
+		"body": [
+		  "/***********************************************************",
+		  "",
+		  "@script     ${1:script_name.js}",
+		  "",
+		  "@brief      ${2:brief_description}",
+		  "",
+		  "@desc       ${3:description}",
+		  "",
+		  "@author     ${4:author_name}",
+		  "",
+		  "(c)2016-2022 Medable, Inc.  All Rights Reserved.",
+		  "Unauthorized use, modification, or reproduction is prohibited.",
+		  "This is a component of Axon, Medable's SmartStudy(TM) system.",
+		  "",
+		  "***********************************************************/",
+		  "$0"
+		],
+		"description": "medable script header comment"
+	  },
 	"assert for script runner": {
 		"prefix": "md assert",
 		"body": [
@@ -347,14 +369,15 @@
 		],
 		"description": ""
 	},
-	"config": {
+	"medable config": {
 		"prefix": "md config",
 		"body": [
-			"import config from 'config'",
-			"$0"
+		  "// import config from 'config'",
+		  "config.${1|keys(),get(key),set(key \\, value)|}",
+		  "$0"
 		],
 		"description": "medable config"
-	},
+	  },
 	"debug": {
 		"prefix": "md debug",
 		"body": [
