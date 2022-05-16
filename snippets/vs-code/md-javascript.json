@@ -1,4 +1,12 @@
 {
+	"decorators import": {
+		"prefix": "md decorators",
+		"body": [
+		  "const { log, job, on, as, trigger } = require('decorators')",
+		  ""
+		],
+		"description": "decorators import"
+	  },
 	"medable script header comment": {
 		"prefix": "md comment header",
 		"body": [

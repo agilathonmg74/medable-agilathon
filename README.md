@@ -62,7 +62,7 @@ Different helpers and snippets for agilathon-medable eco-system.
     md logger
     md logLevels
     md comment header
-
+    md decorators
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
