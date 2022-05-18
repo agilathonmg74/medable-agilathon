@@ -793,10 +793,10 @@
 			"  })",
 			"  ${5:routeHandler}({ req, res, body, next, runtime }) {",
 			"    // const requestBody = body()",
+			"\t\t$0",
 			"  }",
 			"",
-			"}",
-			"$0"
+			"}"
 		],
 		"description": "Create route in library script"
 	}
