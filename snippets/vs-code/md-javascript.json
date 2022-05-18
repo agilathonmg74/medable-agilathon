@@ -801,5 +801,14 @@
 			"}"
 		],
 		"description": "Create route in library script"
+	},
+	"import faults": {
+		"prefix": "md faults",
+		"body": [
+			"import faults from 'c_fault_lib'",
+			"",
+			"faults.throw('$1')"			
+		],
+		"description": "import fault library"
 	}
 }
