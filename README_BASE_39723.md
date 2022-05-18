@@ -1,41 +1,19 @@
-
 # medable - agilathon
 
-  
-
-intent to contain different helpers and snippets for agilathon-medable ecosystem.
-
-  
+intent to contain different helpers and snippets for agilathon-medable eco-system.
 
 ## Description
 
-  
+Different helpers and snippets for agilathon-medable eco-system.
 
-Different helpers and snippets for agilathon-medable ecosystem.
-
-  
-  
 
 # VS Code Snippets
-
-collection of vs code snippets for axon medable framework contained in ./snippets/snippets.code-snippets/
-
+    collection of vs code snippets for axxon medable framework contained in ./snippets/cs-code-md-javascript/
+    
 ### Usage
-
-- download VS Code extension (.vsix file) from [Releases](https://github.com/agilathonmg74/medable-agilathon/releases)
-- open VS Code
-- press CMD-SHIFT P to open the command list
-- type "Install from VSIX" until the correct command appears and select it
-- select the VSIX file you downloaded from above
-
-### Development
-
-- add new snippets  *snippets.code-snippets* file
-- increment version in *package.json* file
-- add changes to the changelog file (CHANGELOG.md)
-- install *vsce* tool packaging VS Code extensions using `npm install -g vsce`
-- run `vsce package` command that will generate `medable-cs-code-snippets-[version].vsix` file
-- publish new version to [Releases](https://github.com/agilathonmg74/medable-agilathon/releases)
+    snippets to be used integrated with with VS Code, by extending 'User Snippets' collection. Steps:
+     - within VS code 'Command Palette'(Cmd+Shift+P) call the 'Preferences: Configure User Snippets'. Open javascript.json
+     - extend javascript.json with snippets items from md-javascript.json
 
 ## Commands
     md query - choose object, method and access level
@@ -85,54 +63,28 @@ collection of vs code snippets for axon medable framework contained in ./snippet
     md decorators
     md job
     md moment now
-    md moment schedule
-    md create route
-
 ### Addtional
 
-  
-
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
+- for snippet customisation check links ['Snippets in Visual Studio Code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and ['Definitive guide to snippets visual studio code'](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/) 
 
-- for snippet customisation check links ['Snippets in Visual Studio Code'](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and ['Definitive guide to snippets visual studio code'](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/)
-
-  
-  
 
 ## Authors
 
-  
-
 Contributors names and contact info
 
-  
-
 to be ...
-
-  
 
 ## Version History
 
-  
-
 to be ...
-
-  
 
 ## License
 
-  
-
 None
-
 ## Acknowledgments
 
-  
-
 Inspiration, code snippets, etc.
-
 * [snippet generator app](https://snippet-generator.app/)
-
-* [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
-
-* [Definitive guide to snippets visual studio code](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code)
+* [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) 
+* [Definitive guide to snippets visual studio code](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code) 

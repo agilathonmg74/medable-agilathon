@@ -1,0 +1,22 @@
+{
+    "name": "medable-cs-code-snippets",
+    "displayName": "Medable CS Code Snippets",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    },
+    "publisher": "agilathonmg74",
+    "repository": "https://github.com/agilathonmg74/medable-agilathon"
+}

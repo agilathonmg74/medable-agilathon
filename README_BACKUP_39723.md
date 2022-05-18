@@ -85,9 +85,12 @@ collection of vs code snippets for axon medable framework contained in ./snippet
     md decorators
     md job
     md moment now
+<<<<<<< HEAD
     md moment schedule
+=======
     md create route
 
+>>>>>>> bb3fa16f37d138ac4c9e7842e63498de38f8f2ba
 ### Addtional
 
   
