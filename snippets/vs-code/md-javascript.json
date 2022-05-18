@@ -1,4 +1,18 @@
 {
+	"set schedule time": {
+		"prefix": "md moment schedule",
+		"body": [
+		  "const notificationTime = moment()",
+		  "  .tz(${1:'Europa/Zagreb'})",
+		  "  .add(${2:0}, 'days')",
+		  "  .startOf('day')",
+		  "  .add(${3:0}, 'hours')",
+		  "  .add(${4:30}, 'minutes')",
+		  "// .startOf('day')",
+		  "$0"		
+		],
+		"description": "set schedule time"
+	  },
 	"moment current date": {
 		"prefix": "md moment now",
 		"body": [
@@ -492,20 +506,36 @@
 	"create event": {
 		"prefix": "md event create",
 		"body": [
-			"org.objects.Event.insertOne({",
-			"  type: 'script',",
-			"  event: ${1:'eventName'},",
-			"  key: ${2:`unique.key`},",
-			"  param: eventParamsObject,//add param obj to pass to event here",
-			"  start: startDate",
-			"})",
-			"  .bypassCreateAcl()",
-			"  .grant(consts.accessLevels.update)",
-			"  .execute()",
-			"$0"
+		  "function createEvent (account, daysFromNow, hour, minute) {",
+		  "  const startTime = moment()",
+		  "    // .tz(account.tz)",
+		  "    .add(daysFromNow, 'days')",
+		  "    .startOf('day')",
+		  "    .add(hour, 'hours')",
+		  "    .add(minute, 'minutes')",
+		  "    .toDate()",
+		  "",
+		  "  org.objects.Event.insertOne(",
+		  "    {",
+		  "      type: 'script',",
+		  "      key: '${1:event_key}',",
+		  "      event: '${2:event_name}',",
+		  "      param: {",
+		  "        account: account",
+		  "      },",
+		  "      start: startTime",
+		  "    }",
+		  "  )",
+		  "    .grant(consts.accessLevels.update)",
+		  "    .bypassCreateAcl()",
+		  "    .execute()",
+		  "}",
+		  "$0",
+		  "// function MUST BE called in order to create event",
+		  "// return createEvent('brane', 0, 14, 59)"
 		],
-		"description": "create Event"
-	},
+		"description": "create event"
+	  },
 	"ats notif payload": {
 		"prefix": "md payload ats",
 		"body": [
