@@ -776,5 +776,28 @@
 			"import _ from 'underscore'"
 		],
 		"description": "import underscore"
+	},
+	"Medable - create route": {
+		"prefix": "md create route",
+		"body": [
+			"const { route, log } = require('decorators')",
+			"",
+			"class MyRoute {",
+			"  @log({ traceError: true })",
+			"  @route({",
+			"    weight: 1,",
+			"    method: ${1|'GET','POST','PUT','PATCH','DELETE'|},",
+			"    name: '${2:name}',",
+			"    path: '${3:path}',",
+			"    apiKey: '${4:c_portal}'",
+			"  })",
+			"  ${5:routeHandler}({ req, res, body, next, runtime }) {",
+			"    // const requestBody = body()",
+			"\t\t$0",
+			"  }",
+			"",
+			"}"
+		],
+		"description": "Create route in library script"
 	}
 }

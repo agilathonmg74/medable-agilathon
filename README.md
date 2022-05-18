@@ -63,6 +63,7 @@ Different helpers and snippets for agilathon-medable eco-system.
     md decorators
     md job
     md moment now
+    md create route
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
