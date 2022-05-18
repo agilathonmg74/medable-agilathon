@@ -49,6 +49,8 @@
 			"",
 			"@author     ${4:author_name}",
 			"",
+			"@jira       ${5:jira_ticket}",
+			"",
 			"(c)2016-2022 Medable, Inc.  All Rights Reserved.",
 			"Unauthorized use, modification, or reproduction is prohibited.",
 			"This is a component of Axon, Medable's SmartStudy(TM) system.",
