@@ -795,7 +795,8 @@
 			"    // const requestBody = body()",
 			"  }",
 			"",
-			"}"
+			"}",
+			"$0"
 		],
 		"description": "Create route in library script"
 	}
