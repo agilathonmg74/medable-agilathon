@@ -1,51 +1,80 @@
 {
+	"moment current date": {
+		"prefix": "md moment now",
+		"body": [
+			"const moment = require('moment.timezone')",
+			"const now = moment.tz('Europe/Zagreb')",
+			"$0"
+		],
+		"description": "moment current date"
+	},
+	"job decorator example": {
+		"prefix": "md job",
+		"body": [
+			"import logger from 'logger'",
+			"const { log, job } = require('decorators')",
+			"",
+			"class ${1:ClassName} {",
+			"",
+			"  @log({ traceError: true })",
+			"  @job('* * * * *', { name: '${2:job_name}', active: true })",
+			"  static '${2:job_name}'() {",
+			"",
+			"    logger.debug('some message to log' + new Date().toISOString())",
+			"",
+			"  }",
+			"",
+			"}"
+		],
+		"description": "job decorator example"
+	},
 	"decorators import": {
 		"prefix": "md decorators",
 		"body": [
-		  "const { log, job, on, as, trigger } = require('decorators')",
-		  ""
+			"const { log, job, on, as, trigger } = require('decorators')",
+			""
 		],
 		"description": "decorators import"
-	  },
+	},
 	"medable script header comment": {
 		"prefix": "md comment header",
 		"body": [
-		  "/***********************************************************",
-		  "",
-		  "@script     ${1:script_name.js}",
-		  "",
-		  "@brief      ${2:brief_description}",
-		  "",
-		  "@desc       ${3:description}",
-		  "",
-		  "@author     ${4:author_name}",
-		  "",
-		  "(c)2016-2022 Medable, Inc.  All Rights Reserved.",
-		  "Unauthorized use, modification, or reproduction is prohibited.",
-		  "This is a component of Axon, Medable's SmartStudy(TM) system.",
-		  "",
-		  "***********************************************************/",
-		  "$0"
+			"/***********************************************************",
+			"",
+			"@script     ${1:script_name.js}",
+			"",
+			"@brief      ${2:brief_description}",
+			"",
+			"@desc       ${3:description}",
+			"",
+			"@author     ${4:author_name}",
+			"",
+			"(c)2016-2022 Medable, Inc.  All Rights Reserved.",
+			"Unauthorized use, modification, or reproduction is prohibited.",
+			"This is a component of Axon, Medable's SmartStudy(TM) system.",
+			"",
+			"***********************************************************/",
+			"$0"
 		],
 		"description": "medable script header comment"
-	  },
+	},
 	"assert for script runner": {
 		"prefix": "md assert",
 		"body": [
-		  "// const should = require('should')",
-		  "should.equal('a','a')",
-		  "$0"
+			"// const should = require('should')",
+			"should.equal('a','a')",
+			"$0"
 		],
 		"description": ""
-	  },
+	},
 	"trigger events ": {
 		"prefix": "md trigger events",
 		"body": [
-		  "${1|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}",
-		  "$0"
+			"${1|'create.after','create.before','update.after','update.before','delete.after','delete.before'|}",
+			"$0"
 		],
 		"description": "trigger events "
-	  },
+	},
 	"md query": {
 		"prefix": "md query",
 		"body": [
@@ -380,12 +409,12 @@
 	"medable config": {
 		"prefix": "md config",
 		"body": [
-		  "// import config from 'config'",
-		  "config.${1|keys(),get(key),set(key \\, value)|}",
-		  "$0"
+			"// import config from 'config'",
+			"config.${1|keys(),get(key),set(key \\, value)|}",
+			"$0"
 		],
 		"description": "medable config"
-	  },
+	},
 	"debug": {
 		"prefix": "md debug",
 		"body": [
@@ -634,7 +663,6 @@
 		],
 		"description": "Schedule notif with cs_notifications module"
 	},
-	
 	"c_notif - cancel notification": {
 		"prefix": "md notif cancel",
 		"body": [
@@ -669,86 +697,84 @@
 		],
 		"description": "Find/ReadOne study participant"
 	},
-	
 	"update c_public_user": {
 		"prefix": "md update publicuser",
 		"body": [
-		  "org.objects.c_public_user.updateOne({ ${1|_id,c_email,c_number,c_account._id|}: '${2}' }, { $$set: { ${3:key}: ${4:new value} } })",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.update)",
-		  "  .execute()",
-		  "$0"
+			"org.objects.c_public_user.updateOne({ ${1|_id,c_email,c_number,c_account._id|}: '${2}' }, { $$set: { ${3:key}: ${4:new value} } })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.update)",
+			"  .execute()",
+			"$0"
 		],
 		"description": "Updates c_public_user"
 	},
 	"Medable - find c_task": {
 		"prefix": "md get task",
 		"body": [
-		  "org.objects.c_task.find({ _id: '$1', c_name: '$2', c_key: '$3' })",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.read)",
-		  "  .next()",
-		  "  $0"
+			"org.objects.c_task.find({ _id: '$1', c_name: '$2', c_key: '$3' })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .next()",
+			"  $0"
 		],
 		"description": "Find c_task"
 	},
 	"Medable - find task response": {
 		"prefix": "md get task response",
 		"body": [
-		  "org.objects.c_task_response.find({",
-		  "  _id: '$1',",
-		  "  c_task: '$2',",
-		  "  c_public_user: '$3',",
-		  "  c_end_date: '$4'",
-		  "})",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.read)",
-		  "  .next()",
-		  "  $0"
+			"org.objects.c_task_response.find({",
+			"  _id: '$1',",
+			"  c_task: '$2',",
+			"  c_public_user: '$3',",
+			"  c_end_date: '$4'",
+			"})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .next()",
+			"  $0"
 		],
 		"description": "Find task response"
 	},
 	"Medable - find step": {
 		"prefix": "md get step",
 		"body": [
-		  "org.objects.c_step.find({ _id: '$1', c_task: '$2', c_key: '$4' })",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.read)",
-		  "  .next()",
-		  "  $0"
+			"org.objects.c_step.find({ _id: '$1', c_task: '$2', c_key: '$4' })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .next()",
+			"  $0"
 		],
 		"description": "Find step"
 	},
 	"Medable - find step response": {
 		"prefix": "md get step response",
 		"body": [
-		  "org.objects.c_step_response.find({ _id: '$1', c_task: '$2', c_step: '$3' })",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.read)",
-		  "  .next()",
-		  "  $0"
+			"org.objects.c_step_response.find({ _id: '$1', c_task: '$2', c_step: '$3' })",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.read)",
+			"  .next()",
+			"  $0"
 		],
 		"description": "Find step response"
 	},
-	
 	"Medable - update task response": {
 		"prefix": "md update task response",
 		"body": [
-		  "org.objects.c_task_response.updateOne({",
-		  "  _id: '$1'",
-		  "}, { $$set: { ${2:c_completed}: '${3|true,false|}'  }})",
-		  "  .skipAcl()",
-		  "  .grant(consts.accessLevels.update)",
-		  "  .execute()",
-		  "  $0"
+			"org.objects.c_task_response.updateOne({",
+			"  _id: '$1'",
+			"}, { $$set: { ${2:c_completed}: '${3|true,false|}'  }})",
+			"  .skipAcl()",
+			"  .grant(consts.accessLevels.update)",
+			"  .execute()",
+			"  $0"
 		],
 		"description": "Update task response object"
-	  },
-	  "import underscore": {
+	},
+	"import underscore": {
 		"prefix": "md underscore",
 		"body": [
-		  "import _ from 'underscore'"
+			"import _ from 'underscore'"
 		],
 		"description": "import underscore"
-	  }
+	}
 }

@@ -44,8 +44,6 @@ Different helpers and snippets for agilathon-medable eco-system.
     md get site
     md get study
     md get anchor date
-
-    newly added:
     md trigger task response - trigger on task response
     md notif schedule - schedule c_notif
     md notif cancel - cancel c_notif
@@ -63,6 +61,8 @@ Different helpers and snippets for agilathon-medable eco-system.
     md logLevels
     md comment header
     md decorators
+    md job
+    md moment now
 ### Addtional
 
 - for generating code snippets use web tool [snippet generator app](https://snippet-generator.app/)
