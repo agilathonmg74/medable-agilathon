@@ -30,7 +30,7 @@ collection of vs code snippets for axon medable framework contained in ./snippet
 
 ### Development
 
-- add new snippets  *snippets.code-snippets* file
+- add new snippets to *snippets.code-snippets* file
 - increment version in *package.json* file
 - add changes to the changelog file (CHANGELOG.md)
 - install *vsce* tool for packaging VS Code extensions using `npm install -g vsce` (use Node version 16.+)
