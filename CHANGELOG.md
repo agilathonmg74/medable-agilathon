@@ -49,4 +49,4 @@
     md decorators\
     md job\
     md moment now\
-    md create route\
+    md route create\

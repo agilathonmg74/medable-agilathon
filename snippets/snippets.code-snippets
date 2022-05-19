@@ -2,7 +2,7 @@
 	"set schedule time": {
 		"prefix": "md moment schedule",
 		"body": [
-		  "const notificationTime = moment()",
+		  "const startTime = moment()",
 		  "  .tz(${1:'Europa/Zagreb'})",
 		  "  .add(${2:0}, 'days')",
 		  "  .startOf('day')",
@@ -532,7 +532,7 @@
 		  "}",
 		  "$0",
 		  "// function MUST BE called in order to create event",
-		  "// return createEvent('brane', 0, 14, 59)"
+		  "// return createEvent('ivan', 0, 14, 59)"
 		],
 		"description": "create event"
 	  },
@@ -808,7 +808,7 @@
 		"description": "import underscore"
 	},
 	"Medable - create route": {
-		"prefix": "md create route",
+		"prefix": "md route create",
 		"body": [
 			"const { route, log } = require('decorators')",
 			"",
