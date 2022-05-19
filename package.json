@@ -18,5 +18,9 @@
         ]
     },
     "publisher": "agilathonmg74",
-    "repository": "https://github.com/agilathonmg74/medable-agilathon"
+    "repository": "https://github.com/agilathonmg74/medable-agilathon",
+    "activationEvents": [
+		"*"
+	],
+	"main": "./src/main.js"
 }
