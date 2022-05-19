@@ -63,6 +63,8 @@
 			"",
 			"@author     ${4:author_name}",
 			"",
+			"@jira       ${5:jira_ticket}",
+			"",
 			"(c)2016-2022 Medable, Inc.  All Rights Reserved.",
 			"Unauthorized use, modification, or reproduction is prohibited.",
 			"This is a component of Axon, Medable's SmartStudy(TM) system.",
@@ -829,5 +831,14 @@
 			"}"
 		],
 		"description": "Create route in library script"
+	},
+	"import faults": {
+		"prefix": "md faults",
+		"body": [
+			"import faults from 'c_fault_lib'",
+			"",
+			"faults.throw('$1')"
+		],
+		"description": "import faults and throw one"
 	}
 }
