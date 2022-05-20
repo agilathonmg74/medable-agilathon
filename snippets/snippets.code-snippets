@@ -443,7 +443,7 @@
 	"moment": {
 		"prefix": "md moment",
 		"body": [
-			"import { moment } from 'moment.timezone'",
+			"import moment from 'moment.timezone'",
 			"$0"
 		],
 		"description": "import moment package"
@@ -508,33 +508,37 @@
 	"create event": {
 		"prefix": "md event create",
 		"body": [
-		  "function createEvent (account, daysFromNow, hour, minute) {",
-		  "  const startTime = moment()",
-		  "    // .tz(account.tz)",
-		  "    .add(daysFromNow, 'days')",
-		  "    .startOf('day')",
-		  "    .add(hour, 'hours')",
-		  "    .add(minute, 'minutes')",
-		  "    .toDate()",
+		  "import moment from 'moment.timezone'",
 		  "",
-		  "  org.objects.Event.insertOne(",
-		  "    {",
-		  "      type: 'script',",
-		  "      key: '${1:event_key}',",
-		  "      event: '${2:event_name}',",
-		  "      param: {",
-		  "        account: account",
-		  "      },",
-		  "      start: startTime",
-		  "    }",
-		  "  )",
-		  "    .grant(consts.accessLevels.update)",
-		  "    .bypassCreateAcl()",
-		  "    .execute()",
-		  "}",
-		  "$0",
-		  "// function MUST BE called in order to create event",
-		  "// return createEvent('ivan', 0, 14, 59)"
+		  "const account = script.principal",
+		  "const daysFromNow = ${1:0}",
+		  "const hour = ${2:0}",
+		  "const minute = ${3:0}",
+		  "",
+		  "const eventTime = moment()",
+		  "// .tz(account.tz)",
+		  "  .add(daysFromNow, 'days')",
+		  "  .startOf('day')",
+		  "  .add(hour, 'hours')",
+		  "  .add(minute, 'minutes')",
+		  "  .toDate()",
+		  "",
+		  "// key and event MUST HAVE double undeline in string literal", 
+		  "org.objects.Event.insertOne(",
+		  "  {",
+		  "    type: 'script',",
+		  "    key: `cs__${4:key}.${account._id}.${(new Date())",
+		  "      .toISOString()}`,",
+		  "    event: 'cs__${5:event_name}',",
+		  "    param: {",
+		  "      account: account",
+		  "    },",
+		  "    start: eventTime",
+		  "  }",
+		  ")",
+		  "  .grant(consts.accessLevels.script)",
+		  "  .bypassCreateAcl()",
+		  "  .execute()"
 		],
 		"description": "create event"
 	  },
@@ -837,8 +841,21 @@
 		"body": [
 			"import faults from 'c_fault_lib'",
 			"",
-			"faults.throw('$1')"
+			"faults.throw('$1')",
+			"$0",
+
 		],
 		"description": "import faults and throw one"
-	}
+	},
+	"find event": {
+		"prefix": "md event find",
+		"body": [
+		  "// find by _id or key, if event is not expired",
+		  "const result = org.objects.Event.find({ _id: '${1:628641ae1eb2eb53b15348c5}' })",
+		  "  .skipAcl()",
+		  "  .grant(consts.accessLevels.read)",
+		  "$0"
+		],
+		"description": "find event"
+	  }
 }
