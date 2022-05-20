@@ -20,7 +20,7 @@
     "publisher": "agilathonmg74",
     "repository": "https://github.com/agilathonmg74/medable-agilathon",
     "activationEvents": [
-		"*"
+		"onStartupFinished"
 	],
 	"main": "./src/main.js"
 }

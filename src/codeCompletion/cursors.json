@@ -1,0 +1,102 @@
+[
+  {
+    "name": "find",
+    "isContinuable": true
+  },
+  {
+    "name": "access",
+    "isContinuable": true
+  },
+  {
+    "name": "batchSize",
+    "isContinuable": true
+  },
+  {
+    "name": "close"
+  },
+  {
+    "name": "count"
+  },
+  {
+    "name": "expand",
+    "isContinuable": true
+  },
+  {
+    "name": "forEach"
+  },
+  {
+    "name": "grant",    
+    "isContinuable": true
+  },
+  {
+    "name": "hasNext"
+  },
+  {
+    "name": "include",
+    "isContinuable": true
+  },
+  {
+    "name": "isClosed"
+  },
+  {
+    "name": "limit",
+    "isContinuable": true
+  },
+  {
+    "name": "locale",
+    "isContinuable": true
+  },
+  {
+    "name": "map"
+  },
+  {
+    "name": "maxTimeMS",
+    "isContinuable": true
+  },
+  {
+    "name": "next"
+  },
+  {
+    "name": "passthru"
+  },
+  {
+    "name": "pathPrefix",
+    "isContinuable": true
+  },
+  {
+    "name": "pathRead",
+    "isContinuable": true
+  },
+  {
+    "name": "paths",
+    "isContinuable": true
+  },
+  {
+    "name": "reduce"
+  },
+  {
+    "name": "skip",
+    "isContinuable": true
+  },
+  {
+    "name": "skipAcl",
+    "isContinuable": true
+  },
+  {
+    "name": "sort",
+    "isContinuable": true
+  },
+  {
+    "name": "stream"
+  },
+  {
+    "name": "where",
+    "isContinuable": true
+  },
+  {
+    "name": "toArray"
+  },
+  {
+    "name": "toList"
+  }
+]
