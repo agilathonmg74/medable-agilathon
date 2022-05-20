@@ -1,3 +1,15 @@
+## [v0.0.3]
+
+- Added commands: 
+    md event find\
+
+
+
+## [v0.0.2]
+
+- Added commands: 
+    md faults\
+
 ## [v0.0.1]
 
 - Initial release
