@@ -1,25 +1,13 @@
 const vscode = require('vscode')
-const { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement } = require('./helpers')
-const objects = require('./objects.json')
-
-const staticProvider = vscode.languages.registerCompletionItemProvider(
-  'javascript',
-  {
-    provideCompletionItems(document, position) {
-      return [
-        new vscode.CompletionItem('org', vscode.CompletionItemKind.Variable),
-        new vscode.CompletionItem('script', vscode.CompletionItemKind.Variable)
-      ]
-    }
-  },
-  ''
-)
+const { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor } = require('./helpers')
+const objects = require('../settings/objects.json')
+const Logger = require('../logger')
 
 const orgProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
   {
     provideCompletionItems(document, position) {
-      const currentStatement = getCurrentStatement(document, position.line)
+      const currentStatement = getCurrentStatement(document, position.line, position.character)
       if (currentStatement.endsWith('org.')) {
         return [
           new vscode.CompletionItem('objects', vscode.CompletionItemKind.Variable),
@@ -34,15 +22,28 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
 
       const objectQuery = getObjectFromQueryStatement(currentStatement)
       if (objectQuery) {
+        const cursorOptions = getOptionsForCursor(currentStatement, objectQuery)
+        if (cursorOptions) {
+          return cursorOptions
+        }
+
         return getOptionsForQueryStatement(currentStatement, objectQuery)
           .map(x => new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Method))
       }
 
+      const constsStatementOptions = getOptionsForConstsStatement(currentStatement)
+      if (constsStatementOptions) {
+        return constsStatementOptions.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable))
+      }
+
+      const scriptStatementOptions = getOptionsForScriptStatement(currentStatement)
+      if (scriptStatementOptions) {
+        return scriptStatementOptions.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable))
+      }
       return undefined
     }
   },
   '.' // triggered whenever a '.' is being typed
 )
 
-module.exports.staticProvider = staticProvider
 module.exports.orgProvider = orgProvider

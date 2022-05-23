@@ -1,0 +1,471 @@
+{
+  "accessLevels": {
+    "connected": null,
+    "delete": null,
+    "public": null,
+    "read": null,
+    "script": null,
+    "share": null,
+    "update": null
+  },
+  "accessPrincipals": {
+    "creator": null,
+    "owner": null,
+    "self": null
+  },
+  "accessTargets": {
+    "account": null,
+    "role": null
+  },
+  "accessTypes": {
+    "access": null,
+    "account": null,
+    "owner": null,
+    "role": null,
+    "self": null
+  },
+  "accountStates": {
+    "unverified": null,
+    "verified": null
+  },
+  "audits": {
+    "categories": {
+      "account": {
+        "label": null,
+        "subs": {
+          "access": {
+            "label": null
+          },
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "locked": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      },
+      "authentication": {
+        "label": null,
+        "subs": {
+          "device": {
+            "label": null
+          },
+          "ended": {
+            "label": null
+          },
+          "login": {
+            "label": null
+          },
+          "logout": {
+            "label": null
+          },
+          "reset": {
+            "label": null
+          },
+          "token": {
+            "label": null
+          }
+        }
+      },
+      "configuration": {
+        "label": null,
+        "subs": {
+          "access": {
+            "label": null
+          },
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      },
+      "deployment": {
+        "label": null,
+        "subs": {
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "execute": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      },
+      "developer": {
+        "label": null,
+        "subs": {
+          "runner": {
+            "label": null
+          }
+        }
+      },
+      "export": {
+        "label": null,
+        "subs": {
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      },
+      "metadata": {
+        "label": null,
+        "subs": {
+          "request": {
+            "label": null
+          }
+        }
+      },
+      "notifications": {
+        "label": null,
+        "subs": {
+          "send": {
+            "label": null
+          }
+        }
+      },
+      "room": {
+        "label": null,
+        "subs": {
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      },
+      "support": {
+        "label": null,
+        "subs": {
+          "login": {
+            "label": null
+          },
+          "script": {
+            "label": null
+          }
+        }
+      },
+      "user": {
+        "label": null,
+        "subs": {
+          "access": {
+            "label": null
+          },
+          "create": {
+            "label": null
+          },
+          "delete": {
+            "label": null
+          },
+          "read": {
+            "label": null
+          },
+          "transfer": {
+            "label": null
+          },
+          "update": {
+            "label": null
+          }
+        }
+      }
+    },
+    "operations": {
+      "access": null,
+      "delete": null,
+      "pull": null,
+      "push": null,
+      "remove": null,
+      "set": null
+    }
+  },
+  "connectionStates": {
+    "active": null,
+    "pending": null
+  },
+  "emptyId": null,
+  "events": {
+    "retention": {
+      "completed": null,
+      "failed": null,
+      "never": null,
+      "skipped": null
+    },
+    "states": {
+      "completed": null,
+      "failed": null,
+      "pending": null,
+      "processing": null,
+      "scheduled": null,
+      "skipped": null
+    }
+  },
+  "http": {
+    "methods": {
+      "DELETE": null,
+      "GET": null,
+      "HEAD": null,
+      "OPTIONS": null,
+      "PATCH": null,
+      "POST": null,
+      "PUT": null
+    },
+    "methodsLookup": {
+      "0": null,
+      "1": null,
+      "2": null,
+      "3": null,
+      "4": null,
+      "5": null,
+      "6": null
+    }
+  },
+  "logs": {
+    "levels": {
+      "debug": null,
+      "error": null,
+      "info": null,
+      "trace": null,
+      "warn": null
+    },
+    "sources": {
+      "api": null,
+      "deployment": null,
+      "export": null,
+      "logger": null,
+      "notification": null,
+      "policy": null,
+      "request": null,
+      "reserved": null,
+      "script": null
+    }
+  },
+  "media": {
+    "states": {
+      "dead": null,
+      "error": null,
+      "pending": null,
+      "processing": null,
+      "ready": null
+    }
+  },
+  "notifications": {
+    "endpoints": {
+      "email": null,
+      "push": null,
+      "sms": null
+    },
+    "states": {
+      "disabled": null,
+      "enabled": null,
+      "user": null
+    },
+    "types": {
+      "account-activation": null,
+      "account-activation-provider": null,
+      "account-auth-locked": null,
+      "account-provider-verification-processing": null,
+      "account-provider-verification-verified": null,
+      "account-provisioned": null,
+      "account-welcome": null,
+      "account-welcome-activation": null,
+      "account-welcome-activation-provider": null,
+      "account-welcome-provider": null,
+      "account-welcome-verification": null,
+      "account-welcome-verification-provider": null,
+      "admin-account-registration-notification": null,
+      "admin-provider-verification-required-notification": null,
+      "c_axon_invite-access_code": null,
+      "c_axon_invite-expired": null,
+      "c_axon_invite-forgot_username": null,
+      "c_axon_invite-no_access_code": null,
+      "c_axon_invite-pin_expired": null,
+      "c_axon_invite-pin_only": null,
+      "c_axon_invite-token": null,
+      "c_axon_leave_study": null,
+      "c_axon_virtual_visit_15m_reminder": null,
+      "c_axon_virtual_visit_canceled": null,
+      "c_axon_virtual_visit_missed": null,
+      "c_axon_virtual_visit_new": null,
+      "c_axon_virtual_visit_reminder": null,
+      "c_axon_virtual_visit_rescheduled": null,
+      "c_cs_marko_notif_email": null,
+      "c_cs_marko_notif_push": null,
+      "c_cs_marko_test": null,
+      "c_cs_patient_eligible_notification": null,
+      "c_document_complete": null,
+      "c_document_invite": null,
+      "c_document_signer_complete": null,
+      "c_send_signed_doc": null,
+      "connection-created": null,
+      "feed-comment-update": null,
+      "feed-post-update": null,
+      "gcm-regid-reassigned": null,
+      "invite-existing-user": null,
+      "invite-new-user": null,
+      "ios-token-reassigned": null,
+      "location-verification": null,
+      "lost-password": null,
+      "mobile-change-notification": null,
+      "org-invitation": null,
+      "password-change-notification": null
+    }
+  },
+  "objects": {
+    "accounts": null,
+    "c_anchor_date_templates": null,
+    "c_branches": null,
+    "c_calls": null,
+    "c_cs_qol_results": null,
+    "c_cs_test_objects": null,
+    "c_dmweb_app_configs": null,
+    "c_dmweb_reports": null,
+    "c_events": null,
+    "c_faults": null,
+    "c_generation_event_lists": null,
+    "c_generation_trackers": null,
+    "c_generation_triggers": null,
+    "c_group_tasks": null,
+    "c_groups": null,
+    "c_health_data": null,
+    "c_locks": null,
+    "c_missed_tasks": null,
+    "c_partial_generation_records": null,
+    "c_participant_schedules": null,
+    "c_patient_flags": null,
+    "c_patient_trackings": null,
+    "c_public_users": null,
+    "c_queries": null,
+    "c_query_notes": null,
+    "c_query_rules": null,
+    "c_research_data": null,
+    "c_results": null,
+    "c_reviews": null,
+    "c_schedule_assignments": null,
+    "c_site_users": null,
+    "c_sites": null,
+    "c_step_responses": null,
+    "c_steps": null,
+    "c_studies": null,
+    "c_study_exports": null,
+    "c_study_team_users": null,
+    "c_task_assignments": null,
+    "c_task_responses": null,
+    "c_tasks": null,
+    "c_visit_schedules": null,
+    "c_visits": null,
+    "c_webframe_table_configs": null,
+    "comments": null,
+    "connections": null,
+    "ec__default_document_csses": null,
+    "ec__document_data": null,
+    "ec__document_invites": null,
+    "ec__document_templates": null,
+    "ec__knowledge_checks": null,
+    "ec__signed_documents": null,
+    "exports": null,
+    "objects": null,
+    "orgs": null,
+    "posts": null,
+    "scripts": null,
+    "views": null
+  },
+  "principals": {
+    "anonymous": null,
+    "public": null
+  },
+  "roles": {
+    "Administrator": null,
+    "Data Export": null,
+    "Data Manager": null,
+    "Data Reviewer": null,
+    "Developer": null,
+    "EC Document Author": null,
+    "EC Document Manager": null,
+    "Principal Data Manager": null,
+    "Provider": null,
+    "Site Investigator": null,
+    "Site Monitor": null,
+    "Site User": null,
+    "Study Designer": null,
+    "Study Manager App": null,
+    "Study Participant": null,
+    "Support": null,
+    "admin": null,
+    "administrator": null,
+    "c_data_export": null,
+    "c_data_manager": null,
+    "c_data_reviewer": null,
+    "c_dm_app": null,
+    "c_principal_data_manager": null,
+    "c_site_investigator": null,
+    "c_site_monitor": null,
+    "c_site_user": null,
+    "c_study_designer": null,
+    "c_study_participant": null,
+    "developer": null,
+    "ec__document_author": null,
+    "ec__document_manager": null,
+    "provider": null,
+    "support": null
+  },
+  "serviceAccounts": {
+    "c_system_user": null
+  },
+  "stats": {
+    "locations": {
+      "medable": null,
+      "s3": null
+    },
+    "sources": {
+      "accounts": null,
+      "cacheStorage": null,
+      "docStorage": null,
+      "fileStorage": null,
+      "logins": null,
+      "notifications": null,
+      "request": null,
+      "roomUsage": null,
+      "scripts": null
+    }
+  }
+}
