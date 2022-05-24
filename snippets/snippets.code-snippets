@@ -881,5 +881,13 @@
 		  "$0"
 		],
 		"description": "session object"
-	  }
+	  },
+	  "cache ": {
+		"prefix": "md cache",
+		"body": [
+		  "import cache from 'cache'",
+		  "cache.${1|get(key),set(key\\,value\\,ttl = null),del(key),has(key),cas(key\\,chk\\,val\\,ttl = null),clear(search=*),count(search=*),find(search\\,skip=0\\,limit=100),list(search=*\\,skip=0\\,limit=100)|}"
+		],
+		"description": "cache "
+	  },
 }

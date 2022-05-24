@@ -3,7 +3,7 @@
 - Added commands: 
     md util paths\
     md session\
-
+    md cache\
 
 ## [v0.0.3]
 

@@ -91,6 +91,7 @@ collection of vs code snippets for axon medable framework contained in ./snippet
     md event find
     md util paths
     md session
+    md cache
 
 ### Addtional
 
