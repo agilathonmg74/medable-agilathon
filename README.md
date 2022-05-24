@@ -101,6 +101,13 @@ collection of vs code snippets for axon medable framework contained in ./snippet
   
   
 
+
+
+
+
+## Code Completion
+Extension provides basic code completion for some cortex specific functionalities.
+
 ## Authors
 
   
@@ -140,3 +147,7 @@ Inspiration, code snippets, etc.
 * [Definitive guide to snippets visual studio code](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code)
 
 * [Generate VS Code snippet package](https://medium.com/@makhmud.islamov/publish-your-vs-code-snippet-extension-in-4-steps-2ed7cc4fccc3)
+
+* [Code Completion Example](https://github.com/microsoft/vscode-extension-samples/tree/main/completions-sample)
+
+* [VS Code API](https://code.visualstudio.com/api/references/vscode-api)

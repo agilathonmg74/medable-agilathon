@@ -1,3 +1,9 @@
+## [v0.1.0]
+
+- Added commands: 
+    md event find\
+
+
 ## [v0.0.3]
 
 - Added commands: 

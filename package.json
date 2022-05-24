@@ -2,7 +2,7 @@
     "name": "medable-cs-code-snippets",
     "displayName": "Medable CS Code Snippets",
     "description": "",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.53.0"
     },
