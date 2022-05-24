@@ -1,8 +1,6 @@
 ## [v0.1.0]
 
-- Added commands: 
-    md event find\
-
+- Added basic code completion: 
 
 ## [v0.0.3]
 
