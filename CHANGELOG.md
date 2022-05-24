@@ -1,3 +1,10 @@
+## [v0.0.xx]
+
+- Added commands: 
+    md util paths\
+    md session\
+
+
 ## [v0.0.3]
 
 - Added commands: 

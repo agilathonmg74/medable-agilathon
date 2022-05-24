@@ -857,5 +857,29 @@
 		  "$0"
 		],
 		"description": "find event"
+	  },
+	  "paths util": {
+		"prefix": "md util paths",
+		"body": [
+		  "// import { paths } from 'util'",
+		  "/**",
+		  " object (Object) The object to search or update.",
+		  " path (String) The path to search or update. Sub-properties can be found/updated using a . as a separator.",
+		  " value (*) If present, writes to the innermost path. If any of the properties are missing from the path, they are created as plain javascript objects.",
+		  " returnSourceObject (Boolean) If true, returns object instead of the innermost property.",
+		  " */",
+		  "paths.to(${1:object}, ${2:path}, ${3:value}, ${4:returnSourceObject}) ",
+		  "$0"
+		],
+		"description": "paths util"
+	  },
+	"session object": {
+		"prefix": "md session",
+		"body": [
+		  "// import session from 'session';",
+		  "session.${1|get(path),set(path, value)|}",
+		  "$0"
+		],
+		"description": "session object"
 	  }
 }
