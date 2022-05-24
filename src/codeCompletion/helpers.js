@@ -3,11 +3,15 @@ const cursors = require('../settings/cursors.json')
 const consts = require('../settings/consts.json')
 const script = require('../settings/script.json')
 
+const { handlePathsCursor, handleExpandCursor, handleFindCursor } = require('./cursors')
+
 const bracketPairs = {
   parentheses: ['(', ')'],
   curly: ['{', '}'],
   square: ['[', ']']
 }
+
+// #region Public
 
 const getCurrentStatement = (document, line, characther = -1) => {
   const currentLine = characther < 1
@@ -24,37 +28,6 @@ const getCurrentStatement = (document, line, characther = -1) => {
 
   return getCurrentStatement(document, line - 1)
     .concat(currentLine)
-}
-
-const getStatementInsideOfBrackets = (statement, bracketChars) => {
-  if (bracketChars.length !== 2) {
-    return null
-  }
-  const brackets = statement.split('')
-    .map((x, index) => { return { value: x, index: index } })
-    .filter(x => x.value === bracketChars[0] || x.value === bracketChars[1])
-
-  const bracketPairs = []
-  for (const e of brackets) {
-    if (e.value === bracketChars[0]) {
-      bracketPairs.push(e.index)
-    } else {
-      bracketPairs.pop()
-    }
-  }
-
-  if (bracketPairs.some()) {
-    const index = bracketPairs[bracketPairs.length - 1]
-    return { index: index, arguments: statement.substring(index + 1) || '' }
-  }
-}
-
-const getFunctionArguments = (statement) => {
-  return getStatementInsideOfBrackets(statement, bracketPairs.parentheses)
-}
-
-const getObjectBody = (statement) => {
-  return getStatementInsideOfBrackets(statement, bracketPairs.curly)
 }
 
 const getObjectFromQueryStatement = (statement) => {
@@ -98,6 +71,57 @@ const getOptionsForScriptStatement = (statement) => {
   return getOptionsForStatementSimple(statement, 'script.', script)
 }
 
+const getOptionsForCursor = (statement, object) => {
+  const functionArguments = getFunctionArguments(statement)
+  if (!functionArguments) {
+    return null
+  }
+  const s = statement.substring(0, functionArguments.index)
+  const cursor = cursors.find(x => s.endsWith(x.name))
+  switch (cursor.name) {
+    case 'paths':
+      return handlePathsCursor(object)
+    case 'expand':
+      return handleExpandCursor(object)
+    case 'sort':
+    case 'find':
+      return handleFindCursor(object)
+    default:
+      return null
+  }
+}
+
+// #endregion
+
+// #region Private
+
+const getStatementInsideOfBrackets = (statement, bracketChars) => {
+  if (bracketChars.length !== 2) {
+    return null
+  }
+  const brackets = statement.split('')
+    .map((x, index) => { return { value: x, index: index } })
+    .filter(x => x.value === bracketChars[0] || x.value === bracketChars[1])
+
+  const bracketStack = []
+  for (const e of brackets) {
+    if (e.value === bracketChars[0]) {
+      bracketStack.push(e.index)
+    } else {
+      bracketStack.pop()
+    }
+  }
+
+  if (bracketStack.length > 0) {
+    const index = bracketStack[bracketStack.length - 1]
+    return { index: index, arguments: statement.substring(index + 1) || '' }
+  }
+}
+
+const getFunctionArguments = (statement) => {
+  return getStatementInsideOfBrackets(statement, bracketPairs.parentheses)
+}
+
 const getOptionsForStatementSimple = (statement, prefix, obj) => {
   const index = statement.indexOf(prefix)
   if (index < 0) {
@@ -126,14 +150,7 @@ const getOptionsForStatementSimple = (statement, prefix, obj) => {
 
 }
 
-const getOptionsForCursor = (statement, object) => {
-  const functionArguments = getFunctionArguments(statement)
-  const s = statement.substring(0, functionArguments.index)
-  const cursor = cursors.find(x => s.endsWith(x.name))
-  if (cursor) {
-
-  }
-}
+// #endregion
 
 module.exports.getCurrentStatement = getCurrentStatement
 module.exports.getObjectFromQueryStatement = getObjectFromQueryStatement

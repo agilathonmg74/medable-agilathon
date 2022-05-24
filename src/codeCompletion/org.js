@@ -38,12 +38,15 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
 
       const scriptStatementOptions = getOptionsForScriptStatement(currentStatement)
       if (scriptStatementOptions) {
-        return scriptStatementOptions.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable))
+        return scriptStatementOptions.map(x => {
+          const item = new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable)
+          return item
+        })
       }
       return undefined
     }
   },
-  '.' // triggered whenever a '.' is being typed
+  '.', '(', ' ', '{', ',' // triggered chars
 )
 
 module.exports.orgProvider = orgProvider
