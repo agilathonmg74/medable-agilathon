@@ -1,8 +1,8 @@
 {
-    "name": "medable-cs-code-snippets",
-    "displayName": "Medable CS Code Snippets",
+    "name": "medable-agilathon-cs-code-snippets",
+    "displayName": "Medable Agilathon CS Code Snippets",
     "description": "",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "engines": {
         "vscode": "^1.53.0"
     },

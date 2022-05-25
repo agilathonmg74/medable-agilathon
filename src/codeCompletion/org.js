@@ -1,7 +1,7 @@
 const vscode = require('vscode')
 const { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor } = require('./helpers')
 const objects = require('../settings/objects.json')
-const Logger = require('../logger')
+// const Logger = require('../logger')
 
 const orgProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
