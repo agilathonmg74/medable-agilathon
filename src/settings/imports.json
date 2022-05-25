@@ -1,0 +1,110 @@
+[
+    {
+        "name": "api",
+        "value": "api from 'api'"
+    },
+    {
+        "name": "base64",
+        "value": "base64 from 'base64'"
+    },
+    {
+        "name": "cache",
+        "value": "cache from 'cache'"
+    },
+    {
+        "name": "connections",
+        "value": "connections from 'connections'"
+    },
+    {
+        "name": "config",
+        "value": "config from 'config'"
+    },
+    {
+        "name": "console",
+        "value": "console from 'console'"
+    },
+    {
+        "name": "consts",
+        "value": "consts from 'consts'"
+    },
+    {
+        "name": "counters",
+        "value": "counters from 'counters'"
+    },
+    {
+        "name": "crypto",
+        "value": "crypto from 'crypto'"
+    },
+    {
+        "name": "env",
+        "value": "env from 'env'"
+    },
+    {
+        "name": "http",
+        "value": "http from 'http'"
+    },
+    {
+        "name": "id",
+        "value": "{ id } from 'util'"
+    },
+    {
+        "name": "logger",
+        "value": "logger from 'logger'"
+    },
+    {
+        "name": "log",
+        "value": "{ log } from 'decorators'"
+    },
+    {
+        "name": "moment",
+        "value": "moment from 'moment.timezone'"
+    },
+    {
+        "name": "notifications",
+        "value": "notifications from 'notifications'"
+    },
+    {
+        "name": "paths",
+        "value": "{ paths } from 'util'"
+    },
+    {
+        "name": "request",
+        "value": "request from 'request'"
+    },
+    {
+        "name": "response",
+        "value": "response from 'request'"
+    },
+    {
+        "name": "route",
+        "value": "{ route } from 'decorators'"
+    },
+    {
+        "name": "saml",
+        "value": "{ ServiceProvider, IdentityProvider} from 'saml'"
+    },
+    {
+        "name": "schemas",
+        "value": "schemas from 'schema'"
+    },
+    {
+        "name": "session",
+        "value": "session from 'session'"
+    },
+    {
+        "name": "underscore",
+        "value": "_ from 'underscore'"
+    },
+    {
+        "name": "timezone",
+        "value": "moment from 'moment.timezone'"
+    },
+    {
+        "name": "trigger",
+        "value": "{ trigger } from 'decorators'"
+    },
+    {
+        "name": "xml",
+        "value": "xml from 'util'"
+    }
+]
