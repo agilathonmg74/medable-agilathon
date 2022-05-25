@@ -1431,6 +1431,90 @@
     ]
   },
   {
+    "name": "Event",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "parent",
+        "type": "ObjectId"
+      },
+      {
+        "name": "parentKey",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "key",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "schedule",
+        "type": "String"
+      },
+      {
+        "name": "count",
+        "type": "Number"
+      },
+      {
+        "name": "if",
+        "type": "Expression"
+      },
+      {
+        "name": "expiresAt",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "retention",
+        "type": "Number"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "started",
+        "type": "Date"
+      },
+      {
+        "name": "start",
+        "type": "Date"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "err",
+        "type": "Any"
+      }
+    ]
+  },
+  {
     "name": "c_public_user",
     "properties": [
       {
