@@ -1,4 +1,4 @@
-const vscode = require('vscode')
+import * as vscode from 'vscode'
 
 const globalsProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -16,4 +16,4 @@ const globalsProvider = vscode.languages.registerCompletionItemProvider(
   ''
 )
 
-module.exports.globalsProvider = globalsProvider
+export { globalsProvider }

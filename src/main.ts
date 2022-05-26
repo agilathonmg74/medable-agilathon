@@ -1,12 +1,12 @@
-const vscode = require('vscode')
-const { orgProvider } = require('./codeCompletion/org')
-const { globalsProvider } = require('./codeCompletion/globals')
-const { importProvider } = require('./codeCompletion/import')
-const Logger = require('./logger')
+import * as vscode from 'vscode'
+import Logger from './logger'
+import { orgProvider } from './codeCompletion/org'
+import { globalsProvider } from './codeCompletion/globals'
+import { importProvider } from './codeCompletion/import'
 
 const medableDirs = ['org-cs', 'cortex', 'configuration']
 
-async function activate(context) {
+async function activate(context: vscode.ExtensionContext) {
   if (await checkMedableWorkspace()) {
     Logger.init()
     Logger.log('activating extension')
@@ -15,7 +15,10 @@ async function activate(context) {
 }
 
 const checkMedableWorkspace = async() => {
-  const workspaceFolder = vscode.workspace.workspaceFolders[0]
+  const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0] : null
+  if (!workspaceFolder) {
+    return false
+  }
   const workspaceDir = await vscode.workspace.fs.readDirectory(workspaceFolder.uri)
   const envDir = workspaceDir.find(x => medableDirs.some(y => y === x[0]) && x[1] === vscode.FileType.Directory)
   if (!envDir) {
@@ -32,4 +35,4 @@ const checkMedableWorkspace = async() => {
   return true
 }
 
-module.exports.activate = activate
+export { activate }

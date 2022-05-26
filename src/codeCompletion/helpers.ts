@@ -1,9 +1,10 @@
-const objects = require('../settings/objects.json')
-const cursors = require('../settings/cursors.json')
-const consts = require('../settings/consts.json')
-const script = require('../settings/script.json')
+import * as vscode from 'vscode'
+import { handlePathsCursor, handleExpandCursor, handleFindCursor } from './cursors'
+import { objects, CortexObject } from '../types/objects'
 
-const { handlePathsCursor, handleExpandCursor, handleFindCursor } = require('./cursors')
+import { cursors } from '../types/cursor'
+import { consts } from '../types/consts'
+import { script } from '../types/script'
 
 const bracketPairs = {
   parentheses: ['(', ')'],
@@ -13,7 +14,7 @@ const bracketPairs = {
 
 // #region Public
 
-const getCurrentStatement = (document, line, characther = -1) => {
+const getCurrentStatement = (document: vscode.TextDocument, line: number, characther = -1): string => {
   const currentLine = characther < 1
     ? document.lineAt(line).text.trim()
     : document.lineAt(line).text.substring(0, characther)
@@ -30,22 +31,22 @@ const getCurrentStatement = (document, line, characther = -1) => {
     .concat(currentLine)
 }
 
-const getObjectFromQueryStatement = (statement) => {
+const getObjectFromQueryStatement = (statement: string): CortexObject | undefined => {
   const index = statement.indexOf('org.objects')
   if (index < 0) {
-    return null
+    return undefined
   }
   const queryStatement = statement.substring(index)
   const splitted = queryStatement.split('.')
   if (splitted.length < 3) {
-    return null
+    return undefined
   }
 
   return objects.find(x => x.name === splitted[2])
 
 }
 
-const getOptionsForQueryStatement = (statement, object) => {
+const getOptionsForQueryStatement = (statement: string, object: CortexObject) => {
   const splitted = statement.split('.')
   const lastElement = splitted[splitted.length - 2]
 
@@ -63,21 +64,24 @@ const getOptionsForQueryStatement = (statement, object) => {
   return []
 }
 
-const getOptionsForConstsStatement = (statement) => {
+const getOptionsForConstsStatement = (statement: string) => {
   return getOptionsForStatementSimple(statement, 'consts.', consts)
 }
 
-const getOptionsForScriptStatement = (statement) => {
+const getOptionsForScriptStatement = (statement: string) => {
   return getOptionsForStatementSimple(statement, 'script.', script)
 }
 
-const getOptionsForCursor = (statement, object) => {
+const getOptionsForCursor = (statement: string, object: CortexObject) => {
   const functionArguments = getFunctionArguments(statement)
   if (!functionArguments) {
     return null
   }
   const s = statement.substring(0, functionArguments.index)
   const cursor = cursors.find(x => s.endsWith(x.name))
+  if (!cursor) {
+    return null
+  }
   switch (cursor.name) {
     case 'paths':
       return handlePathsCursor(object)
@@ -95,7 +99,7 @@ const getOptionsForCursor = (statement, object) => {
 
 // #region Private
 
-const getStatementInsideOfBrackets = (statement, bracketChars) => {
+const getStatementInsideOfBrackets = (statement: string, bracketChars: string[]) => {
   if (bracketChars.length !== 2) {
     return null
   }
@@ -118,11 +122,11 @@ const getStatementInsideOfBrackets = (statement, bracketChars) => {
   }
 }
 
-const getFunctionArguments = (statement) => {
+const getFunctionArguments = (statement: string) => {
   return getStatementInsideOfBrackets(statement, bracketPairs.parentheses)
 }
 
-const getOptionsForStatementSimple = (statement, prefix, obj) => {
+const getOptionsForStatementSimple = (statement: string, prefix: string, obj: any) => {
   const index = statement.indexOf(prefix)
   if (index < 0) {
     return null
@@ -152,9 +156,11 @@ const getOptionsForStatementSimple = (statement, prefix, obj) => {
 
 // #endregion
 
-module.exports.getCurrentStatement = getCurrentStatement
-module.exports.getObjectFromQueryStatement = getObjectFromQueryStatement
-module.exports.getOptionsForQueryStatement = getOptionsForQueryStatement
-module.exports.getOptionsForConstsStatement = getOptionsForConstsStatement
-module.exports.getOptionsForScriptStatement = getOptionsForScriptStatement
-module.exports.getOptionsForCursor = getOptionsForCursor
+export {
+  getCurrentStatement,
+  getObjectFromQueryStatement,
+  getOptionsForQueryStatement,
+  getOptionsForConstsStatement,
+  getOptionsForScriptStatement,
+  getOptionsForCursor
+}
