@@ -8,7 +8,8 @@ const globalsProvider = vscode.languages.registerCompletionItemProvider(
         new vscode.CompletionItem('org', vscode.CompletionItemKind.Variable),
         new vscode.CompletionItem('script', vscode.CompletionItemKind.Variable),
         new vscode.CompletionItem('consts', vscode.CompletionItemKind.Variable),
-        new vscode.CompletionItem('import', vscode.CompletionItemKind.Variable)
+        new vscode.CompletionItem('import', vscode.CompletionItemKind.Variable),
+        new vscode.CompletionItem('modules', vscode.CompletionItemKind.Variable)
 
       ]
     }
