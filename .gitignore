@@ -3,3 +3,5 @@
 
 #built package
 *.vsix
+out
+node_modules

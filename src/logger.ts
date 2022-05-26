@@ -1,8 +1,8 @@
-const vscode = require('vscode')
-class Logger {
+import * as vscode from 'vscode'
+export default class Logger {
 
-  static output
-  static log(...params) {
+  static output : vscode.OutputChannel
+  static log(...params: any[]) {
     let output = ''
     for (const e of params) {
       if (typeof e === 'string') {
@@ -19,5 +19,3 @@ class Logger {
   }
 
 }
-
-module.exports = Logger

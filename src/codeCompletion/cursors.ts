@@ -1,6 +1,7 @@
-const vscode = require('vscode')
+import * as vscode from 'vscode'
+import { CortexObject } from '../types/objects'
 
-const handlePathsCursor = (obj) => {
+const handlePathsCursor = (obj: CortexObject) => {
   return obj.properties.map(x => {
     const item = new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable)
     item.insertText = `'${x.name}'`
@@ -8,7 +9,7 @@ const handlePathsCursor = (obj) => {
   })
 }
 
-const handleExpandCursor = (obj) => {
+const handleExpandCursor = (obj: CortexObject) => {
   return obj.properties.filter(x => x.type === 'Reference')
     .map(x => {
       const item = new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable)
@@ -17,7 +18,7 @@ const handleExpandCursor = (obj) => {
     })
 }
 
-const handleFindCursor = (obj) => {
+const handleFindCursor = (obj: CortexObject) => {
   return obj.properties.filter(x => x.indexed)
     .map(x => {
       const item = new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable)
@@ -26,6 +27,4 @@ const handleFindCursor = (obj) => {
     })
 }
 
-module.exports.handlePathsCursor = handlePathsCursor
-module.exports.handleExpandCursor = handleExpandCursor
-module.exports.handleFindCursor = handleFindCursor
+export { handlePathsCursor, handleExpandCursor, handleFindCursor }

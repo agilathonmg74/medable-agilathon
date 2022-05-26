@@ -1,6 +1,6 @@
-const vscode = require('vscode')
-const { getCurrentStatement } = require('./helpers')
-const imports = require('../settings/imports.json')
+import * as vscode from 'vscode'
+import { getCurrentStatement } from './helpers'
+import { imports } from '../types/imports'
 
 const importProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -23,4 +23,4 @@ const importProvider = vscode.languages.registerCompletionItemProvider(
 
 )
 
-module.exports.importProvider = importProvider
+export { importProvider }

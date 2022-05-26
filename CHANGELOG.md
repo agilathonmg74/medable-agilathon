@@ -1,6 +1,16 @@
+## [v0.1.2]
+
+- Typescript
+
+
+## [v0.1.1]
+
+- Added imports code completion
+
+
 ## [v0.1.0]
 
-- Added basic code completion: 
+- Added basic code completion
 
 ## [v0.0.3]
 

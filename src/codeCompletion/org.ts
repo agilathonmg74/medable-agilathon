@@ -1,7 +1,7 @@
-const vscode = require('vscode')
-const { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor } = require('./helpers')
-const objects = require('../settings/objects.json')
-// const Logger = require('../logger')
+import * as vscode from 'vscode'
+import { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor } from './helpers'
+import { objects } from '../types/objects'
+// import Logger from '../logger'
 
 const orgProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -49,4 +49,4 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
   '.', '(', ' ', '{', ',' // triggered chars
 )
 
-module.exports.orgProvider = orgProvider
+export { orgProvider }

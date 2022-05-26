@@ -2,9 +2,9 @@
     "name": "medable-agilathon-cs-code-snippets",
     "displayName": "Medable Agilathon CS Code Snippets",
     "description": "",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
-        "vscode": "^1.53.0"
+        "vscode": "^1.67.0"
     },
     "categories": [
         "Snippets"
@@ -20,7 +20,16 @@
     "publisher": "agilathonmg74",
     "repository": "https://github.com/agilathonmg74/medable-agilathon",
     "activationEvents": [
-		"onStartupFinished"
-	],
-	"main": "./src/main.js"
+        "onStartupFinished"
+    ],
+    "main": "./out/main.js",
+    "scripts": {
+        "compile": "tsc -p ./",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.35",
+        "@types/vscode": "^1.67.0",
+        "typescript": "^4.7.2"
+    }
 }
