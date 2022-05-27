@@ -4,8 +4,6 @@
         "text": "info(data[optional], message)",
         "detail": "data as Object[optional], message as string",
         "documentation": "logs the message with the debug level, with optional custom data"
-        
-        
     },
     {
         "item": "warn",

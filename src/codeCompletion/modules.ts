@@ -1,8 +1,6 @@
-const vscode = require('vscode')
-const { getCurrentStatement } = require('./helpers')
-const loggerData = require('../settings/loggerData.json')
-const cacheData = require('../settings/cacheData.json')
-const notifData = require('../settings/notifData.json')
+import * as vscode from 'vscode'
+import { loggerData, cacheData, notifData } from '../types/standardDefinition'
+import { getCurrentStatement } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -30,7 +28,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
         })
       } else if (currentStatement.startsWith('notification.') || currentStatement.endsWith(' notification.')) {
         return notifData.map(x => {
-          const item = new vscode.CompletionItem(x.item, jebate )
+          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
           item.documentation = x.documentation
@@ -45,4 +43,4 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
 
 )
 
-module.exports = modulesProvider
+export { modulesProvider }

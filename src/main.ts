@@ -1,17 +1,9 @@
-<<<<<<< HEAD:src/main.ts
 import * as vscode from 'vscode'
 import Logger from './logger'
 import { orgProvider } from './codeCompletion/org'
 import { globalsProvider } from './codeCompletion/globals'
 import { importProvider } from './codeCompletion/import'
-=======
-const vscode = require('vscode')
-const { orgProvider } = require('./codeCompletion/org')
-const { globalsProvider } = require('./codeCompletion/globals')
-const { importProvider } = require('./codeCompletion/import')
-const { modulesProvider } = require('./codeCompletion/modules')
-const Logger = require('./logger')
->>>>>>> mgudic-codecompletion:src/main.js
+import { modulesProvider } from './codeCompletion/modules'
 
 const medableDirs = ['org-cs', 'cortex', 'configuration']
 
