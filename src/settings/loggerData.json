@@ -1,0 +1,32 @@
+[
+    {
+        "item": "info",
+        "text": "info(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the debug level, with optional custom data"
+    },
+    {
+        "item": "warn",
+        "text": "warn(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the warn level, with optional custom data"
+    },
+    {
+        "item": "error",
+        "text": "error(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the error level, with optional custom data"
+    },
+    {
+        "item": "debug",
+        "text": "debug(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the debug level, with optional custom data"
+    },
+    {
+        "item": "trace",
+        "text": "trace(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the log level, with optional custom data"
+    }
+]

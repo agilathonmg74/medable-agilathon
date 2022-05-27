@@ -7,11 +7,15 @@
 		"sourceMap": true,
 		"strict": true,
 		"rootDir": "src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+		"esModuleInterop": true
 	},
 	"exclude": [
 		"node_modules",
 		".vscode",
     "snippets"
+	],
+	"include": [
+		"src/**/*.json"
 	]
 }
