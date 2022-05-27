@@ -1,8 +1,17 @@
+<<<<<<< HEAD:src/main.ts
 import * as vscode from 'vscode'
 import Logger from './logger'
 import { orgProvider } from './codeCompletion/org'
 import { globalsProvider } from './codeCompletion/globals'
 import { importProvider } from './codeCompletion/import'
+=======
+const vscode = require('vscode')
+const { orgProvider } = require('./codeCompletion/org')
+const { globalsProvider } = require('./codeCompletion/globals')
+const { importProvider } = require('./codeCompletion/import')
+const { modulesProvider } = require('./codeCompletion/modules')
+const Logger = require('./logger')
+>>>>>>> mgudic-codecompletion:src/main.js
 
 const medableDirs = ['org-cs', 'cortex', 'configuration']
 
@@ -10,7 +19,7 @@ async function activate(context: vscode.ExtensionContext) {
   if (await checkMedableWorkspace()) {
     Logger.init()
     Logger.log('activating extension')
-    context.subscriptions.push(globalsProvider, orgProvider, importProvider)
+    context.subscriptions.push(globalsProvider, orgProvider, importProvider, modulesProvider)
   }
 }
 
