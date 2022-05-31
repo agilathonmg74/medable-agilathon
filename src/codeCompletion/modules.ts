@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
-import { loggerData, cacheData, notifData } from '../types/standardDefinition'
+// eslint-disable-next-line no-unused-vars
+import { loggerData, cacheData, apiData } from '../types/standardDefinition'
 import { getCurrentStatement } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
@@ -26,12 +27,16 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           item.documentation = x.documentation
           return item
         })
-      } else if (currentStatement.argumentsStatement?.startsWith('notification.') || currentStatement.argumentsStatement?.endsWith(' notification.')) {
-        return notifData.map(x => {
+      } else if (currentStatement.argumentsStatement?.startsWith('api.') || currentStatement.argumentsStatement?.endsWith(' api.')) {
+        // return [
+        //   new vscode.CompletionItem('foo', vscode.CompletionItemKind.Method)
+        // ]
+        return apiData.map(x => {
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
           item.documentation = x.documentation
+          item
           return item
         })
       }

@@ -1,6 +1,7 @@
 const _loggerData = require('../settings/loggerData.json')
 const _cacheData = require('../settings/cacheData.json')
 const _notifData = require('../settings/notifData.json')
+const _apiData = require('../settings/apiData.json')
 
 interface StandardConfigDefinition {
     item: string,
@@ -12,5 +13,6 @@ interface StandardConfigDefinition {
 const loggerData: StandardConfigDefinition[] = _loggerData
 const cacheData: StandardConfigDefinition[] = _cacheData
 const notifData: StandardConfigDefinition[] = _notifData
+const apiData: StandardConfigDefinition[] = _apiData
 
-export { StandardConfigDefinition, loggerData, cacheData, notifData }
+export { StandardConfigDefinition, loggerData, cacheData, notifData, apiData }

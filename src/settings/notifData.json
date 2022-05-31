@@ -5,4 +5,5 @@
         "detail": "name as string, variables as object, options[context[optional],locale, recipient, apikey, number]",
         "documentation": "Sends a custom notification to a single recipient."
     }
+    
 ]
