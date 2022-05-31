@@ -7,7 +7,7 @@ const importProvider = vscode.languages.registerCompletionItemProvider(
   {
     provideCompletionItems(document, position) {
       const currentStatement = getCurrentStatement(document, position.line, position.character)
-      if (currentStatement.startsWith('import') && currentStatement.endsWith('import')) {
+      if (currentStatement.fullStatement.startsWith('import') && currentStatement.fullStatement.endsWith('import')) {
 
         return imports.map(x => {
           const item = new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable)

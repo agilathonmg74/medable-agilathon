@@ -3,15 +3,15 @@ export default class Logger {
 
   static output : vscode.OutputChannel
   static log(...params: any[]) {
-    let output = ''
+    let outputString = ''
     for (const e of params) {
       if (typeof e === 'string') {
-        output = output.concat(' ', e)
+        outputString = outputString.concat(' ', e)
       } else {
-        output = output.concat(' ', JSON.stringify(e))
+        outputString = outputString.concat(' ', JSON.stringify(e))
       }
     }
-    this.output.appendLine(output)
+    this.output.appendLine(outputString)
   }
 
   static init() {

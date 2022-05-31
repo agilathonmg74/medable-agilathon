@@ -5,6 +5,8 @@ import { objects, CortexObject } from '../types/objects'
 import { cursors } from '../types/cursor'
 import { consts } from '../types/consts'
 import { script } from '../types/script'
+import Statement from '../types/statement'
+import Logger from '../logger'
 
 const bracketPairs = {
   parentheses: ['(', ')'],
@@ -14,21 +16,20 @@ const bracketPairs = {
 
 // #region Public
 
-const getCurrentStatement = (document: vscode.TextDocument, line: number, characther = -1): string => {
-  const currentLine = characther < 1
-    ? document.lineAt(line).text.trim()
-    : document.lineAt(line).text.substring(0, characther)
-      .trim()
+const getCurrentStatement = (document: vscode.TextDocument, line: number, characther = -1): Statement => {
+  const fullStatement = getFullStatement(document, line, characther)
+  const argumentsStatements = [
+    getStatementInsideOfBrackets(fullStatement, bracketPairs.parentheses),
+    getStatementInsideOfBrackets(fullStatement, bracketPairs.curly),
+    getStatementInsideOfBrackets(fullStatement, bracketPairs.square)
+  ].filter(x => x)
+    .sort((a, z) => (a?.arguments?.length || 100) - (z?.arguments?.length || 100))
 
-  if (line === 0) {
-    return currentLine
-  }
-  if (currentLine.charAt(0) !== '.') {
-    return currentLine
+  if (argumentsStatements.length > 0) {
+    return new Statement(fullStatement, argumentsStatements[0]?.arguments || '')
   }
 
-  return getCurrentStatement(document, line - 1)
-    .concat(currentLine)
+  return new Statement(fullStatement, fullStatement)
 }
 
 const getObjectFromQueryStatement = (statement: string): CortexObject | undefined => {
@@ -64,11 +65,11 @@ const getOptionsForQueryStatement = (statement: string, object: CortexObject) =>
   return []
 }
 
-const getOptionsForConstsStatement = (statement: string) => {
+const getOptionsForConstsStatement = (statement: string | null) => {
   return getOptionsForStatementSimple(statement, 'consts.', consts)
 }
 
-const getOptionsForScriptStatement = (statement: string) => {
+const getOptionsForScriptStatement = (statement: string | null) => {
   return getOptionsForStatementSimple(statement, 'script.', script)
 }
 
@@ -120,13 +121,18 @@ const getStatementInsideOfBrackets = (statement: string, bracketChars: string[])
     const index = bracketStack[bracketStack.length - 1]
     return { index: index, arguments: statement.substring(index + 1) || '' }
   }
+
+  return null
 }
 
 const getFunctionArguments = (statement: string) => {
   return getStatementInsideOfBrackets(statement, bracketPairs.parentheses)
 }
 
-const getOptionsForStatementSimple = (statement: string, prefix: string, obj: any) => {
+const getOptionsForStatementSimple = (statement: string | null, prefix: string, obj: any) => {
+  if (statement === null) {
+    return null
+  }
   const index = statement.indexOf(prefix)
   if (index < 0) {
     return null
@@ -152,6 +158,23 @@ const getOptionsForStatementSimple = (statement: string, prefix: string, obj: an
 
   return Object.keys(currentObject)
 
+}
+
+const getFullStatement = (document: vscode.TextDocument, line: number, characther = -1): string => {
+  const currentLine = characther < 1
+    ? document.lineAt(line).text.trim()
+    : document.lineAt(line).text.substring(0, characther)
+      .trim()
+
+  if (line === 0) {
+    return currentLine
+  }
+  if (currentLine.charAt(0) !== '.') {
+    return currentLine
+  }
+
+  return getFullStatement(document, line - 1)
+    .concat(currentLine)
 }
 
 // #endregion
