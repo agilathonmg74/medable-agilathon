@@ -3,6 +3,7 @@
         "item": "send",
         "text": "send(name, variables as object,options)",
         "detail": "name as string, variables as object, options[context[optional],locale, recipient, apikey, number]",
-        "documentation": "Sends a custom notification to a single recipient."
+        "documentation": "Sends a custom notification to a single recipient. Go to:\n<https://docs.medable.com/cortex-api/scripting/modules-1/notifications-module#methods>"
     }
+    
 ]
