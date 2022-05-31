@@ -1,6 +1,9 @@
 # vs code workspace settings
 .vscode/
 
+#
+package-lock.json
+
 #built package
 *.vsix
 out
