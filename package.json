@@ -24,7 +24,7 @@
     ],
     "main": "./out/main.js",
     "scripts": {
-        "compile": "tsc -p ./",
+        "build": "tsc -p ./",
         "package": "vsce package"
     },
     "devDependencies": {
