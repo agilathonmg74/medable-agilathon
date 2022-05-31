@@ -35,7 +35,7 @@ collection of vs code snippets for axon medable framework contained in ./snippet
 - add changes to the changelog file (CHANGELOG.md)
 - install *vsce* tool for packaging VS Code extensions using `npm install -g vsce` (use Node version 16.+)
 - run `npm install` to pull dependencies 
-- run `npm run compile` to transpile typescript
+- run `npm run build` to transpile typescript
 - run `npm run package` to create .vsix extension
 - publish new version to [Releases](https://github.com/agilathonmg74/medable-agilathon/releases)
 
