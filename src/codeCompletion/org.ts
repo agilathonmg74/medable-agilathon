@@ -8,7 +8,7 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
   {
     provideCompletionItems(document, position) {
       const currentStatement = getCurrentStatement(document, position.line, position.character)
-      if (currentStatement.endsWith('org.')) {
+      if (currentStatement.argumentsStatement?.endsWith('org.')) {
         return [
           new vscode.CompletionItem('objects', vscode.CompletionItemKind.Variable),
           new vscode.CompletionItem('_id', vscode.CompletionItemKind.Variable),
@@ -16,27 +16,28 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
         ]
       }
 
-      if (currentStatement.endsWith('org.objects.')) {
+      if (currentStatement.argumentsStatement?.endsWith('org.objects.')) {
         return objects.map(x => new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable))
       }
 
-      const objectQuery = getObjectFromQueryStatement(currentStatement)
-      if (objectQuery) {
-        const cursorOptions = getOptionsForCursor(currentStatement, objectQuery)
-        if (cursorOptions) {
-          return cursorOptions
-        }
+      const objectQuery = getObjectFromQueryStatement(currentStatement.fullStatement)
+      const cursorOptions = objectQuery && currentStatement.argumentsStatement !== currentStatement.fullStatement && getOptionsForCursor(currentStatement.fullStatement, objectQuery)
 
-        return getOptionsForQueryStatement(currentStatement, objectQuery)
+      if (cursorOptions) {
+        return cursorOptions
+      }
+
+      if (objectQuery && currentStatement.argumentsStatement === currentStatement.fullStatement) {
+        return getOptionsForQueryStatement(currentStatement.fullStatement, objectQuery)
           .map(x => new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Method))
       }
 
-      const constsStatementOptions = getOptionsForConstsStatement(currentStatement)
+      const constsStatementOptions = getOptionsForConstsStatement(currentStatement.argumentsStatement)
       if (constsStatementOptions) {
         return constsStatementOptions.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable))
       }
 
-      const scriptStatementOptions = getOptionsForScriptStatement(currentStatement)
+      const scriptStatementOptions = getOptionsForScriptStatement(currentStatement.argumentsStatement)
       if (scriptStatementOptions) {
         return scriptStatementOptions.map(x => {
           const item = new vscode.CompletionItem(x, vscode.CompletionItemKind.Variable)

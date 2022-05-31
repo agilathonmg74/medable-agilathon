@@ -16,6 +16,7 @@
     "snippets"
 	],
 	"include": [
-		"src/**/*.json"
+		"src/**/*.json",
+		"src/**/*.ts"
 	]
 }
