@@ -1,0 +1,20 @@
+[
+    {
+        "item": "keys",
+        "text": "keys()",
+        "detail": "Returns a list of configuration keys",
+        "documentation": "Use import config as 'config' \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/config#keys) \n #### [go to examples](https://docs.medable.com/cortex-api/scripting/modules-1/config#examples)"
+    },
+    {
+        "item": "get",
+        "text": "get(key as string)",
+        "detail": "Returns the value for a configuration key. The key can also be an object property path.",
+        "documentation": "Use import config as 'config' \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/config#get-key) \n #### [go to examples](https://docs.medable.com/cortex-api/scripting/modules-1/config#examples)"
+    },
+    {
+        "item": "set",
+        "text": "set(key as string, value as any)",
+        "detail": "Set the value for a configuration key.",
+        "documentation": "Use import config as 'config' \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/config#set-key-val). \n ### \n #### [go to examples](https://docs.medable.com/cortex-api/scripting/modules-1/config#examples) "
+    }
+]
