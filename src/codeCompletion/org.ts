@@ -29,7 +29,13 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
 
       if (objectQuery && currentStatement.argumentsStatement === currentStatement.fullStatement) {
         return getOptionsForQueryStatement(currentStatement.fullStatement, objectQuery)
-          .map(x => new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Method))
+          .map(x => {
+            const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
+            item.insertText = x.text
+            item.detail = x.detail
+            item.documentation = new vscode.MarkdownString(x.documentation)
+            return item
+          })
       }
 
       const constsStatementOptions = getOptionsForConstsStatement(currentStatement.argumentsStatement)

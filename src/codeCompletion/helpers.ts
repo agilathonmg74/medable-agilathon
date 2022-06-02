@@ -6,7 +6,7 @@ import { cursors } from '../types/cursor'
 import { consts } from '../types/consts'
 import { script } from '../types/script'
 import Statement from '../types/statement'
-import Logger from '../logger'
+// import Logger from '../logger'
 
 const bracketPairs = {
   parentheses: ['(', ')'],
@@ -55,7 +55,7 @@ const getOptionsForQueryStatement = (statement: string, object: CortexObject) =>
     return cursors
   }
 
-  const cursor = cursors.find(x => lastElement.includes(x.name))
+  const cursor = cursors.find(x => lastElement.includes(x.item))
   if (cursor) {
     if (cursor.isContinuable) {
       return cursors
@@ -79,11 +79,11 @@ const getOptionsForCursor = (statement: string, object: CortexObject) => {
     return null
   }
   const s = statement.substring(0, functionArguments.index)
-  const cursor = cursors.find(x => s.endsWith(x.name))
+  const cursor = cursors.find(x => s.endsWith(x.item))
   if (!cursor) {
     return null
   }
-  switch (cursor.name) {
+  switch (cursor.item) {
     case 'paths':
       return handlePathsCursor(object)
     case 'expand':

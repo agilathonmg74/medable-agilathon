@@ -1,102 +1,186 @@
 [
   {
-    "name": "find",
+    "item": "find",
+    "text": "find()",
+    "detail": "find(filtersObject)",
+    "documentation": "Selects documents in a collection and returns a cursor to the selected documents \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors)",
     "isContinuable": true
   },
   {
-    "name": "access",
+    "item": "access",
+    "text": "access()",
+    "detail": "access(level)",
+    "documentation": "Sets the minimum context access level the caller needs to return results \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.access-level)",
     "isContinuable": true
   },
   {
-    "name": "batchSize",
+    "item": "batchSize",
+    "text": "batchSize()",
+    "detail": "batchSize(sz) sz The internal cursor batch size (between 1 and 1000)",
+    "documentation": "Sets the internal cursor batch size for fetching results \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.batchsize-sz)",
     "isContinuable": true
   },
   {
-    "name": "close"
+    "item": "close",
+    "text": "close()",
+    "detail": "close()",
+    "documentation": "Releases the cursor resources \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.close)"
   },
   {
-    "name": "count"
+    "item": "count",
+    "text": "count()",
+    "detail": "count()",
+    "documentation": "Executes a count using the current match filter and cursor options \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.count)"
   },
   {
-    "name": "expand",
+    "item": "expand",
+    "text": "expand()",
+    "detail": "expand(...props) props - Property paths to expand",
+    "documentation": "Sets the references that should be expanded in the returned documents \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.expand-...props)",
     "isContinuable": true
   },
   {
-    "name": "forEach"
+    "item": "forEach",
+    "text": "forEach((document) => {})",
+    "detail": "forEach(fn) fn - a function to call for each element in the form of (document) => {}",
+    "documentation": "Executes the cursor, calling fn with each document. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.foreach-fn)"
   },
   {
-    "name": "grant",    
+    "item": "grant",
+    "text": "grant(level)",
+    "detail": "grant(level)",
+    "documentation": "Sets the property grant level for the operation. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.grant-level-null)",
     "isContinuable": true
   },
   {
-    "name": "hasNext"
+    "item": "hasNext",
+    "text": "hasNext()",
+    "detail": "hasNext()",
+    "documentation": "Executes the cursor, returning true if next() can be safely called to fetch the next result. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.hasnext)"
   },
   {
-    "name": "include",
+    "item": "include",
+    "text": "include()",
+    "detail": "include(...props) props - Property paths to include (e.g. include('connections')) ",
+    "documentation": "Sets the optional properties to include in results. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.include-...props)",
     "isContinuable": true
   },
   {
-    "name": "isClosed"
+    "item": "isClosed",
+    "text": "isClosed()",
+    "detail": "isClosed()",
+    "documentation": "Returns true if a cursor has been opened and has been subsequently closed or exhausted. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.isclosed)"
   },
   {
-    "name": "limit",
+    "item": "limit",
+    "text": "limit()",
+    "detail": "limit(count) count - The limit",
+    "documentation": "Limits the number of query results to count. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.limit-count)",
     "isContinuable": true
   },
   {
-    "name": "locale",
+    "item": "locale",
+    "text": "locale()",
+    "detail": "locale(identifier) identifier - The locale identifier",
+    "documentation": "Specifies the locale of the cursor for any localized strings. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.locale-identifier)",
     "isContinuable": true
   },
   {
-    "name": "map"
+    "item": "map",
+    "text": "map((document) => { return document; })",
+    "detail": "map(fn) fn - a function to call for each result",
+    "documentation": "Exhausts the cursor, calling fn with each document, and returning an array of results. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.map-fn)"
   },
   {
-    "name": "maxTimeMS",
+    "item": "maxTimeMs",
+    "text": "maxTimeMs()",
+    "detail": "maxTimeMs(ms) ms - A number between 10 and 10000.",
+    "documentation": "Set the maximum time a query is allowed to run. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.maxtimems-ms)",
     "isContinuable": true
   },
   {
-    "name": "next"
+    "item": "next",
+    "text": "next()",
+    "detail": "next()",
+    "documentation": "Returns the next result. Throws a RangeError is there are no more results. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.next)"
   },
   {
-    "name": "passthru"
+    "item": "passthru",
+    "text": "passthru()",
+    "detail": "passthru()",
+    "documentation": "Opens a cursor (without fetching any results) which can be returned from a route script and streamed directly through the api. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.passthru)"
   },
   {
-    "name": "pathPrefix",
+    "item": "pathPrefix",
+    "text": "pathPrefix()",
+    "detail": "pathPrefix(path) path - Path to a list property.",
+    "documentation": "Sets the query prefix for retrieving a nested List property. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.pathprefix-path-null)"
+  },
+  {
+    "item": "pathRead",
+    "text": "pathRead()",
+    "detail": "pathRead(path, options) path - Property path to read, options - Object",
+    "documentation": "Returns the first matching document single path base on the current cursor options. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.pathread-path-options)"
+  },
+  {
+    "item": "paths",
+    "text": "paths()",
+    "detail": "paths(...props) props - Property paths to return in results.",
+    "documentation": "Limits the result properties to ...props. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.paths-...props)",
     "isContinuable": true
   },
   {
-    "name": "pathRead",
+    "item": "reduce",
+    "text": "reduce((memo, document) => { return memo; })",
+    "detail": "reduce(fn, memo) fn - a function to call for each result, memo - an initial value for fn",
+    "documentation": "Exhausts the cursor, calling fn with memo for each document, and returning memo. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.reduce-fn-memo)"
+  },
+  {
+    "item": "skip",
+    "text": "skip()",
+    "detail": "skip(count) count - The number of results to skip",
+    "documentation": "Skips count number of results. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.skip-count)",
     "isContinuable": true
   },
   {
-    "name": "paths",
+    "item": "skipAcl",
+    "text": "skipAcl()",
+    "detail": "skip(bool = true)",
+    "documentation": "Skips initial lookup access control checks. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.skipacl-bool-true)",
     "isContinuable": true
   },
   {
-    "name": "reduce"
-  },
-  {
-    "name": "skip",
+    "item": "sort",
+    "text": "sort()",
+    "detail": "sort(object) object - an object containing indexed, sortable properties to sort on and their direction (1, -1)",
+    "documentation": "Sets the sort options (e.g. {c_num_prescriptions: -1, c_fullname: 1}). \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.sort-object)",
     "isContinuable": true
   },
   {
-    "name": "skipAcl",
+    "item": "stream",
+    "text": "stream((result, total) => { return false; }, (result) => { return result; })",
+    "detail": "stream(fnEach, fnMap) fnEach - called after each item is written, fnMap - called to transform each result before output",
+    "documentation": "Exhausts the cursor, setting the content type to application/json and writing directly to the Response as a list object. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.stream-fneach-fnmap)"
+  },
+  {
+    "item": "where",
+    "text": "where()",
+    "detail": "where(filter)",
+    "documentation": "Overwrites the initial filter passed in the constructor. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.where-filter)",
     "isContinuable": true
   },
   {
-    "name": "sort",
+    "item": "toArray",
+    "text": "toArray()",
+    "detail": "toArray()",
+    "documentation": "Exhausts the cursor and returns an array of results (not a list! see toList() ). \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.toarray)",
     "isContinuable": true
   },
   {
-    "name": "stream"
-  },
-  {
-    "name": "where",
+    "item": "toList",
+    "text": "toList()",
+    "detail": "toList()",
+    "documentation": "Returns a list object based on limit() (or the default limit of 10). \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/cursors#querycursor.tolist)",
     "isContinuable": true
-  },
-  {
-    "name": "toArray"
-  },
-  {
-    "name": "toList"
   }
 ]

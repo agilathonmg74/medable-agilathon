@@ -3,7 +3,7 @@
         "item": "get",
         "text": "get(key)",
         "detail": "key as string",
-        "documentation": "Returns the value of a cache entry matching key or null if key is not found. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#get-key)",
+        "documentation": "Returns the value of a cache entry matching key or null if key is not found. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#get-key)"
     },
     {
         "item": "set",

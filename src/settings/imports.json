@@ -1,110 +1,164 @@
 [
     {
-        "name": "api",
-        "value": "api from 'api'"
+        "item": "api",
+        "text": "api from 'api'",
+        "detail": "import api module",
+        "documentation": "API Module \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/api-module)"
     },
     {
-        "name": "base64",
-        "value": "base64 from 'base64'"
+        "item": "base64",
+        "text": "base64 from 'base64'",
+        "detail": "import base64 module",
+        "documentation": "Simple, fast base64 encoding/decoding service \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/base64-module)"
     },
     {
-        "name": "cache",
-        "value": "cache from 'cache'"
+        "item": "cache",
+        "text": "cache from 'cache'",
+        "detail": "import base64 module",
+        "documentation": "General purpose key/value storage with searchable keys. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/cache-module)"
     },
     {
-        "name": "connections",
-        "value": "connections from 'connections'"
+        "item": "connections",
+        "text": "connections from 'connections'",
+        "detail": "import connections module",
+        "documentation": "Connections Module. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/connections-module)"
     },
     {
-        "name": "config",
-        "value": "config from 'config'"
+        "item": "config",
+        "text": "config from 'config'",
+        "detail": "import config module",
+        "documentation": "Simplified configuration and local secrets storage. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/config)"
     },
     {
-        "name": "console",
-        "value": "console from 'console'"
+        "item": "console",
+        "text": "console from 'console'",
+        "detail": "import console module",
+        "documentation": "Console Module. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/console-module)"
     },
     {
-        "name": "consts",
-        "value": "consts from 'consts'"
+        "item": "consts",
+        "text": "consts from 'consts'",
+        "detail": "import consts module",
+        "documentation": "A global variable containing various constants. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/consts-module)"
     },
     {
-        "name": "counters",
-        "value": "counters from 'counters'"
+        "item": "counters",
+        "text": "consts from 'counters'",
+        "detail": "import counters module",
+        "documentation": "General purpose atomically incrementing counters. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/counters-module)"
     },
     {
-        "name": "crypto",
-        "value": "crypto from 'crypto'"
+        "item": "crypto",
+        "text": "crypto from 'crypto'",
+        "detail": "import crypto module",
+        "documentation": "Simple, fast crypto service. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/crypto-module)"
     },
     {
-        "name": "env",
-        "value": "env from 'env'"
+        "item": "env",
+        "text": "env from 'env'",
+        "detail": "import env module",
+        "documentation": "Ephemeral environments enable the creation of temporary environments to assist development and testing. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/environments)"
     },
     {
-        "name": "http",
-        "value": "http from 'http'"
+        "item": "http",
+        "text": "http from 'http'",
+        "detail": "import http module",
+        "documentation": "Basic http(s) callout capability. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module)"
     },
     {
-        "name": "id",
-        "value": "{ id } from 'util'"
+        "item": "id",
+        "text": "{ id } from 'util'",
+        "detail": "import id module",
+        "documentation": "Util.id Module. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/util.id-module)"
     },
     {
-        "name": "logger",
-        "value": "logger from 'logger'"
+        "item": "logger",
+        "text": "logger from 'logger'",
+        "detail": "import logger module",
+        "documentation": "Debug logging facility. Logs to the logger log source. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
     },
     {
-        "name": "log",
-        "value": "{ log } from 'decorators'"
+        "item": "log",
+        "text": "{ log } from 'decorators'",
+        "detail": "import log decorator",
+        "documentation": "Log decorator. \n #### [go to docs](https://docs.medable.com/cortex-api/decorators/runtime-1/log)"
     },
     {
-        "name": "moment",
-        "value": "moment from 'moment.timezone'"
+        "item": "moment",
+        "text": "moment from 'moment.timezone'",
+        "detail": "import moment module",
+        "documentation": "Parse and display dates in any timezone. \n #### [go to docs](https://momentjs.com/timezone/docs/)"
     },
     {
-        "name": "notifications",
-        "value": "notifications from 'notifications'"
+        "item": "timezone",
+        "text": "moment from 'moment.timezone'",
+        "detail": "import moment module",
+        "documentation": "Parse and display dates in any timezone. \n #### [go to docs](https://momentjs.com/timezone/docs/)"
     },
     {
-        "name": "paths",
-        "value": "{ paths } from 'util'"
+        "item": "notifications",
+        "text": "notifications from 'notifications'",
+        "detail": "import notifications module",
+        "documentation": "Send custom notifications. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/notifications-module)"
     },
     {
-        "name": "request",
-        "value": "request from 'request'"
+        "item": "paths",
+        "text": "{ paths } from 'util'",
+        "detail": "import paths module",
+        "documentation": "Util.paths Module. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/util.paths-module)"
     },
     {
-        "name": "response",
-        "value": "response from 'request'"
+        "item": "request",
+        "text": "request from 'request'",
+        "detail": "import request module",
+        "documentation": "Represents the current HTTP request. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/request-module)"
     },
     {
-        "name": "route",
-        "value": "{ route } from 'decorators'"
+        "item": "response",
+        "text": "response from 'response'",
+        "detail": "import response module",
+        "documentation": "Represents the current response object. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/response-module)"
     },
     {
-        "name": "saml",
-        "value": "{ ServiceProvider, IdentityProvider} from 'saml'"
+        "item": "route",
+        "text": "{ route } from 'decorators'",
+        "detail": "import route decorator",
+        "documentation": "Route decorator. \n #### [go to docs](https://docs.medable.com/cortex-api/decorators/static/route)"
     },
     {
-        "name": "schemas",
-        "value": "schemas from 'schema'"
+        "item": "saml",
+        "text": "{ ServiceProvider, IdentityProvider} from 'saml'",
+        "detail": "import saml module",
+        "documentation": "The SAML module allows you to implement Single-Sign-On via SAML v2.0 protocol. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/saml-module)"
     },
     {
-        "name": "session",
-        "value": "session from 'session'"
+        "item": "schemas",
+        "text": "schemas from 'schemas'",
+        "detail": "import schemas module",
+        "documentation": "Read an object schema and its properties. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/schemas-modules)"
     },
     {
-        "name": "underscore",
-        "value": "_ from 'underscore'"
+        "item": "session",
+        "text": "session from 'session'",
+        "detail": "import session module",
+        "documentation": "When a request session is available for the current original principal, developers can store session variables that remain available until the sign-in session ends. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/session-module)"
     },
     {
-        "name": "timezone",
-        "value": "moment from 'moment.timezone'"
+        "item": "underscore",
+        "text": "_ from 'underscore'",
+        "detail": "import underscore module",
+        "documentation": "Provides a whole mess of useful functional programming helpers. \n #### [go to docs](http://underscorejs.org/)"
     },
     {
-        "name": "trigger",
-        "value": "{ trigger } from 'decorators'"
+        "item": "trigger",
+        "text": "{ trigger } from 'decorators'",
+        "detail": "import trigger decorator",
+        "documentation": "Trigger decorator. \n #### [go to docs](https://docs.medable.com/cortex-api/decorators/static/trigger)"
     },
     {
-        "name": "xml",
-        "value": "xml from 'util'"
+        "item": "xml",
+        "text": "xml from 'xml'",
+        "detail": "import xml module",
+        "documentation": "Simple xml/json conversion tool. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/xml-module)"
     }
 ]
