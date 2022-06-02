@@ -1,5 +1,3 @@
-import * as vscode from 'vscode'
-
 const _loggerData = require('../settings/loggerData.json')
 const _cacheData = require('../settings/cacheData.json')
 const _notifData = require('../settings/notifData.json')
