@@ -1,6 +1,9 @@
 # vs code workspace settings
 # .vscode/
 
+# workspace settings
+.vscode/settings.json
+
 #
 package-lock.json
 

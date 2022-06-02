@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 // eslint-disable-next-line no-unused-vars
-import { loggerData, cacheData, notifData, apiData, httpData } from '../types/standardDefinition'
+import { loggerData, cacheData, notifData, apiData, httpData, configData } from '../types/standardDefinition'
 import { getCurrentStatement } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
@@ -48,6 +48,15 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
         })
       } else if (currentStatement.argumentsStatement?.startsWith('http.') || currentStatement.argumentsStatement?.endsWith(' http.')) {
         return httpData.map(x => {
+          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
+          item.insertText = x.text
+          item.detail = x.detail
+          item.documentation = new vscode.MarkdownString(x.documentation)
+          return item
+
+        })
+      } else if (currentStatement.argumentsStatement?.startsWith('config.') || currentStatement.argumentsStatement?.endsWith(' config.')) {
+        return configData.map(x => {
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail

@@ -3,42 +3,30 @@
         "item": "get",
         "text": "get(url, options[optional])",
         "detail": "get(url as string, options[optional] as array)",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options"
+        "documentation": "import http as 'http' \n\n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options)"
     },
     {
         "item": "post",
         "text": "post(url, options[optional])",
         "detail": "post(url as string, options[optional] as array)",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options"
-    },
-    {
-        "item": "put",
-        "text": "put(url, options[optional])",
-        "detail": "put(url as string, options[optional] as array)",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options"
+        "documentation": "import http as 'http' \n\n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options)"
     },
     {
         "item": "patch",
         "text": "patch(url, options[optional])",
         "detail": "patch(url as string, options[optional] as array)",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options"
+        "documentation": "import http as 'http' \n\n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options)"
     },
     {
         "item": "delete",
         "text": "delete(url, options[optional])",
         "detail": "delete(url as string, options[optional] as array)",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options"
+        "documentation": "import http as 'http' \n\n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options)"
     },
     {
         "item": "getCiphers",
         "text": "getCiphers()",
         "detail": "getCiphers()",
-        "documentation": "import http as 'http'",
-        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/http-module#getciphers"
-    }   
+        "documentation": "import http as 'http' \n\n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/http-module#get-head-post-put-patch-delete-url-options)"
+    }
 ]
