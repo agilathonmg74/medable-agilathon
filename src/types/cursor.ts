@@ -1,7 +1,8 @@
+import { StandardConfigDefinition } from './standardDefinition'
+
 const _cursors = require('../settings/cursors.json')
 
-interface Cursor {
-  name: string,
+interface Cursor extends StandardConfigDefinition {
   isContinuable?: boolean
 }
 
