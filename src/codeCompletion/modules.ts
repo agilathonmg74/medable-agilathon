@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 // eslint-disable-next-line no-unused-vars
-import { loggerData, cacheData, notifData, apiData, httpData, getDocumentationString } from '../types/standardDefinition'
+import { loggerData, cacheData, notifData, apiData, httpData } from '../types/standardDefinition'
 import { getCurrentStatement } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
@@ -14,7 +14,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
-          item.documentation = getDocumentationString(x)
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
         })
 
@@ -24,7 +24,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
-          item.documentation = getDocumentationString(x)
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
         })
       } else if (currentStatement.argumentsStatement?.startsWith('api.') || currentStatement.argumentsStatement?.endsWith(' api.')) {
@@ -33,7 +33,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
-          item.documentation = getDocumentationString(x)
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
         })
       } else if (currentStatement.argumentsStatement?.startsWith('notifications.') || currentStatement.argumentsStatement?.endsWith(' notifications.')) {
@@ -42,7 +42,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
-          item.documentation = getDocumentationString(x)
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
 
         })
@@ -51,7 +51,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail
-          item.documentation = getDocumentationString(x)
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
 
         })
