@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 import { getCurrentStatement } from './helpers'
-import { imports } from '../types/imports'
+import { imports } from '../types/standardDefinition'
 
 const importProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -10,8 +10,10 @@ const importProvider = vscode.languages.registerCompletionItemProvider(
       if (currentStatement.fullStatement.startsWith('import') && currentStatement.fullStatement.endsWith('import')) {
 
         return imports.map(x => {
-          const item = new vscode.CompletionItem(x.name, vscode.CompletionItemKind.Variable)
-          item.insertText = x.value
+          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
+          item.insertText = x.text
+          item.detail = x.detail
+          item.documentation = new vscode.MarkdownString(x.documentation)
           return item
         })
 
