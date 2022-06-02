@@ -6,7 +6,7 @@ import { cursors } from '../types/cursor'
 import { consts } from '../types/consts'
 import { script } from '../types/script'
 import Statement from '../types/statement'
-import Logger from '../logger'
+// import Logger from '../logger'
 
 const bracketPairs = {
   parentheses: ['(', ')'],
