@@ -825,9 +825,10 @@
 			"    method: ${1|'GET','POST','PUT','PATCH','DELETE'|},",
 			"    name: '${2:name}',",
 			"    path: '${3:path}',",
-			"    apiKey: '${4:c_portal}'",
+			"    acl: ['account.anonymous']',",
+			"    //apiKey: '${4:c_portal}'",
 			"  })",
-			"  ${5:routeHandler}({ req, res, body, next, runtime }) {",
+			" static ${5:routeHandler}({ req, res, body, next, runtime }) {",
 			"    // const requestBody = body()",
 			"\t\t$0",
 			"  }",
@@ -857,5 +858,35 @@
 		  "$0"
 		],
 		"description": "find event"
+	  },
+	  "route example ": {
+		"prefix": "md route create 2",
+		"body": [
+		  "const { route, log } = require('decorators')",
+		  "",
+		  "class MyRoute {",
+		  "",
+		  "  @log({ traceError: true })",
+		  "  @route({",
+		  "    weight: 1,",
+		  "    method: 'POST',",
+		  "    name: 'c_cs_route_name',",
+		  "    path: 'test/echo/:p1/:p2'",
+		  "    // acl: ['account.anonymous']'",
+		  "    // apiKey: 'c_portal'",
+		  "  })",
+		  "  static routeHandler({ req, res, body, next, runtime }) {",
+		  "    const responseResult = {",
+		  "      message: 'Echoing parameters',",
+		  "      param: req.params,",
+		  "      queryParams: req.query,",
+		  "      body: req.body",
+		  "    }",
+		  "    return responseResult",
+		  "  }",
+		  "",
+		  "}"
+		],
+		"description": "route example "
 	  }
 }
