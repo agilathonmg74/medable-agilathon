@@ -3,54 +3,63 @@
         "item": "get",
         "text": "get(key)",
         "detail": "key as string",
-        "documentation": "Returns the value of a cache entry matching key or null if key is not found"
+        "documentation": "Returns the value of a cache entry matching key or null if key is not found",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#get-key"
     },
     {
         "item": "set",
         "text": "set(key, val, [ttl])",
         "detail": "key as string, val as Object, ttl as number",
-        "documentation": "Sets or update a cache entry."
+        "documentation": "Sets or update a cache entry.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#set-key-val-ttl-null"
     },
     {
         "item": "cas",
         "text": "cas(key, chk, val,[ttl])",
         "detail": "key as string, chk as Object, val as Object, ttl as number",
-        "documentation": "Atomic compare and swap. Returns updated (Boolean) true if the value was set, or false if the cache value did not initially equal chk."
+        "documentation": "Atomic compare and swap. Returns updated (Boolean) true if the value was set, or false if the cache value did not initially equal chk.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#cas-key-chk-val-ttl-null"
     },
     {
         "item": "clear",
         "text": "count(search=*)",
         "detail": "search as string",
-        "documentation": "Clears cache values starting with search (or the entire cache).Returns removed (Number) the number of keys removed."
+        "documentation": "Clears cache values starting with search (or the entire cache).Returns removed (Number) the number of keys removed.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#clear-search"
     }, 
     {
         "item": "count",
         "text": "count(search=*)",
         "detail": "search as string",
-        "documentation": "Returns a count of cache entries starting with search (or the entire cache)."
+        "documentation": "Returns a count of cache entries starting with search (or the entire cache).",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#count-search"
     },
     {
         "item": "del",
         "text": "del(key)",
         "detail": "key as string",
-        "documentation": "Removes the cache entries with a key matching key. Returns removed (Boolean) true if the value was removed."
+        "documentation": "Removes the cache entries with a key matching key. Returns removed (Boolean) true if the value was removed.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#del-key"
     },
     {
         "item": "find",
         "text": "find(search=*, skip=0[optional],limit=0[optional])",
         "detail": "search as string, skip as number, limit as number[1 to 1000]",
-        "documentation": "Returns an array of matching entry key/value pairs, sorted by key."
+        "documentation": "Returns an array of matching entry key/value pairs, sorted by key.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#find-search-skip-0-limit-100"
     },
     {
         "item": "has",
         "text": "has(key)",
         "detail": "key as string",
-        "documentation": "Returns true if a cache entry matching key exists. For use in cases where null is a valid entry value."
+        "documentation": "Returns true if a cache entry matching key exists. For use in cases where null is a valid entry value.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#has-key"
     },
     {
         "item": "list",
         "text": "list(search=*, skip=0[optional],limit=0[optional])",
         "detail": "search as string, skip as number, limit as number[1 to 1000]",
-        "documentation": "Returns an array of matching entry metadata, sorted by key. List results may include recently expired keys."
+        "documentation": "Returns an array of matching entry metadata, sorted by key. List results may include recently expired keys.",
+        "documentationLink": "https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#list-search-skip-0-limit-100"
     }
 ]
