@@ -46,7 +46,7 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
           return item
 
         })
-      } else if (currentStatement.ttpargumentsStatement?.startsWith('http.') || currentStatement.argumentsStatement?.endsWith(' http.')) {
+      } else if (currentStatement.argumentsStatement?.startsWith('http.') || currentStatement.argumentsStatement?.endsWith(' http.')) {
         return httpData.map(x => {
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
