@@ -2,13 +2,13 @@
     {
         "item": "logs",
         "text": "logs(options[where, map, group, sort,limit])",
-        "detail": "Queries the org's log. Very useful for creating daily activity reports, searching for access anomalies, etc.",
-        "documentation": "go to:\n <https://docs.medable.com/cortex-api/scripting/modules-1/api-module#methods>"
+        "detail": "logs(options[where, map, group, sort,limit])",
+        "documentation": "Queries the org's log. Very useful for creating daily activity reports, searching for access anomalies, etc. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/api-module?q=script#logs-options)"
     },
     {
         "item": "stats",
         "text": "stats(options[where, map, group, sort,limit])",
-        "detail": "Queries the org's stats.",
-        "documentation": "go to:\n <https://docs.medable.com/cortex-api/scripting/modules-1/api-module#methods>"
+        "detail": "stats(options[where, map, group, sort,limit])",
+        "documentation": "Queries the org's stats. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/api-module?q=script#stats-options)"    
     }
 ]

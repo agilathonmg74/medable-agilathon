@@ -21,8 +21,7 @@
         "item": "clear",
         "text": "count(search=*)",
         "detail": "search as string",
-        "documentation": "Clears cache values starting with search (or the entire cache).Returns removed (Number) the number of keys removed. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#clear-search)",
-        "documentationLink": ""
+        "documentation": "Clears cache values starting with search (or the entire cache).Returns removed (Number) the number of keys removed. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/cache-module#clear-search)"
     },
     {
         "item": "count",
