@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 // eslint-disable-next-line no-unused-vars
-import { loggerData, cacheData, notifData, apiData, httpData, configData, base64Data } from '../types/standardDefinition'
+import { loggerData, cacheData, notifData, apiData, httpData, configData, base64Data, sessionData } from '../types/standardDefinition'
 import { getCurrentStatement } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
@@ -65,7 +65,18 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
 
         })
       } else if (currentStatement.argumentsStatement?.startsWith('base64.') || currentStatement.argumentsStatement?.endsWith(' base64.')) {
+
         return base64Data.map(x => {
+          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
+          item.insertText = x.text
+          item.detail = x.detail
+          item.documentation = new vscode.MarkdownString(x.documentation)
+          return item
+
+        })
+      } else if (currentStatement.argumentsStatement?.startsWith('session.') || currentStatement.argumentsStatement?.endsWith(' session.')) {
+
+        return sessionData.map(x => {
           const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
           item.insertText = x.text
           item.detail = x.detail

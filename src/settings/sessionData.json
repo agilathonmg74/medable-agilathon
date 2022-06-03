@@ -1,0 +1,14 @@
+[
+    {
+        "item": "set",
+        "text": "set(key,value)",
+        "detail": "set(key,value)",
+        "documentation": "Set a session variable. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/session-module#methods)"    
+    },
+    {
+        "item": "get",
+        "text": "get(value)",
+        "detail": "get(value)",
+        "documentation": "Get a session variable. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/session-module#methods)"    
+    }
+]
