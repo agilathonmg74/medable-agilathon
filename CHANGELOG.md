@@ -1,20 +1,9 @@
-## [#.#.#]
+## [v0.0.xx]
 
--  md route create 2
-
-## [v0.1.2]
-
-- Typescript
-
-
-## [v0.1.1]
-
-- Added imports code completion
-
-
-## [v0.1.0]
-
-- Added basic code completion
+- Added commands: 
+    md util paths\
+    md session\
+    md cache\
 
 ## [v0.0.3]
 
