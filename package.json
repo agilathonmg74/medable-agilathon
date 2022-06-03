@@ -2,7 +2,7 @@
     "name": "medable-agilathon-cs-code-snippets",
     "displayName": "Medable Agilathon CS Code Snippets",
     "description": "",
-    "version": "0.1.2",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.67.0"
     },
