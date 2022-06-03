@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 // eslint-disable-next-line no-unused-vars
 import { loggerData, cacheData, notifData, apiData, httpData, configData, base64Data, sessionData, expressionsData, StandardConfigDefinition } from '../types/standardDefinition'
-import { getCurrentStatement } from './helpers'
+import { getCurrentStatement, mapToCompletionItem } from './helpers'
 
 const modulesProvider = vscode.languages.registerCompletionItemProvider(
   'javascript',
@@ -20,35 +20,11 @@ const modulesProvider = vscode.languages.registerCompletionItemProvider(
       } else if (currentStatement.argumentsStatement?.startsWith('http.') || currentStatement.argumentsStatement?.endsWith(' http.')) {
         definitions = httpData
       } else if (currentStatement.argumentsStatement?.startsWith('config.') || currentStatement.argumentsStatement?.endsWith(' config.')) {
-        return configData.map(x => {
-          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
-          item.insertText = x.text
-          item.detail = x.detail
-          item.documentation = new vscode.MarkdownString(x.documentation)
-          return item
-
-        })
-      } else if (currentStatement.argumentsStatement?.startsWith('base64.') || currentStatement.argumentsStatement?.endsWith(' base64.')) {
-
-        return base64Data.map(x => {
-          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
-          item.insertText = x.text
-          item.detail = x.detail
-          item.documentation = new vscode.MarkdownString(x.documentation)
-          return item
-
-        })
-      } else if (currentStatement.argumentsStatement?.startsWith('session.') || currentStatement.argumentsStatement?.endsWith(' session.')) {
-
-        return sessionData.map(x => {
-          const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
-          item.insertText = x.text
-          item.detail = x.detail
-          item.documentation = new vscode.MarkdownString(x.documentation)
-          return item
-
-        })
         definitions = configData
+      } else if (currentStatement.argumentsStatement?.startsWith('base64.') || currentStatement.argumentsStatement?.endsWith(' base64.')) {
+        definitions = base64Data
+      } else if (currentStatement.argumentsStatement?.startsWith('session.') || currentStatement.argumentsStatement?.endsWith(' session.')) {
+        definitions = sessionData
       } else if (currentStatement.argumentsStatement?.startsWith('expressions.') || currentStatement.argumentsStatement?.endsWith(' expressions.')) {
         definitions = expressionsData
       }
