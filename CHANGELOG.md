@@ -1,9 +1,11 @@
-## [v0.0.xx]
+## [v0.1.0]
 
 - Added commands: 
     md util paths\
     md session\
     md cache\
+
+- Added basic code completion
 
 ## [v0.0.3]
 
