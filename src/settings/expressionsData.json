@@ -1,0 +1,38 @@
+[
+  {
+    "item": "parse",
+    "text": "parse({})",
+    "detail": "parse(expression) expression - Any valid expression",
+    "documentation": "This returns a JSON that contains a list of query parts, and methods for interacting with the query \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#parse-expression)"
+  },
+  {
+    "item": "run",
+    "text": "run({})",
+    "detail": "run(expression, root) expression - Any valid expression",
+    "documentation": "This runs the command in the context of the current database. \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#run-expression-root)"
+  },
+  {
+    "item": "evaluate",
+    "text": "evaluate({})",
+    "detail": "evaluate(expression, root) expression - Any valid expression",
+    "documentation": "This evaluates an expression, running the expression and returning a JSON that contains a list of query parts, and methods for interacting with the query. \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#evaluate-expression-root)"
+  },
+  {
+    "item": "pipline.parse",
+    "text": "pipline.parse([])",
+    "detail": "pipline.parse(expression) expression - Any valid expression",
+    "documentation": "This returns a JSON that contains a list of query parts, and methods for interacting with the query \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#pipeline.parse-expression)"
+  },
+  {
+    "item": "pipeline.run",
+    "text": "pipeline.run([])",
+    "detail": "run(expression, input) expression - Any valid expression, input - An array or cursor to serve as initial input",
+    "documentation": "This runs the command in the context of the current database. \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#pipeline.run-expression-input)"
+  },
+  {
+    "item": "pipeline.evaluate",
+    "text": "pipeline.evaluate([])",
+    "detail": "evaluate(expression, input) expression - Any valid expression, input - An array or cursor to serve as initial input",
+    "documentation": "This evaluates an expression, running the expression and returning a JSON that contains a list of query parts, and methods for interacting with the query. \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions#pipeline.evaluate-expression-input)"
+  }
+]

@@ -4,6 +4,7 @@ import { orgProvider } from './codeCompletion/org'
 import { globalsProvider } from './codeCompletion/globals'
 import { importProvider } from './codeCompletion/import'
 import { modulesProvider } from './codeCompletion/modules'
+import { expressionOperatorsProvider } from './codeCompletion/expressionOperators'
 
 const medableDirs = ['org-cs', 'cortex', 'configuration']
 
@@ -11,7 +12,7 @@ async function activate(context: vscode.ExtensionContext) {
   if (await checkMedableWorkspace()) {
     Logger.init()
     Logger.log('activating extension')
-    context.subscriptions.push(globalsProvider, orgProvider, importProvider, modulesProvider)
+    context.subscriptions.push(globalsProvider, orgProvider, importProvider, modulesProvider, expressionOperatorsProvider)
   }
 }
 

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor } from './helpers'
+import { getCurrentStatement, getObjectFromQueryStatement, getOptionsForQueryStatement, getOptionsForConstsStatement, getOptionsForScriptStatement, getOptionsForCursor, mapToCompletionItem } from './helpers'
 import { objects } from '../types/objects'
 // import Logger from '../logger'
 
@@ -29,13 +29,7 @@ const orgProvider = vscode.languages.registerCompletionItemProvider(
 
       if (objectQuery && currentStatement.argumentsStatement === currentStatement.fullStatement) {
         return getOptionsForQueryStatement(currentStatement.fullStatement, objectQuery)
-          .map(x => {
-            const item = new vscode.CompletionItem(x.item, vscode.CompletionItemKind.Method)
-            item.insertText = x.text
-            item.detail = x.detail
-            item.documentation = new vscode.MarkdownString(x.documentation)
-            return item
-          })
+          .map(x => mapToCompletionItem(x, vscode.CompletionItemKind.Method))
       }
 
       const constsStatementOptions = getOptionsForConstsStatement(currentStatement.argumentsStatement)
