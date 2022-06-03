@@ -1,0 +1,8227 @@
+[
+  {
+    "name": "account",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "email",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "username",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "type": "Document"
+      },
+      {
+        "name": "dob",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "service",
+        "type": "Boolean"
+      },
+      {
+        "name": "role",
+        "type": "Boolean"
+      },
+      {
+        "name": "gender",
+        "type": "String"
+      },
+      {
+        "name": "age",
+        "type": "Number"
+      },
+      {
+        "name": "image",
+        "type": "File"
+      },
+      {
+        "name": "mobile",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "locale",
+        "type": "String"
+      },
+      {
+        "name": "state",
+        "type": "String"
+      },
+      {
+        "name": "locked",
+        "type": "Boolean"
+      },
+      {
+        "name": "key",
+        "type": "Document"
+      },
+      {
+        "name": "preferences",
+        "type": "Document"
+      },
+      {
+        "name": "profile",
+        "type": "Document"
+      },
+      {
+        "name": "roles",
+        "indexed": true,
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "inherited_roles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "activationRequired",
+        "type": "Boolean"
+      },
+      {
+        "name": "stats",
+        "type": "Document"
+      },
+      {
+        "name": "tz",
+        "type": "String"
+      },
+      {
+        "name": "c_enrollments",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_health_data",
+        "type": "Reference[]",
+        "sourceObject": "c_health_datum"
+      },
+      {
+        "name": "c_public_identifier",
+        "type": "String"
+      },
+      {
+        "name": "c_public_users",
+        "type": "Reference[]",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_site_app_settings",
+        "type": "Document"
+      },
+      {
+        "name": "c_study_groups",
+        "indexed": true,
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "c_site_access_list",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_site_subjects",
+        "type": "Reference[]",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_sites",
+        "type": "Reference[]",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "ec__site_documents",
+        "type": "Reference[]",
+        "sourceObject": "ec__signed_document"
+      },
+      {
+        "name": "ec__site_signers",
+        "type": "Reference[]",
+        "sourceObject": "c_site_user"
+      },
+      {
+        "name": "ec__site_templates",
+        "type": "Reference[]",
+        "sourceObject": "ec__document_template"
+      }
+    ]
+  },
+  {
+    "name": "c_dmweb_app_config",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_review_tab_config",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_webframe_table_config"
+      },
+      {
+        "name": "c_review_tab_filters",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_site_tab_config",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_webframe_table_config"
+      },
+      {
+        "name": "c_site_tab_filters",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "c_webframe_table_config",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_columns",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_sortby",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_branch",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_conditions",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_default_destination",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_trigger",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step"
+      }
+    ]
+  },
+  {
+    "name": "c_call",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_room",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "room"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_status",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_event",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_completed",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_end",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_last_updated",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_missed",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_start",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_timezone",
+        "type": "String"
+      },
+      {
+        "name": "c_title",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_fault",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_detail_code",
+        "type": "String"
+      },
+      {
+        "name": "c_error_code",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_message",
+        "type": "String"
+      },
+      {
+        "name": "c_namespace",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_native_code",
+        "type": "String"
+      },
+      {
+        "name": "c_reason",
+        "type": "String"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_translations",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "c_group",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_description",
+        "type": "String"
+      },
+      {
+        "name": "c_display_in_invite_list",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_group_tasks",
+        "type": "Reference[]",
+        "sourceObject": "c_group_task"
+      },
+      {
+        "name": "c_import_id",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_sequence",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_televisit_enabled",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_visits",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_visit"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_group_task",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_assignment",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_end_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_end_date_anchor",
+        "type": "Document"
+      },
+      {
+        "name": "c_flow_rules",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_group",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_notification_active",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_notification_message",
+        "type": "String"
+      },
+      {
+        "name": "c_notification_skip",
+        "type": "Number"
+      },
+      {
+        "name": "c_notification_times",
+        "type": "String[]"
+      },
+      {
+        "name": "c_order",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_required_reviews",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "c_schedule",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_schedule_value",
+        "type": "Number"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_sites",
+        "type": "ObjectId[]",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_start_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_start_date_anchor",
+        "type": "Document"
+      },
+      {
+        "name": "c_use_time_window",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_window_end",
+        "type": "String"
+      },
+      {
+        "name": "c_window_start",
+        "type": "String"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_health_datum",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "c_data",
+        "type": "Any"
+      },
+      {
+        "name": "c_device",
+        "type": "Any"
+      },
+      {
+        "name": "c_end",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_patient",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_source",
+        "type": "Any"
+      },
+      {
+        "name": "c_start",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_subtype",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_uuid",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_version",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_missed_task",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_due_after",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_due_before",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_invalid",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_group_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_group_task"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      }
+    ]
+  },
+  {
+    "name": "c_partial_generation_record",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "c_completed",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_partial_end_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_regeneration_time",
+        "type": "Date"
+      },
+      {
+        "name": "c_scheduled_regeneration_time",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_task_assignment",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "c_task_assignment"
+      }
+    ]
+  },
+  {
+    "name": "c_participant_schedule",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ETag",
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_task_assignments",
+        "type": "Reference[]",
+        "sourceObject": "c_task_assignment"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      }
+    ]
+  },
+  {
+    "name": "Event",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "parent",
+        "type": "ObjectId"
+      },
+      {
+        "name": "parentKey",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "key",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "schedule",
+        "type": "String"
+      },
+      {
+        "name": "count",
+        "type": "Number"
+      },
+      {
+        "name": "if",
+        "type": "Expression"
+      },
+      {
+        "name": "expiresAt",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "retention",
+        "type": "Number"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "started",
+        "type": "Date"
+      },
+      {
+        "name": "start",
+        "type": "Date"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "err",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "c_public_user",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_access_code",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_baseline_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_caregivers",
+        "type": "ObjectId[]",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_connection_id",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_email",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_enrollment_date",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_events",
+        "type": "Reference[]",
+        "sourceObject": "c_event"
+      },
+      {
+        "name": "c_events_generating",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_events_last_updated",
+        "type": "Date"
+      },
+      {
+        "name": "c_group",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_invite",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_invite_validated",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_last_invite_time",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_locale",
+        "type": "String"
+      },
+      {
+        "name": "c_mobile",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_number",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_open_queries",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_participant_name_or_email",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_pin_expiry_time",
+        "type": "Date"
+      },
+      {
+        "name": "c_review_status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_schedule_assignments",
+        "type": "Reference[]",
+        "sourceObject": "c_schedule_assignment"
+      },
+      {
+        "name": "c_search",
+        "indexed": true,
+        "type": "String[]"
+      },
+      {
+        "name": "c_set_dates",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_set_patient_flags",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_signatures",
+        "type": "Reference[]",
+        "sourceObject": "signature"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_start",
+        "type": "Date"
+      },
+      {
+        "name": "c_state",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_study",
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_task_responses",
+        "type": "Reference[]",
+        "sourceObject": "c_task_response"
+      },
+      {
+        "name": "c_type",
+        "type": "String"
+      },
+      {
+        "name": "c_tz",
+        "type": "String"
+      },
+      {
+        "name": "c_username",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_visit_events",
+        "type": "Reference[]",
+        "sourceObject": "c_event"
+      },
+      {
+        "name": "c_visit_schedule",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_visit_schedule"
+      },
+      {
+        "name": "ec__documents",
+        "type": "Reference[]",
+        "sourceObject": "ec__signed_document"
+      }
+    ]
+  },
+  {
+    "name": "c_query",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_closed_by",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_closed_datetime",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_closing_reason",
+        "type": "String"
+      },
+      {
+        "name": "c_description",
+        "type": "String"
+      },
+      {
+        "name": "c_manually_closed",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_notes",
+        "type": "Reference[]",
+        "sourceObject": "c_query_note"
+      },
+      {
+        "name": "c_number",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_query_rule",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_query_rule"
+      },
+      {
+        "name": "c_responded_by",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_responded_datetime",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_response",
+        "type": "String"
+      },
+      {
+        "name": "c_search",
+        "indexed": true,
+        "type": "String[]"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_step_response",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step_response"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_subject",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_task_response",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task_response"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_query_note",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_note",
+        "type": "String"
+      },
+      {
+        "name": "c_query",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_query"
+      }
+    ]
+  },
+  {
+    "name": "c_query_rule",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_message",
+        "type": "String"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_relevant_steps",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_rules",
+        "type": "Any"
+      },
+      {
+        "name": "c_target_field",
+        "type": "String"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_variables",
+        "type": "String[]"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_research_datum",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_datetime",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_value",
+        "indexed": true,
+        "type": "Number"
+      }
+    ]
+  },
+  {
+    "name": "c_schedule_assignment",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_participant",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_participant_schedules",
+        "type": "Reference[]",
+        "sourceObject": "c_participant_schedule"
+      },
+      {
+        "name": "c_paused",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_set_assignments",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_task_assignment"
+      },
+      {
+        "name": "c_set_schedules",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_participant_schedule"
+      },
+      {
+        "name": "c_task_assignments",
+        "type": "Reference[]",
+        "sourceObject": "c_task_assignment"
+      }
+    ]
+  },
+  {
+    "name": "c_site",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_addresses",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_contacts",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_country",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_locks",
+        "type": "Reference[]",
+        "sourceObject": "c_lock"
+      },
+      {
+        "name": "c_missed_tasks",
+        "type": "Reference[]",
+        "sourceObject": "c_missed_task"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_number",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_pi_name",
+        "type": "String"
+      },
+      {
+        "name": "c_queries",
+        "type": "Reference[]",
+        "sourceObject": "c_query"
+      },
+      {
+        "name": "c_site_users",
+        "type": "Reference[]",
+        "sourceObject": "c_site_user"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_subjects",
+        "type": "Reference[]",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_supported_locales",
+        "type": "String[]"
+      },
+      {
+        "name": "c_task_responses",
+        "type": "Reference[]",
+        "sourceObject": "c_task_response"
+      },
+      {
+        "name": "ec__document_templates",
+        "type": "Reference[]",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__signed_documents",
+        "type": "Reference[]",
+        "sourceObject": "ec__signed_document"
+      }
+    ]
+  },
+  {
+    "name": "c_site_user",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_role",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      }
+    ]
+  },
+  {
+    "name": "c_step",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_accessibility_hint",
+        "type": "String"
+      },
+      {
+        "name": "c_accessibility_instructions",
+        "type": "String"
+      },
+      {
+        "name": "c_account_map",
+        "type": "String"
+      },
+      {
+        "name": "c_allow_multiples",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_assets",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_calendar",
+        "type": "String"
+      },
+      {
+        "name": "c_camera",
+        "type": "String"
+      },
+      {
+        "name": "c_cdash_domain",
+        "type": "String"
+      },
+      {
+        "name": "c_completion_text_list",
+        "type": "String"
+      },
+      {
+        "name": "c_completion_text_list_restrict",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_content_url",
+        "type": "String"
+      },
+      {
+        "name": "c_date_only",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_default",
+        "type": "Number"
+      },
+      {
+        "name": "c_default_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_default_hour",
+        "type": "Number"
+      },
+      {
+        "name": "c_default_index",
+        "type": "Number"
+      },
+      {
+        "name": "c_default_interval",
+        "type": "Number"
+      },
+      {
+        "name": "c_default_minute",
+        "type": "Number"
+      },
+      {
+        "name": "c_default_value",
+        "type": "Any"
+      },
+      {
+        "name": "c_description",
+        "type": "String"
+      },
+      {
+        "name": "c_disabled",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_document_section",
+        "type": "String"
+      },
+      {
+        "name": "c_document_title",
+        "type": "String"
+      },
+      {
+        "name": "c_form_steps",
+        "type": "Reference[]",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_formal_title",
+        "type": "String"
+      },
+      {
+        "name": "c_fraction_digit",
+        "type": "Number"
+      },
+      {
+        "name": "c_get_air_quality_data",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_google_fit_permissions",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_hidden",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_html_content",
+        "type": "String"
+      },
+      {
+        "name": "c_image",
+        "type": "File"
+      },
+      {
+        "name": "c_image_choices",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_image_insets",
+        "type": "Number[]"
+      },
+      {
+        "name": "c_import_id",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_instructions",
+        "type": "String"
+      },
+      {
+        "name": "c_invalid_message",
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_learn_more_button",
+        "type": "String"
+      },
+      {
+        "name": "c_mappings",
+        "type": "Document"
+      },
+      {
+        "name": "c_match_anywhere",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_maximum",
+        "type": "Number"
+      },
+      {
+        "name": "c_maximum_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_maximum_description",
+        "type": "String"
+      },
+      {
+        "name": "c_maximum_fraction_digit",
+        "type": "Number"
+      },
+      {
+        "name": "c_maximum_length",
+        "type": "Number"
+      },
+      {
+        "name": "c_minimum",
+        "type": "Number"
+      },
+      {
+        "name": "c_minimum_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_minimum_description",
+        "type": "String"
+      },
+      {
+        "name": "c_multiple_lines",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_no_completion_image",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_omit_from_doc",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_optional",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_order",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_original_item",
+        "type": "Reference",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_original_step",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_parent",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_parent_step",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_placeholder",
+        "type": "String"
+      },
+      {
+        "name": "c_quantity_types",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_question",
+        "type": "String"
+      },
+      {
+        "name": "c_require_validation",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_result_type",
+        "type": "String"
+      },
+      {
+        "name": "c_secure_text_entry",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_step_size",
+        "type": "Number"
+      },
+      {
+        "name": "c_style",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_success",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_text",
+        "type": "String"
+      },
+      {
+        "name": "c_text_choices",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_unit",
+        "type": "String"
+      },
+      {
+        "name": "c_use_current_location",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_validation_regex",
+        "type": "String"
+      },
+      {
+        "name": "c_validation_type",
+        "type": "String"
+      },
+      {
+        "name": "c_vertical",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_visible",
+        "type": "Boolean"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_step_response",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_cdash_variable",
+        "type": "String"
+      },
+      {
+        "name": "c_completion_instructions",
+        "type": "String"
+      },
+      {
+        "name": "c_end_date",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_group",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_queries",
+        "type": "Reference[]",
+        "sourceObject": "c_query"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_skipped",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_start_date",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_step",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_task_response",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task_response"
+      },
+      {
+        "name": "c_unique_identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_visit",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_visit"
+      }
+    ]
+  },
+  {
+    "name": "c_study",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_all_tasks",
+        "type": "Reference[]",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_anchor_date_templates",
+        "type": "Reference[]",
+        "sourceObject": "c_anchor_date_template"
+      },
+      {
+        "name": "c_patient_flags",
+        "type": "Reference[]",
+        "sourceObject": "c_patient_flag"
+      },
+      {
+        "name": "c_auth_task_fields",
+        "type": "String[]"
+      },
+      {
+        "name": "c_code",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_configuration",
+        "type": "Document"
+      },
+      {
+        "name": "c_default_subject_group",
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_default_participant_schedule",
+        "type": "Reference",
+        "sourceObject": "c_participant_schedule"
+      },
+      {
+        "name": "c_default_subject_site",
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_default_subject_visit_schedule",
+        "type": "Reference",
+        "sourceObject": "c_visit_schedule"
+      },
+      {
+        "name": "c_description",
+        "type": "String"
+      },
+      {
+        "name": "c_enable_alt_reg",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_end_date",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_exports",
+        "type": "Reference[]",
+        "sourceObject": "c_study_export"
+      },
+      {
+        "name": "c_faults",
+        "type": "Reference[]",
+        "sourceObject": "c_fault"
+      },
+      {
+        "name": "c_field",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_forgot_username_options",
+        "type": "String[]"
+      },
+      {
+        "name": "c_format_spec_queries",
+        "type": "String"
+      },
+      {
+        "name": "c_format_spec_sites",
+        "type": "String"
+      },
+      {
+        "name": "c_format_spec_subject_id",
+        "type": "String"
+      },
+      {
+        "name": "c_format_spec_tasks",
+        "type": "String"
+      },
+      {
+        "name": "c_goal",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_groups",
+        "type": "Reference[]",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_information",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_invite_code_ttl",
+        "type": "Number"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_localized_faults",
+        "type": "Any"
+      },
+      {
+        "name": "c_menu_config",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_patient_app_display_options",
+        "type": "Document"
+      },
+      {
+        "name": "c_privacy_items",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_protocol_number",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_public_group",
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_queries",
+        "type": "Reference[]",
+        "sourceObject": "c_query"
+      },
+      {
+        "name": "c_reasons_for_change",
+        "type": "String[]"
+      },
+      {
+        "name": "c_requires_invite",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_resources",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_review_types",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_sites",
+        "type": "Reference[]",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_sponsor_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_start_date",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_step_responses",
+        "type": "Reference[]",
+        "sourceObject": "c_step_response"
+      },
+      {
+        "name": "c_store_invite_data",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_study_contact_information",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_study_team_users",
+        "type": "Reference[]",
+        "sourceObject": "c_study_team_user"
+      },
+      {
+        "name": "c_subject_enrollment_status",
+        "type": "String"
+      },
+      {
+        "name": "c_subject_invite_validation",
+        "type": "String"
+      },
+      {
+        "name": "c_subject_menu_config",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_subject_status_list",
+        "type": "Document[]"
+      },
+      {
+        "name": "c_supported_locales",
+        "type": "String[]"
+      },
+      {
+        "name": "c_task_responses",
+        "type": "Reference[]",
+        "sourceObject": "c_task_response"
+      },
+      {
+        "name": "c_tasks",
+        "type": "Reference[]",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_televisit_enabled",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_use_advanced_task_scheduler",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_visit_schedules",
+        "type": "Reference[]",
+        "sourceObject": "c_visit_schedule"
+      },
+      {
+        "name": "c_unique_org_study",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_login_identifier",
+        "type": "String"
+      },
+      {
+        "name": "c_participant_schedules",
+        "type": "Reference[]",
+        "sourceObject": "c_participant_schedule"
+      },
+      {
+        "name": "ec__document_templates",
+        "type": "Reference[]",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__econsent_format_spec",
+        "type": "Document"
+      },
+      {
+        "name": "ec__signed_documents",
+        "type": "Reference[]",
+        "sourceObject": "ec__signed_document"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_study_export",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_export",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "export"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_type",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_study_team_user",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_role",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      }
+    ]
+  },
+  {
+    "name": "c_task",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_accelerometer",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_active_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_audio",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_branches",
+        "type": "Reference[]",
+        "sourceObject": "c_branch"
+      },
+      {
+        "name": "c_category",
+        "type": "String"
+      },
+      {
+        "name": "c_cloning_flag",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_code",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_conclusion",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_consent_appendix",
+        "type": "String"
+      },
+      {
+        "name": "c_consent_cover_html",
+        "type": "String"
+      },
+      {
+        "name": "c_consent_hcp_statement",
+        "type": "String"
+      },
+      {
+        "name": "c_consent_type",
+        "type": "String"
+      },
+      {
+        "name": "c_description",
+        "type": "String"
+      },
+      {
+        "name": "c_device_motion",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_dominant_left",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_duration",
+        "type": "Number"
+      },
+      {
+        "name": "c_eligibility_condition",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_groups",
+        "indexed": true,
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "c_heart_rate",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_html_review_content",
+        "type": "String"
+      },
+      {
+        "name": "c_import_id",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_include_in_report",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_instructions",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_intended_use",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_location",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_number_of_disks",
+        "type": "Number"
+      },
+      {
+        "name": "c_number_of_pegs",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_number_of_steps_per_leg",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_pedometer",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_record_settings",
+        "type": "String"
+      },
+      {
+        "name": "c_requires_subject",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_response_validity_period_unit",
+        "type": "String"
+      },
+      {
+        "name": "c_response_validity_period_value",
+        "type": "Number"
+      },
+      {
+        "name": "c_rest_duration",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "c_rotated",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_sdm_review_required",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_self_assessment",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_set_subject_status_failure",
+        "type": "String"
+      },
+      {
+        "name": "c_set_subject_status_success",
+        "type": "String"
+      },
+      {
+        "name": "c_short_speech_instruction",
+        "type": "String"
+      },
+      {
+        "name": "c_speech_instruction",
+        "type": "String"
+      },
+      {
+        "name": "c_steps",
+        "type": "Reference[]",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_survey_schedule_unit",
+        "type": "String"
+      },
+      {
+        "name": "c_survey_schedule_value",
+        "type": "Number"
+      },
+      {
+        "name": "c_threshold",
+        "type": "Number"
+      },
+      {
+        "name": "c_time_limit",
+        "type": "Number"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_use_as_template",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_validated_instrument",
+        "type": "Document"
+      },
+      {
+        "name": "c_visits",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_visit"
+      },
+      {
+        "name": "c_walk_duration",
+        "type": "Number"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_task_assignment",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ETag",
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_auto_start",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_end_date",
+        "type": "Document"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_participant_schedules",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_participant_schedule"
+      },
+      {
+        "name": "c_start_date",
+        "type": "Document"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_time_window",
+        "type": "Document"
+      },
+      {
+        "name": "c_assignment_availability",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "c_task_response",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_clean_status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_client",
+        "type": "Document"
+      },
+      {
+        "name": "c_completed",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_data_manager_review",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_end",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_event",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_event"
+      },
+      {
+        "name": "c_group",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_inactive",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_locale",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_number",
+        "type": "String"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_queries",
+        "type": "Reference[]",
+        "sourceObject": "c_query"
+      },
+      {
+        "name": "c_reviews",
+        "type": "Reference[]",
+        "sourceObject": "c_review"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_start",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_step_responses",
+        "type": "Reference[]",
+        "sourceObject": "c_step_response"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_success",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_task",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_uuid",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_visit",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_visit"
+      },
+      {
+        "name": "c_tz",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_visit",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_anchor_date",
+        "type": "Reference",
+        "sourceObject": "c_anchor_date_template"
+      },
+      {
+        "name": "c_groups",
+        "type": "Reference[]",
+        "sourceObject": "c_group"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_schedule",
+        "type": "Document"
+      },
+      {
+        "name": "c_visit_schedules",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_visit_schedule"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "c_visit_schedule",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_default_anchor_date",
+        "type": "Reference",
+        "sourceObject": "c_anchor_date_template"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_visits",
+        "type": "Reference[]",
+        "sourceObject": "c_visit"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "org",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "policies",
+        "type": "Document[]"
+      },
+      {
+        "name": "apps",
+        "type": "Document[]"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "maintenance",
+        "type": "Boolean"
+      },
+      {
+        "name": "maintenanceMessage",
+        "type": "String"
+      },
+      {
+        "name": "schemasETag",
+        "type": "String"
+      },
+      {
+        "name": "locale",
+        "type": "String"
+      },
+      {
+        "name": "tz",
+        "type": "String"
+      },
+      {
+        "name": "support",
+        "type": "Document"
+      },
+      {
+        "name": "security",
+        "type": "Document"
+      },
+      {
+        "name": "registration",
+        "type": "Document"
+      },
+      {
+        "name": "hub",
+        "type": "Document"
+      },
+      {
+        "name": "deployment",
+        "type": "Document"
+      },
+      {
+        "name": "configuration",
+        "type": "Document"
+      },
+      {
+        "name": "code",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "website",
+        "type": "String"
+      },
+      {
+        "name": "runtime",
+        "type": "Any"
+      },
+      {
+        "name": "serviceAccounts",
+        "type": "Document[]"
+      },
+      {
+        "name": "roles",
+        "type": "Document[]"
+      },
+      {
+        "name": "logo",
+        "type": "File"
+      },
+      {
+        "name": "favicon",
+        "type": "File"
+      },
+      {
+        "name": "c_pin",
+        "indexed": true,
+        "type": "Number"
+      }
+    ]
+  },
+  {
+    "name": "c_review",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_invalidated_at",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "c_review_type",
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_reviewer",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_task_response",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task_response"
+      }
+    ]
+  },
+  {
+    "name": "c_dmweb_report",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_config",
+        "type": "Any"
+      },
+      {
+        "name": "c_csv_exportable",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_data",
+        "type": "Any"
+      },
+      {
+        "name": "c_description",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_headers",
+        "type": "Any"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_pdf_exportable",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_pdf_template",
+        "type": "String"
+      },
+      {
+        "name": "c_preview",
+        "type": "Any"
+      },
+      {
+        "name": "c_reading",
+        "type": "Any"
+      },
+      {
+        "name": "c_title",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_transformation",
+        "type": "Any"
+      },
+      {
+        "name": "c_xls_exportable",
+        "type": "Boolean"
+      }
+    ]
+  },
+  {
+    "name": "c_lock",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_active",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_item",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_locked_object_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_locked_object_type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "c_snapshot_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_anchor_date_template",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_date_time_step",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_step"
+      },
+      {
+        "name": "c_identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_static_date",
+        "type": "Date"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_task_completion",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_task"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_patient_flag",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "c_label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "c_study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "c_conditions",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "c_generation_tracker",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "c_assignments",
+        "type": "ObjectId[]",
+        "sourceObject": "c_task_assignment"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      }
+    ]
+  },
+  {
+    "name": "c_generation_trigger",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "c_updated_assignments",
+        "type": "ObjectId[]",
+        "sourceObject": "c_task_assignment"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_picked",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_type",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_generation_event_list",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "c_active",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_enable_events_list",
+        "indexed": true,
+        "type": "Boolean"
+      },
+      {
+        "name": "c_public_user",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "c_events_list",
+        "type": "Any"
+      },
+      {
+        "name": "c_retries",
+        "type": "Number"
+      }
+    ]
+  },
+  {
+    "name": "ec__document_template",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__assets",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__builder_data",
+        "type": "Any"
+      },
+      {
+        "name": "ec__css",
+        "type": "String"
+      },
+      {
+        "name": "ec__custom_data",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__description",
+        "type": "String"
+      },
+      {
+        "name": "ec__econsent_version",
+        "type": "String"
+      },
+      {
+        "name": "ec__enroll_subject",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__html",
+        "type": "String"
+      },
+      {
+        "name": "ec__identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "ec__knowledge_checks",
+        "type": "Reference[]",
+        "sourceObject": "ec__knowledge_check"
+      },
+      {
+        "name": "ec__language",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__parent_template",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__published",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "ec__requested_data",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__requested_signatures",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__signer_roles",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__sites",
+        "indexed": true,
+        "type": "ObjectId[]",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "ec__src_doc_filename",
+        "type": "String"
+      },
+      {
+        "name": "ec__status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      },
+      {
+        "name": "ec__styles",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__televisit",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__title",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__version",
+        "indexed": true,
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "ec__document_datum",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__custom_data",
+        "type": "Any"
+      },
+      {
+        "name": "ec__identifier",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "ec__signed_document",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__signed_document"
+      }
+    ]
+  },
+  {
+    "name": "ec__document_invite",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__document_template",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__email",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__order",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "ec__pin",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__signed_document",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__signed_document"
+      },
+      {
+        "name": "ec__signer_role",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__valid",
+        "indexed": true,
+        "type": "Boolean"
+      }
+    ]
+  },
+  {
+    "name": "ec__knowledge_check",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__answer_context",
+        "type": "String"
+      },
+      {
+        "name": "ec__description",
+        "type": "String"
+      },
+      {
+        "name": "ec__document_template",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__key",
+        "indexed": true,
+        "type": "UUID"
+      },
+      {
+        "name": "ec__label",
+        "type": "String"
+      },
+      {
+        "name": "ec__optional",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__options",
+        "type": "String[]"
+      },
+      {
+        "name": "ec__options_answer",
+        "type": "String[]"
+      },
+      {
+        "name": "ec__question",
+        "type": "String"
+      },
+      {
+        "name": "ec__signer_role",
+        "type": "String"
+      },
+      {
+        "name": "ec__type",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "ec__signed_document",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__accepted_signers",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__applied_signers",
+        "type": "Number"
+      },
+      {
+        "name": "ec__completion_time",
+        "type": "Date"
+      },
+      {
+        "name": "ec__custom_data",
+        "type": "Document[]"
+      },
+      {
+        "name": "ec__document_template",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "ec__document_template"
+      },
+      {
+        "name": "ec__final_document",
+        "type": "File"
+      },
+      {
+        "name": "ec__identifier",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__primary_participant",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "ec__required_data",
+        "type": "Reference[]",
+        "sourceObject": "ec__document_datum"
+      },
+      {
+        "name": "ec__required_signers",
+        "type": "Number"
+      },
+      {
+        "name": "ec__signature_invites",
+        "type": "Reference[]",
+        "sourceObject": "ec__document_invite"
+      },
+      {
+        "name": "ec__signatures",
+        "type": "Reference[]",
+        "sourceObject": "signature"
+      },
+      {
+        "name": "ec__site",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_site"
+      },
+      {
+        "name": "ec__status",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__study",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "c_study"
+      }
+    ]
+  },
+  {
+    "name": "ec__default_document_css",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "ec__css_file",
+        "type": "File"
+      },
+      {
+        "name": "ec__key",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ec__version",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "c_patient_tracking",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "c_public_user",
+        "type": "Reference",
+        "sourceObject": "c_public_user"
+      },
+      {
+        "name": "c_account",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "c_first_answer",
+        "type": "String"
+      },
+      {
+        "name": "c_second_answer",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "audit",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "req",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "principal",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "ipv4",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "cat",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "sub",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "context",
+        "type": "Document"
+      },
+      {
+        "name": "ac",
+        "type": "Any"
+      },
+      {
+        "name": "metadata",
+        "type": "Any"
+      },
+      {
+        "name": "err",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "script",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "description",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "active",
+        "type": "Boolean"
+      },
+      {
+        "name": "environment",
+        "type": "String"
+      },
+      {
+        "name": "weight",
+        "type": "Number"
+      },
+      {
+        "name": "optimized",
+        "type": "Boolean"
+      },
+      {
+        "name": "language",
+        "type": "String"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "script",
+        "type": "String"
+      },
+      {
+        "name": "classes",
+        "type": "Any"
+      },
+      {
+        "name": "requires",
+        "type": "String[]"
+      },
+      {
+        "name": "serviceAccounts",
+        "type": "String[]"
+      },
+      {
+        "name": "if",
+        "type": "Expression"
+      },
+      {
+        "name": "resources",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "object",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "ETag",
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "favorite",
+        "type": "Boolean"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "localized",
+        "type": "Boolean"
+      },
+      {
+        "name": "label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "uniqueKey",
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "pluralName",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "lookup",
+        "type": "ObjectId"
+      },
+      {
+        "name": "description",
+        "type": "String"
+      },
+      {
+        "name": "isDeletable",
+        "type": "Boolean"
+      },
+      {
+        "name": "canCascadeDelete",
+        "type": "Boolean"
+      },
+      {
+        "name": "isUnmanaged",
+        "type": "Boolean"
+      },
+      {
+        "name": "auditing",
+        "type": "Document"
+      },
+      {
+        "name": "reporting",
+        "type": "Document"
+      },
+      {
+        "name": "properties",
+        "type": "Document[]"
+      },
+      {
+        "name": "defaultAcl",
+        "type": "Document[]"
+      },
+      {
+        "name": "createAcl",
+        "type": "Document[]"
+      },
+      {
+        "name": "hasETag",
+        "type": "Boolean"
+      },
+      {
+        "name": "isVersioned",
+        "type": "Boolean"
+      },
+      {
+        "name": "hasOwner",
+        "type": "Boolean"
+      },
+      {
+        "name": "validateOwner",
+        "type": "Boolean"
+      },
+      {
+        "name": "shareAcl",
+        "type": "Document[]"
+      },
+      {
+        "name": "shareChain",
+        "type": "Number[]"
+      },
+      {
+        "name": "allowConnections",
+        "type": "Boolean"
+      },
+      {
+        "name": "connectionOptions",
+        "type": "Document"
+      },
+      {
+        "name": "deletedProperties",
+        "type": "Document[]"
+      },
+      {
+        "name": "objectTypes",
+        "type": "Document[]"
+      },
+      {
+        "name": "feedDefinition",
+        "type": "Document[]"
+      },
+      {
+        "name": "locales",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "view",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "acl",
+        "type": "Document[]"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "description",
+        "type": "String"
+      },
+      {
+        "name": "active",
+        "type": "Boolean"
+      },
+      {
+        "name": "sourceObject",
+        "type": "String"
+      },
+      {
+        "name": "postType",
+        "type": "String"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "limit",
+        "type": "Document"
+      },
+      {
+        "name": "skip",
+        "type": "Document"
+      },
+      {
+        "name": "paths",
+        "type": "Document"
+      },
+      {
+        "name": "objectAcl",
+        "type": "Document[]"
+      },
+      {
+        "name": "pipeline",
+        "type": "Expression"
+      },
+      {
+        "name": "query",
+        "type": "Document[]"
+      },
+      {
+        "name": "script",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "deployment",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "description",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "target",
+        "type": "ObjectId"
+      },
+      {
+        "name": "closeOutputStreams",
+        "type": "Boolean"
+      },
+      {
+        "name": "outputStreamsGracePeriodSeconds",
+        "type": "Number"
+      },
+      {
+        "name": "giveUpSeconds",
+        "type": "Number"
+      },
+      {
+        "name": "configuration",
+        "type": "Document"
+      },
+      {
+        "name": "stage",
+        "type": "String"
+      },
+      {
+        "name": "lastDeployed",
+        "type": "Date"
+      },
+      {
+        "name": "lastRunId",
+        "type": "ObjectId"
+      },
+      {
+        "name": "lastDeployer",
+        "type": "ObjectId"
+      },
+      {
+        "name": "lastRunResult",
+        "type": "Any"
+      },
+      {
+        "name": "mappings",
+        "type": "Document[]"
+      },
+      {
+        "name": "scripts",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "export",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "label",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "description",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "state",
+        "type": "String"
+      },
+      {
+        "name": "location",
+        "type": "Number"
+      },
+      {
+        "name": "storageId",
+        "type": "String"
+      },
+      {
+        "name": "exportFiles",
+        "type": "Boolean"
+      },
+      {
+        "name": "zipFiles",
+        "type": "Boolean"
+      },
+      {
+        "name": "format",
+        "type": "String"
+      },
+      {
+        "name": "objects",
+        "type": "String"
+      },
+      {
+        "name": "paths",
+        "type": "String[]"
+      },
+      {
+        "name": "include",
+        "type": "String[]"
+      },
+      {
+        "name": "expand",
+        "type": "String[]"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "prefix",
+        "type": "String"
+      },
+      {
+        "name": "where",
+        "type": "String"
+      },
+      {
+        "name": "afterScript",
+        "type": "String"
+      },
+      {
+        "name": "files",
+        "type": "Facet[]"
+      },
+      {
+        "name": "dataFile",
+        "type": "File"
+      },
+      {
+        "name": "stats",
+        "type": "Document"
+      },
+      {
+        "name": "expiresAt",
+        "type": "Date"
+      },
+      {
+        "name": "started",
+        "type": "Date"
+      },
+      {
+        "name": "completed",
+        "type": "Date"
+      },
+      {
+        "name": "fault",
+        "type": "Any"
+      },
+      {
+        "name": "events",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "history",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "context",
+        "type": "Document"
+      },
+      {
+        "name": "document",
+        "type": "Any"
+      },
+      {
+        "name": "message",
+        "type": "String"
+      }
+    ]
+  },
+  {
+    "name": "signature",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "signer",
+        "type": "String"
+      },
+      {
+        "name": "date",
+        "type": "Date"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "value",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "package",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "version",
+        "type": "Number"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "name",
+        "type": "String"
+      },
+      {
+        "name": "ver",
+        "type": "String"
+      },
+      {
+        "name": "active",
+        "type": "Boolean"
+      },
+      {
+        "name": "configuration",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "room",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "connections",
+        "type": "Reference[]"
+      },
+      {
+        "name": "shared",
+        "type": "Boolean"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "token",
+        "type": "String"
+      },
+      {
+        "name": "mediaRegion",
+        "type": "String"
+      },
+      {
+        "name": "duration",
+        "type": "Number"
+      },
+      {
+        "name": "configuration",
+        "type": "Document"
+      },
+      {
+        "name": "events",
+        "type": "Reference[]",
+        "sourceObject": "roomevent"
+      },
+      {
+        "name": "recordings",
+        "type": "Document[]"
+      },
+      {
+        "name": "recordingsReady",
+        "type": "Boolean"
+      },
+      {
+        "name": "compositions",
+        "type": "Document[]"
+      },
+      {
+        "name": "participants",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "roomevent",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "roomId",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "room"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "order",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "accountId",
+        "indexed": true,
+        "type": "ObjectId",
+        "sourceObject": "account"
+      }
+    ]
+  },
+  {
+    "name": "composition",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "remoteId",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "format",
+        "type": "String"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "err",
+        "type": "Any"
+      },
+      {
+        "name": "output",
+        "type": "String[]"
+      },
+      {
+        "name": "started",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "completed",
+        "type": "Date"
+      },
+      {
+        "name": "file",
+        "type": "File"
+      },
+      {
+        "name": "definition",
+        "type": "Any"
+      },
+      {
+        "name": "progress",
+        "type": "Number"
+      },
+      {
+        "name": "retries",
+        "type": "Number"
+      }
+    ]
+  },
+  {
+    "name": "event",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "parent",
+        "type": "ObjectId"
+      },
+      {
+        "name": "parentKey",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "key",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "schedule",
+        "type": "String"
+      },
+      {
+        "name": "count",
+        "type": "Number"
+      },
+      {
+        "name": "if",
+        "type": "Expression"
+      },
+      {
+        "name": "expiresAt",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "retention",
+        "type": "Number"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "started",
+        "type": "Date"
+      },
+      {
+        "name": "start",
+        "type": "Date"
+      },
+      {
+        "name": "principal",
+        "type": "ObjectId"
+      },
+      {
+        "name": "err",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "oo",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "audit",
+        "type": "Document"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "owner",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "accessRoles",
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "propertyAccess",
+        "type": "Document"
+      },
+      {
+        "name": "posts",
+        "type": "Reference[]"
+      },
+      {
+        "name": "label",
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "listOptions",
+        "type": "Document"
+      },
+      {
+        "name": "list",
+        "type": "Reference[]"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "expiresAt",
+        "type": "Date"
+      },
+      {
+        "name": "cascadeDelete",
+        "type": "Boolean"
+      },
+      {
+        "name": "properties",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "post",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "created",
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "account",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "targeted",
+        "type": "Boolean"
+      },
+      {
+        "name": "targets",
+        "type": "Document[]"
+      },
+      {
+        "name": "votes",
+        "type": "Number"
+      },
+      {
+        "name": "voted",
+        "type": "Boolean"
+      },
+      {
+        "name": "comments",
+        "type": "Reference[]"
+      },
+      {
+        "name": "body",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "comment",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "created",
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "access",
+        "type": "Number"
+      },
+      {
+        "name": "type",
+        "indexed": true,
+        "type": "String"
+      },
+      {
+        "name": "context",
+        "type": "Reference",
+        "sourceObject": "post"
+      },
+      {
+        "name": "creator",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "updated",
+        "type": "Date"
+      },
+      {
+        "name": "updater",
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "votes",
+        "type": "Number"
+      },
+      {
+        "name": "voted",
+        "type": "Boolean"
+      },
+      {
+        "name": "body",
+        "type": "Document[]"
+      }
+    ]
+  },
+  {
+    "name": "location",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "created",
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "client",
+        "type": "String"
+      },
+      {
+        "name": "state",
+        "type": "String"
+      },
+      {
+        "name": "name",
+        "type": "String"
+      },
+      {
+        "name": "lastLogin",
+        "type": "Document"
+      },
+      {
+        "name": "notifications",
+        "type": "Document"
+      }
+    ]
+  },
+  {
+    "name": "notification",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "created",
+        "type": "Date"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "type",
+        "type": "ObjectId"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "meta",
+        "type": "Any"
+      }
+    ]
+  },
+  {
+    "name": "connection",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "creator",
+        "indexed": true,
+        "type": "Reference",
+        "sourceObject": "account"
+      },
+      {
+        "name": "created",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "target",
+        "type": "Document"
+      },
+      {
+        "name": "state",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "context",
+        "indexed": true,
+        "type": "Reference"
+      },
+      {
+        "name": "contextSource",
+        "type": "String"
+      },
+      {
+        "name": "token",
+        "type": "String"
+      },
+      {
+        "name": "expiresAt",
+        "type": "Date"
+      },
+      {
+        "name": "access",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "roles",
+        "indexed": true,
+        "type": "ObjectId[]"
+      },
+      {
+        "name": "usesRemaining",
+        "type": "Number"
+      }
+    ]
+  },
+  {
+    "name": "stat",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "starting",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "ending",
+        "indexed": true,
+        "type": "Date"
+      },
+      {
+        "name": "org",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "code",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "count",
+        "type": "Number"
+      },
+      {
+        "name": "size",
+        "type": "Number"
+      },
+      {
+        "name": "total",
+        "type": "Number"
+      },
+      {
+        "name": "duration",
+        "type": "Number"
+      },
+      {
+        "name": "s_source",
+        "type": "String"
+      },
+      {
+        "name": "s_object",
+        "type": "String"
+      },
+      {
+        "name": "s_type",
+        "type": "String"
+      },
+      {
+        "name": "s_property",
+        "type": "ObjectId"
+      },
+      {
+        "name": "today",
+        "type": "Number"
+      },
+      {
+        "name": "active",
+        "type": "Number"
+      },
+      {
+        "name": "location",
+        "type": "Number"
+      },
+      {
+        "name": "client",
+        "type": "ObjectId"
+      },
+      {
+        "name": "method",
+        "type": "Number"
+      },
+      {
+        "name": "api",
+        "type": "String"
+      },
+      {
+        "name": "ms",
+        "type": "Number"
+      },
+      {
+        "name": "in",
+        "type": "Number"
+      },
+      {
+        "name": "out",
+        "type": "Number"
+      },
+      {
+        "name": "errs",
+        "type": "Number"
+      },
+      {
+        "name": "scriptId",
+        "type": "ObjectId"
+      },
+      {
+        "name": "scriptType",
+        "type": "String"
+      },
+      {
+        "name": "callouts",
+        "type": "Number"
+      },
+      {
+        "name": "calloutsMs",
+        "type": "Number"
+      },
+      {
+        "name": "ops",
+        "type": "Number"
+      },
+      {
+        "name": "notifType",
+        "type": "ObjectId"
+      },
+      {
+        "name": "notifEndpoint",
+        "type": "ObjectId"
+      }
+    ]
+  },
+  {
+    "name": "log",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "req",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "pid",
+        "type": "ObjectId"
+      },
+      {
+        "name": "oid",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "beg",
+        "type": "Date"
+      },
+      {
+        "name": "end",
+        "type": "Date"
+      },
+      {
+        "name": "sts",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "src",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "src_id",
+        "type": "ObjectId"
+      },
+      {
+        "name": "lvl",
+        "indexed": true,
+        "type": "Number"
+      },
+      {
+        "name": "trc",
+        "type": "Document[]"
+      },
+      {
+        "name": "err",
+        "type": "Document"
+      },
+      {
+        "name": "in",
+        "type": "Number"
+      },
+      {
+        "name": "out",
+        "type": "Number"
+      },
+      {
+        "name": "sid",
+        "type": "ObjectId"
+      },
+      {
+        "name": "stp",
+        "type": "String"
+      },
+      {
+        "name": "ops",
+        "type": "Number"
+      },
+      {
+        "name": "ctt",
+        "type": "Number"
+      },
+      {
+        "name": "cms",
+        "type": "Number"
+      },
+      {
+        "name": "adr",
+        "type": "Number"
+      },
+      {
+        "name": "mtd",
+        "type": "Number"
+      },
+      {
+        "name": "url",
+        "type": "String"
+      },
+      {
+        "name": "que",
+        "type": "Any"
+      },
+      {
+        "name": "rte",
+        "type": "String"
+      },
+      {
+        "name": "aid",
+        "type": "ObjectId"
+      },
+      {
+        "name": "cid",
+        "type": "ObjectId"
+      },
+      {
+        "name": "lid",
+        "type": "ObjectId"
+      },
+      {
+        "name": "dat",
+        "type": "Any"
+      },
+      {
+        "name": "ctx",
+        "type": "ObjectId"
+      },
+      {
+        "name": "obj",
+        "type": "String"
+      },
+      {
+        "name": "dpl",
+        "type": "ObjectId"
+      }
+    ]
+  },
+  {
+    "name": "token",
+    "properties": [
+      {
+        "name": "_id",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "iss",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "object",
+        "type": "String"
+      },
+      {
+        "name": "sub",
+        "indexed": true,
+        "type": "ObjectId"
+      },
+      {
+        "name": "uses",
+        "type": "Number"
+      },
+      {
+        "name": "expires",
+        "type": "Date"
+      },
+      {
+        "name": "accessed",
+        "type": "Date"
+      }
+    ]
+  }
+]

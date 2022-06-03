@@ -1,5 +1,13 @@
 # vs code workspace settings
-.vscode/
+# .vscode/
+
+# workspace settings
+.vscode/settings.json
+
+#
+package-lock.json
 
 #built package
 *.vsix
+out
+node_modules

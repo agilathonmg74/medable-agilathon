@@ -1,0 +1,14 @@
+[
+    {
+        "item": "encode",
+        "text": "encode(value)",
+        "detail": "encode(value as string)",
+        "documentation": "Encode a string. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/base64-module?q=script#encode-value)"    
+    },
+    {
+        "item": "decode",
+        "text": "decode(value, asBuffer)",
+        "detail": "decode(value as string, asBuffer(Boolean=false))",
+        "documentation": "Decode a string into a string or buffer. \n  #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/base64-module?q=script#decode-value-asbuffer)"    
+    }
+]

@@ -1,0 +1,244 @@
+{
+  "version": null,
+  "_id": null,
+  "depth": null,
+  "type": null,
+  "label": null,
+  "access": null,
+  "principal": {
+    "object": null,
+    "_id": null,
+    "type": null,
+    "org": null,
+    "roles": {
+      "0": null,
+      "1": null,
+      "2": null
+    },
+    "locked": null,
+    "state": null,
+    "email": null,
+    "username": null,
+    "name": {
+      "additional": {},
+      "first": null,
+      "last": null
+    },
+    "tz": null,
+    "service": null
+  },
+  "org": {
+    "object": null,
+    "_id": null,
+    "code": null
+  },
+  "arguments": {
+    "modified": {
+      "0": null,
+      "1": null,
+      "2": null,
+      "3": null
+    },
+    "old": {
+      "_id": null,
+      "object": null,
+      "created": null,
+      "creator": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "owner": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "updated": null,
+      "updater": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "access": null,
+      "accessRoles": {
+        "0": null,
+        "1": null,
+        "2": null
+      },
+      "favorite": null,
+      "c_account": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_clean_status": null,
+      "c_client": {
+        "c_client_key": null,
+        "c_user_agent": null
+      },
+      "c_completed": null,
+      "c_end": null,
+      "c_group": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_locale": null,
+      "c_number": null,
+      "c_public_user": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_site": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_start": null,
+      "c_status": null,
+      "c_study": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_success": null,
+      "c_task": {
+        "_id": null,
+        "object": null,
+        "path": null
+      },
+      "c_uuid": null,
+      "c_tz": null,
+      "shared": null
+    },
+    "new": {
+      "c_status": null,
+      "_id": null,
+      "object": null
+    }
+  },
+  "config": {
+    "query": {
+      "defaultMaxTimeMS": null,
+      "minTimeMS": null,
+      "maxTimeMS": null
+    }
+  },
+  "env": {
+    "version": null,
+    "url": null,
+    "name": null,
+    "domain": null,
+    "host": null,
+    "server": null
+  },
+  "parent": {
+    "_id": null,
+    "depth": null,
+    "type": null,
+    "label": null,
+    "arguments": {
+      "modified": {
+        "0": null,
+        "1": null,
+        "2": null
+      },
+      "old": {
+        "_id": null,
+        "object": null,
+        "created": null,
+        "creator": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "owner": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "updated": null,
+        "updater": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "access": null,
+        "accessRoles": {
+          "0": null,
+          "1": null,
+          "2": null
+        },
+        "favorite": null,
+        "c_account": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_clean_status": null,
+        "c_client": {
+          "c_client_key": null,
+          "c_user_agent": null
+        },
+        "c_end": null,
+        "c_group": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_locale": null,
+        "c_number": null,
+        "c_public_user": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_site": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_start": null,
+        "c_status": null,
+        "c_study": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_success": null,
+        "c_task": {
+          "_id": null,
+          "object": null,
+          "path": null
+        },
+        "c_uuid": null,
+        "c_tz": null,
+        "shared": null
+      },
+      "new": {
+        "c_completed": null,
+        "_id": null,
+        "object": null
+      }
+    },
+    "parent": {
+      "_id": null,
+      "depth": null,
+      "type": null,
+      "label": null
+    },
+    "trace": null
+  },
+  "trace": null,
+  "context": {
+    "c_status": null,
+    "_id": null,
+    "object": null
+  },
+  "event": null,
+  "inline": null,
+  "originalPrincipal": {
+    "_id": null
+  }
+}

@@ -825,9 +825,10 @@
 			"    method: ${1|'GET','POST','PUT','PATCH','DELETE'|},",
 			"    name: '${2:name}',",
 			"    path: '${3:path}',",
-			"    apiKey: '${4:c_portal}'",
+			"    acl: ['account.anonymous']',",
+			"    //apiKey: '${4:c_portal}'",
 			"  })",
-			"  ${5:routeHandler}({ req, res, body, next, runtime }) {",
+			" static ${5:routeHandler}({ req, res, body, next, runtime }) {",
 			"    // const requestBody = body()",
 			"\t\t$0",
 			"  }",
@@ -858,36 +859,34 @@
 		],
 		"description": "find event"
 	  },
-	  "paths util": {
-		"prefix": "md util paths",
+	  "route example ": {
+		"prefix": "md route create 2",
 		"body": [
-		  "// import { paths } from 'util'",
-		  "/**",
-		  " object (Object) The object to search or update.",
-		  " path (String) The path to search or update. Sub-properties can be found/updated using a . as a separator.",
-		  " value (*) If present, writes to the innermost path. If any of the properties are missing from the path, they are created as plain javascript objects.",
-		  " returnSourceObject (Boolean) If true, returns object instead of the innermost property.",
-		  " */",
-		  "paths.to(${1:object}, ${2:path}, ${3:value}, ${4:returnSourceObject}) ",
-		  "$0"
+		  "const { route, log } = require('decorators')",
+		  "",
+		  "class MyRoute {",
+		  "",
+		  "  @log({ traceError: true })",
+		  "  @route({",
+		  "    weight: 1,",
+		  "    method: 'POST',",
+		  "    name: 'c_cs_route_name',",
+		  "    path: 'test/echo/:p1/:p2'",
+		  "    // acl: ['account.anonymous']'",
+		  "    // apiKey: 'c_portal'",
+		  "  })",
+		  "  static routeHandler({ req, res, body, next, runtime }) {",
+		  "    const responseResult = {",
+		  "      message: 'Echoing parameters',",
+		  "      param: req.params,",
+		  "      queryParams: req.query,",
+		  "      body: req.body",
+		  "    }",
+		  "    return responseResult",
+		  "  }",
+		  "",
+		  "}"
 		],
-		"description": "paths util"
-	  },
-	"session object": {
-		"prefix": "md session",
-		"body": [
-		  "// import session from 'session';",
-		  "session.${1|get(path),set(path, value)|}",
-		  "$0"
-		],
-		"description": "session object"
-	  },
-	  "cache ": {
-		"prefix": "md cache",
-		"body": [
-		  "import cache from 'cache'",
-		  "cache.${1|get(key),set(key\\,value\\,ttl = null),del(key),has(key),cas(key\\,chk\\,val\\,ttl = null),clear(search=*),count(search=*),find(search\\,skip=0\\,limit=100),list(search=*\\,skip=0\\,limit=100)|}"
-		],
-		"description": "cache "
-	  },
+		"description": "route example "
+	  }
 }

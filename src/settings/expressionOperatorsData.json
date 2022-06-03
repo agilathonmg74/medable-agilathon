@@ -1,0 +1,751 @@
+[
+  {
+    "item": "$group",
+    "text": "$group: {}",
+    "detail": "$group",
+    "documentation": "Outputs a cursor containing specified groups of elements from the previous cursor. Groups may make use of accumulator expressions \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$limit",
+    "text": "$limit: 1",
+    "detail": "$limit",
+    "documentation": "Outputs a cursor containing a limited number of elements from the previous cursor \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$match",
+    "text": "$match: {}",
+    "detail": "$match",
+    "documentation": "Outputs a cursor containing a subset of elements from the previous cursor which satisfy a set matching criteria \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$project",
+    "text": "$project: {}",
+    "detail": "$project",
+    "documentation": "A JSON object that specifies existing properties or new properties to pass along to the next stage in the pipeline \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$skip",
+    "text": "$skip: 1",
+    "detail": "$skip",
+    "documentation": "An integer representing the number of results to skip. Useful for paging where mapping or groupings have been applied, or where search the search criteria cannot be paged using unique fields \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$sort",
+    "text": "$sort: {}",
+    "detail": "$sort",
+    "documentation": "A JSON object containing one or more properties, the values of which must be 1 for ascending and -1 for descending \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$count",
+    "text": "$count",
+    "detail": "$count",
+    "documentation": "Exhausts an input cursor and outputs a cursor with a single element specifying the total number of elements within the input cursor \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$cursor",
+    "text": "$cursor",
+    "detail": "$cursor",
+    "documentation": "Outputs a cursor containing the results of a database query and exhausts any previous cursors to dev/null \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$output",
+    "text": "$output",
+    "detail": "$output",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$transform",
+    "text": "$transform",
+    "detail": "$transform",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$var",
+    "text": "$var",
+    "detail": "$var",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/pipelines)",
+    "type": "pipelines"
+  },
+  {
+    "item": "$abs",
+    "text": "$abs: -1",
+    "detail": "$abs",
+    "documentation": "Returns the absolute value of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$acos",
+    "text": "$acos: 1",
+    "detail": "$acos",
+    "documentation": "Returns a numeric value between 0 and π radians for x between -1 and 1 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$acosh",
+    "text": "$acosh: 1",
+    "detail": "$acosh",
+    "documentation": "Returns the inverse hyperbolic cosine of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$acl",
+    "text": "$acl: 1",
+    "detail": "$acl",
+    "documentation": "Not applicable \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$add",
+    "text": "$add: []",
+    "detail": "$add",
+    "documentation": "Adds two or more array properties or expressions. In addition to numbers, a single Date value may be included in the array \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$and",
+    "text": "$and: []",
+    "detail": "$and",
+    "documentation": "Evaluates to true if all conditions in the passed in array evaluate to true \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$asin",
+    "text": "$asin: 1",
+    "detail": "$asin",
+    "documentation": "Returns the arcsine (in radians) of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$asinh",
+    "text": "$asinh: 1",
+    "detail": "$asinh",
+    "documentation": "Returns the hyperbolic arcsine of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$atan",
+    "text": "$atan: 1",
+    "detail": "$atan",
+    "documentation": "Returns the arctangent (in radians) of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$atan2",
+    "text": "$atan2: []",
+    "detail": "$atan2",
+    "documentation": "Returns the angle in the plane (in radians) between the positive x-axis and the ray from (0,0) to the point (x,y) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$atanh",
+    "text": "$atanh: 1",
+    "detail": "$atanh",
+    "documentation": "Returns the hyperbolic arctangent of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$ceil",
+    "text": "$ceil: 1",
+    "detail": "$ceil",
+    "documentation": "Always rounds a number up to the next largest integer \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$convert",
+    "text": "$convert: 1",
+    "detail": "$convert",
+    "documentation": "Not applicable \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$cos",
+    "text": "$cos: 1",
+    "detail": "$cos",
+    "documentation": "Returns the cosine of the specified angle, which must be specified in radians \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dateFromParts",
+    "text": "$dateFromParts: {}",
+    "detail": "$dateFromParts",
+    "documentation": "Returns a date from the specified parts (year, month, and day values) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dateFromString",
+    "text": "$dateFromString: {}",
+    "detail": "$dateFromString",
+    "documentation": "Converts a date object to a string in a specified format, and expects an array of [date_expression] \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dateToParts",
+    "text": "$dateToParts: {}",
+    "detail": "$dateToParts",
+    "documentation": "Returns a document that contains the constituent parts of a given Date value as individual properties \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dateToString",
+    "text": "$dateToString: {}",
+    "detail": "$dateToString",
+    "documentation": "Converts a date object to a string according to a user-specified format \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dateToString",
+    "text": "$dateToString: {}",
+    "detail": "$dateToString",
+    "documentation": "Converts a date object to a string according to a user-specified format \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dayOfMonth",
+    "text": "$dayOfMonth: {}",
+    "detail": "$dayOfMonth",
+    "documentation": "Returns the day of the month for a date as a number between 1 and 31 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dayOfWeek",
+    "text": "$dayOfWeek: {}",
+    "detail": "$dayOfWeek",
+    "documentation": "Returns the day of the week for a date as a number between 1 (Sunday) and 7 (Saturday) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$dayofYear",
+    "text": "$dayofYear: {}",
+    "detail": "$dayofYear",
+    "documentation": "Returns the day of the year for a date as a number between 1 and 366 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$degreestoRadians",
+    "text": "$degreestoRadians: 90",
+    "detail": "$degreestoRadians",
+    "documentation": "Converts an input value measured in degrees to radians \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$divide",
+    "text": "$divide: []",
+    "detail": "$divide",
+    "documentation": "Divides one number by another and returns the result \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$exp",
+    "text": "$exp: 1",
+    "detail": "$exp",
+    "documentation": "Takes the e^n of a number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$floor",
+    "text": "$floor: 1",
+    "detail": "$floor",
+    "documentation": "Returns the largest integer less than or equal to the specified number \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$hour",
+    "text": "$hour: {}",
+    "detail": "$hour",
+    "documentation": "Returns the hour portion of a date as a number between 0 and 23 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$isoDayOfWeek",
+    "text": "$isoDayOfWeek: {}",
+    "detail": "$isoDayOfWeek",
+    "documentation": "Returns the weekday number in ISO 8601 format, ranging from 1 (Monday) to 7 (Sunday) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$isoWeek",
+    "text": "$isoWeek: {}",
+    "detail": "$isoWeek",
+    "documentation": "Returns the week number in ISO 8601 format, ranging from 1 to 53 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$isoWeekYear",
+    "text": "$isoWeekYear: {}",
+    "detail": "$isoWeekYear",
+    "documentation": "Returns the year number in ISO 8601 format \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$log",
+    "text": "$log: []",
+    "detail": "$log",
+    "documentation": "Takes the log of the first number in the second number's base \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$log10",
+    "text": "$log10: 1",
+    "detail": "$log10",
+    "documentation": "Calculates the log base 10 of a number and returns the result as a double \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$let",
+    "text": "$let: {}",
+    "detail": "$let",
+    "documentation": "Binds variables for use in the specified expression, and returns the result of the expression \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$ltrim",
+    "text": "$ltrim: ''",
+    "detail": "$ltrim",
+    "documentation": "Removes whitespace characters, including null, or the specified characters from the beginning of a string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$mergeObjects",
+    "text": "$mergeObjects: []",
+    "detail": "$mergeObjects",
+    "documentation": "Combines multiple documents into a single document \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$milliseconds",
+    "text": "$milliseconds: {}",
+    "detail": "$milliseconds",
+    "documentation": "Returns the millisecond portion of a date as an integer between 0 and 999 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$minute",
+    "text": "$minute: {}",
+    "detail": "$minute",
+    "documentation": "Returns the minute portion of a date as a number between 0 and 59 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$moment",
+    "text": "$moment: []",
+    "detail": "$moment",
+    "documentation": "Used as a wrapper for the moment.js library to parse, validate, manipulate, and display dates and times in JavaScript \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$month",
+    "text": "$month: {}",
+    "detail": "$month",
+    "documentation": "Returns the month of a date as a number between 1 and 12 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$multiply",
+    "text": "$multiply: []",
+    "detail": "$multiply",
+    "documentation": "Returns the month of a date as a number between 1 and 12 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$omit",
+    "text": "$omit: {}",
+    "detail": "$omit",
+    "documentation": "Not applicable \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$or",
+    "text": "$or: []",
+    "detail": "$or",
+    "documentation": "Performs a logical OR operation on an array of two or more and selects the documents that satisfy at least one of the arguments \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$pathTo",
+    "text": "$pathTo: []",
+    "detail": "$pathTo",
+    "documentation": "Sets a path and creates deep objects \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$pick",
+    "text": "$pick: {}",
+    "detail": "$pick",
+    "documentation": "Not applicable \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$radiansToDegrees",
+    "text": "$radiansToDegrees: 1",
+    "detail": "$radiansToDegrees",
+    "documentation": "Converts an input value measured in radians to degrees \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$regexFind",
+    "text": "$regexFind: {}",
+    "detail": "$regexFind",
+    "documentation": "Provides regular expression (regex) pattern matching capability in aggregation expressions \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$regexFindAll",
+    "text": "$regexFindAll: {}",
+    "detail": "$regexFindAll",
+    "documentation": "Provides regex pattern matching capability in aggregation expressions. The operator returns an array of documents that contains information on each match \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$regexMatch",
+    "text": "$regexMatch: {}",
+    "detail": "$regexMatch",
+    "documentation": "Performs regex pattern matching and returns \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$regexMatch",
+    "text": "$regexMatch: {}",
+    "detail": "$regexMatch",
+    "documentation": "Performs regex pattern matching and returns \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$replaceAll",
+    "text": "$replaceAll: []",
+    "detail": "$replaceAll",
+    "documentation": "Replaces all instances of a search string in an input string with a replacement string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$replaceOne",
+    "text": "$replaceOne: []",
+    "detail": "$replaceOne",
+    "documentation": "Replaces the first instance of a search string in an input string with a replacement string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$rtrim",
+    "text": "$rtrim: ''",
+    "detail": "$rtrim",
+    "documentation": "Removes whitespace characters, including null, or the specified characters from the end of a string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$second",
+    "text": "$second: {}",
+    "detail": "$second",
+    "documentation": "Returns the second portion of a date as a number between 0 and 59, but can be 60 to account for leap seconds \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$sin",
+    "text": "$sin: 1",
+    "detail": "$sin",
+    "documentation": "Returns the sine of a value that is measured in radians \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$split",
+    "text": "$split: ''",
+    "detail": "$split",
+    "documentation": "Divides a string into an array of substrings based on a delimiter \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$sqrt",
+    "text": "$sqrt: 1",
+    "detail": "$sqrt",
+    "documentation": "Calculates the square root of a positive number and returns the result as a double \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$stdDevPop",
+    "text": "$stdDevPop: []",
+    "detail": "$stdDevPop",
+    "documentation": "Calculates the population standard deviation of the input values \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$stdDevSamp",
+    "text": "$stdDevSamp: []",
+    "detail": "$stdDevSamp",
+    "documentation": "Calculates the sample standard deviation of the input values \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$strcasecmp",
+    "text": "$strcasecmp: []",
+    "detail": "$strcasecmp",
+    "documentation": "Performs a case-insensitive comparison of two strings \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$strLenBytes",
+    "text": "$strLenBytes: ''",
+    "detail": "$strLenBytes",
+    "documentation": "Returns the number of UTF-8 encoded bytes in the specified string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$strLenCP",
+    "text": "$strLenCP: ''",
+    "detail": "$strLenCP",
+    "documentation": "Returns the number of UTF-8 encoded bytes in the specified string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$substrBytes",
+    "text": "$substrBytes: []",
+    "detail": "$substrBytes",
+    "documentation": "Returns the substring of a string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$substrCP",
+    "text": "$substrCP: []",
+    "detail": "$substrCP",
+    "documentation": "Returns the substring of a string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$tan",
+    "text": "$tan: 1",
+    "detail": "$tan",
+    "documentation": "Returns the tangent of a value that is measured in radians \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$toDate",
+    "text": "$toDate: ''",
+    "detail": "$toDate",
+    "documentation": "Converts a value to date \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$toLower",
+    "text": "$toLower: ''",
+    "detail": "$toLower",
+    "documentation": "Converts a string to lowercase, returning the result \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$toUpper",
+    "text": "$toUpper: ''",
+    "detail": "$toUpper",
+    "documentation": "Converts a string to uppercase, returning the result \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$trim",
+    "text": "$trim: ''",
+    "detail": "$trim",
+    "documentation": "Removes whitespace characters, including null, or the specified characters from the beginning and end of a string \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$week",
+    "text": "$week: {}",
+    "detail": "$week",
+    "documentation": "Returns the week of the year for a date as a number between 0 and 53 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$year",
+    "text": "$year: {}",
+    "detail": "$year",
+    "documentation": "Returns the year portion of a date \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/operators)",
+    "type": "operators"
+  },
+  {
+    "item": "$accumulator",
+    "text": "$accumulator: {}",
+    "detail": "$accumulator",
+    "documentation": "Returns the result of a user-defined accumulator function \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$addToSet",
+    "text": "$addToSet: {}",
+    "detail": "$addToSet",
+    "documentation": "Returns an array of unique expression values for each group. Order of the array elements is undefined \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$avg",
+    "text": "$avg: {}",
+    "detail": "$avg",
+    "documentation": "Returns an average of numerical values. Ignores non-numeric values \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$addToSet",
+    "text": "$addToSet: []",
+    "detail": "$addToSet",
+    "documentation": "Returns array of unique pushed values \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$avg",
+    "text": "$avg: []",
+    "detail": "$avg",
+    "documentation": "Calculates the average of a number property or expression in the group \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$count",
+    "text": "$count: []",
+    "detail": "$count",
+    "documentation": "Calculates the average of a number property or expression in the group \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$first",
+    "text": "$first: []",
+    "detail": "$first",
+    "documentation": "Returns the first value from the group. The result depends on the sort field(s) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$last",
+    "text": "$last: []",
+    "detail": "$last",
+    "documentation": "Returns the last value from the group. The result depends on the sort field(s) \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$lamergeObjectst",
+    "text": "$mergeObjects: []",
+    "detail": "$mergeObjects",
+    "documentation": "Combines multiple documents into a single document \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$min",
+    "text": "$min: []",
+    "detail": "$min",
+    "documentation": "Returns the smallest value from the group \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$max",
+    "text": "$max: []",
+    "detail": "$max",
+    "documentation": "Returns the largest value from the group \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$push",
+    "text": "$push: []",
+    "detail": "$push",
+    "documentation": "Returns the array of pushed values \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$sum",
+    "text": "$sum: []",
+    "detail": "$sum",
+    "documentation": "Calculates the sum of a number property or expression in the group \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/accumulators#group-accumulators)",
+    "type": "accumulators"
+  },
+  {
+    "item": "$cond",
+    "text": "$cond: []",
+    "detail": "$cond",
+    "documentation": "Takes an array of 3 expressions. If the first expression evaluates to true, the second expression value is returned. Otherwise, the value of the third expression is returned \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/conditionals)",
+    "type": "conditionals"
+  },
+  {
+    "item": "$ifNull",
+    "text": "$ifNull: []",
+    "detail": "$ifNull",
+    "documentation": "Takes an array of 2 expressions. Returns the value of the first expression unless it evaluates to null, in which case the value of the second expression is returned \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/conditionals)",
+    "type": "conditionals"
+  },
+  {
+    "item": "$$CONTEXT",
+    "text": "$$CONTEXT",
+    "detail": "$$CONTEXT",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$CLOSE",
+    "text": "$$CLOSE",
+    "detail": "$$CLOSE",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$CURSOR",
+    "text": "$$CURSOR",
+    "detail": "$$CURSOR",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$DATE",
+    "text": "$$DATE",
+    "detail": "$$DATE",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$ENV",
+    "text": "$$ENV",
+    "detail": "$$ENV",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$NOW",
+    "text": "$$NOW",
+    "detail": "$$NOW",
+    "documentation": "A variable that returns the current datetime value \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$RANDOM",
+    "text": "$$RANDOM",
+    "detail": "$$RANDOM",
+    "documentation": "returns a floating-point, pseudo-random number in the range 0 to less than 1 \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$REMOVE",
+    "text": "$$REMOVE",
+    "detail": "returns a floating-point, pseudo-random number in the range 0 to less than 1",
+    "documentation": "A variable which evaluates to the missing value \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$ROOT",
+    "text": "$$ROOT",
+    "detail": "$$ROOT",
+    "documentation": "References the root currently being processed in the aggregation pipeline stage \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$SCRIPT",
+    "text": "$$SCRIPT",
+    "detail": "$$SCRIPT",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  },
+  {
+    "item": "$$VAR",
+    "text": "$$VAR",
+    "detail": "$$VAR",
+    "documentation": "N/A \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/variables)",
+    "type": "variables"
+  }
+]

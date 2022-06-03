@@ -1,17 +1,9 @@
 
-# medable - agilathon
-
-  
-
-intent to contain different helpers and snippets for agilathon-medable ecosystem.
-
-  
-
 ## Description
 
   
 
-Different helpers and snippets for agilathon-medable ecosystem.
+Different helpers and snippets for medable ecosystem.
 
   
   
@@ -34,7 +26,9 @@ collection of vs code snippets for axon medable framework contained in ./snippet
 - increment version in *package.json* file
 - add changes to the changelog file (CHANGELOG.md)
 - install *vsce* tool for packaging VS Code extensions using `npm install -g vsce` (use Node version 16.+)
-- run `vsce package` command that will generate `medable-cs-code-snippets-[version].vsix` file
+- run `npm install` to pull dependencies 
+- run `npm run build` to transpile typescript
+- run `npm run package` to create .vsix extension
 - publish new version to [Releases](https://github.com/agilathonmg74/medable-agilathon/releases)
 
 ## Commands
@@ -89,9 +83,6 @@ collection of vs code snippets for axon medable framework contained in ./snippet
     md route create
     md faults
     md event find
-    md util paths
-    md session
-    md cache
 
 ### Addtional
 
@@ -104,24 +95,23 @@ collection of vs code snippets for axon medable framework contained in ./snippet
   
   
 
+
+
+
+
+## Code Completion
+Extension provides basic code completion for some cortex specific functionalities.
+
 ## Authors
 
-  
 
-Contributors names and contact info
+* [Marko Gudic](https://gitlab.medable.com/mgudic_ag)
 
-  
+* [Marin Buric](https://gitlab.medable.com/mradovcic_ag)
 
-to be ...
+* [Marko Radovcic](https://gitlab.medable.com/mradovcic_ag)
 
-  
-
-## Version History
-
-  
-
-to be ...
-
+* [Branimir Corluka](https://gitlab.medable.com/bcorluka_ag)
   
 
 ## License
@@ -143,3 +133,7 @@ Inspiration, code snippets, etc.
 * [Definitive guide to snippets visual studio code](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code)
 
 * [Generate VS Code snippet package](https://medium.com/@makhmud.islamov/publish-your-vs-code-snippet-extension-in-4-steps-2ed7cc4fccc3)
+
+* [Code Completion Example](https://github.com/microsoft/vscode-extension-samples/tree/main/completions-sample)
+
+* [VS Code API](https://code.visualstudio.com/api/references/vscode-api)

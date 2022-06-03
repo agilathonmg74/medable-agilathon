@@ -1,0 +1,32 @@
+[
+    {
+        "item": "info",
+        "text": "info(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the INFO level, with optional custom data \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
+    },
+    {
+        "item": "warn",
+        "text": "warn(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the WARN level, with optional custom data \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
+    },
+    {
+        "item": "error",
+        "text": "error(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the ERROR level, with optional custom data \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
+    },
+    {
+        "item": "debug",
+        "text": "debug(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the DEBUG level, with optional custom data \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
+    },
+    {
+        "item": "trace",
+        "text": "trace(data[optional], message)",
+        "detail": "data as Object[optional], message as string",
+        "documentation": "logs the message with the TRACE level, with optional custom data \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/logger-module)"
+    }
+]
