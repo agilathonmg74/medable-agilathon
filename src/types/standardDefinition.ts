@@ -5,6 +5,7 @@ const _apiData = require('../settings/apiData.json')
 const _httpData = require('../settings/httpData.json')
 const _configData = require('../settings/configData.json')
 const _imports = require('../settings/imports.json')
+const _expressionsData = require('../settings/expressionsData.json')
 
 interface StandardConfigDefinition {
     item: string,
@@ -20,5 +21,6 @@ const apiData: StandardConfigDefinition[] = _apiData
 const httpData: StandardConfigDefinition[] = _httpData
 const configData: StandardConfigDefinition[] = _configData
 const imports: StandardConfigDefinition[] = _imports
+const expressionsData: StandardConfigDefinition[] = _expressionsData
 
-export { StandardConfigDefinition, loggerData, cacheData, notifData, apiData, httpData, configData, imports }
+export { StandardConfigDefinition, loggerData, cacheData, notifData, apiData, httpData, configData, imports, expressionsData }

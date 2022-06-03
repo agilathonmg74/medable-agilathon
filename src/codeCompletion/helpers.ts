@@ -6,6 +6,7 @@ import { cursors } from '../types/cursor'
 import { consts } from '../types/consts'
 import { script } from '../types/script'
 import Statement from '../types/statement'
+import { StandardConfigDefinition } from '../types/standardDefinition'
 // import Logger from '../logger'
 
 const bracketPairs = {
@@ -15,6 +16,14 @@ const bracketPairs = {
 }
 
 // #region Public
+
+const mapToCompletionItem = (definition: StandardConfigDefinition, kind: vscode.CompletionItemKind): vscode.CompletionItem => {
+  const item = new vscode.CompletionItem(definition.item, kind)
+  item.insertText = definition.text
+  item.detail = definition.detail
+  item.documentation = new vscode.MarkdownString(definition.documentation)
+  return item
+}
 
 const getCurrentStatement = (document: vscode.TextDocument, line: number, characther = -1): Statement => {
   const fullStatement = getFullStatement(document, line, characther)
@@ -185,5 +194,6 @@ export {
   getOptionsForQueryStatement,
   getOptionsForConstsStatement,
   getOptionsForScriptStatement,
-  getOptionsForCursor
+  getOptionsForCursor,
+  mapToCompletionItem
 }
