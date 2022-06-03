@@ -160,5 +160,11 @@
         "text": "xml from 'xml'",
         "detail": "import xml module",
         "documentation": "Simple xml/json conversion tool. \n #### [go to docs](https://docs.medable.com/cortex-api/scripting/modules-1/xml-module)"
+    },
+    {
+        "item": "expressions",
+        "text": "expressions from 'expressions'",
+        "detail": "import expressions module",
+        "documentation": "Module Expressions. \n #### [go to docs](https://docs.medable.com/cortex-api/expressions/expressions)"
     }
 ]
