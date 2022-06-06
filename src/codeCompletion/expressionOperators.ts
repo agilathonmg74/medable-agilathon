@@ -20,7 +20,6 @@ const expressionOperatorsProvider = vscode.languages.registerCompletionItemProvi
 const getCompletionTypeFromOperatorType = (operatorType: string): vscode.CompletionItemKind => {
   switch (operatorType) {
     case 'operators':
-      return vscode.CompletionItemKind.Operator
     case 'pipelines':
       return vscode.CompletionItemKind.Function
     case 'accumulators':
