@@ -4,7 +4,6 @@
   
 
 Different helpers and snippets for medable ecosystem.
-
   
   
 
